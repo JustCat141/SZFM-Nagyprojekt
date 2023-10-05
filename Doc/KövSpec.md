@@ -47,3 +47,35 @@ volna hogy statisztikákat tudjunk kiállítani egy adott felméréssel
 kapcsolatban. További elvárás hogy a reszponzivitás mellett a design is
 igazodjon a megrendelő vállalatának a színeihez és bárki számára könnyen
 kezelhető legyen.
+
+<h3> Jelenlegi folyamatok: </h3>
+Jelenleg külön egy erre a célra felvett ember végzi a feladatot, 
+valamint időszakonként diákok szokták diákmunka keretein belül. 
+Ez a modell több okból is problémás és nem fenntartható hosszú távon,
+előnye nincs sok, de hátránya annál több. 
+Itt az ideje hogy egy digitális megoldással kiváltsuk ezt az elavult
+kérdőívezési módszert.
+
+A folyamat a következőképpen néz ki jelenleg:
+
+* Papír vásárlása (Nem túl környezetbarát megoldás)
+* Kérdőívek elkészítése
+* Ezek kinyomtatása
+* Kérdőívek szétosztása
+* Kérdőívek begyűjtése
+* Kérdőívek kielemzése
+* Statisztikák létrehozása
+* Ellenőrzés
+* Az adott eredmény prezentálása a megfelelő személynek
+
+Nos, az itt leírt nem túl effektív folyamatot a digitalizálás
+segítségével egy új, modern szintre lehet emelni és
+hosszútávon ez egyértelműen spórolást jelent az adott vállalkozásnak.
+
+A Google Forms esetében más a folyamat:
+
+* Itt elsőként rendelkeznünk kell egy Gmail fiókkal, amennyiben nem, akkor regisztrálni
+* Csak Google fiók birtokában tud a létrehozó kérdőíveket kreálni
+* Ezután a létrehozó elkészíti a kérdőívet
+* A létrehozó elküldi az általa létrehozott kérdőív URL linkjét
+* A létrehozó a kitöltés után megkapja a válaszokat.
