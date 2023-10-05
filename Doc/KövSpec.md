@@ -35,3 +35,15 @@ Ezen kívül a programnak képesnek kell lennie a felhasználóktól tippeket/
 jóslatokat kérni és fogadni, például "Ki fogja megnyeri a következő football világbajnokságot?"
 A kérdőívek kitöltésénnél célunk az információk begyűjtése, ezeket egy adatbázis segítségével fogjuk eltárolni, 
 a későbbi felhasználás érdekében.
+
+<h2>Megrendelői igényspecifikáció</h2>
+
+<h3>2. Vágyálom rendszer: </h3>
+Szükség van egy olyan reszponzív webes rendszerre amely először is
+felhasználóbarát, lehetőség van a regisztrációra, bejelentkezésre, jelszó
+megváltoztatására és segítségével felmérést lehet végezni egy adott
+témakörben, majd ez automatikusan ki kell értékelődjön. Ezután szükséges
+volna hogy statisztikákat tudjunk kiállítani egy adott felméréssel
+kapcsolatban. További elvárás hogy a reszponzivitás mellett a design is
+igazodjon a megrendelő vállalatának a színeihez és bárki számára könnyen
+kezelhető legyen.
