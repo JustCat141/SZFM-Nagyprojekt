@@ -48,7 +48,7 @@ kapcsolatban. További elvárás hogy a reszponzivitás mellett a design is
 igazodjon a megrendelő vállalatának a színeihez és bárki számára könnyen
 kezelhető legyen.
 
-<h3> Jelenlegi folyamatok: </h3>
+<h3> 3. Jelenlegi folyamatok: </h3>
 Jelenleg külön egy erre a célra felvett ember végzi a feladatot, 
 valamint időszakonként diákok szokták diákmunka keretein belül. 
 Ez a modell több okból is problémás és nem fenntartható hosszú távon,

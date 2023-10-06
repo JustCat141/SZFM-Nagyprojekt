@@ -27,3 +27,7 @@ A programnak meg kell felelnie a mai kor elvárásainak, és tökéletesen kell 
 Emellett lehetőséget kell biztosítania a felhasználók számára, hogy tippeket és jóslatokat tegyenek, például 
 "Ki fogja megnyerni a következő futball világbajnokságot?"
 A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket egy adatbázisban fogunk tárolni a későbbi felhasználás céljából.
+
+<h3> 3. Követelménylista</h3> 
+
+<h3> 4. Jelenlegi üzleti folyamatok modellje:</h3> 
