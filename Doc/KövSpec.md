@@ -79,3 +79,11 @@ A Google Forms esetében más a folyamat:
 * Ezután a létrehozó elkészíti a kérdőívet
 * A létrehozó elküldi az általa létrehozott kérdőív URL linkjét
 * A létrehozó a kitöltés után megkapja a válaszokat.
+
+### 4. Igényelt folyamatok:
+
+### 5. Rendszerre vonatkozó szabályok
+
+## 6. Fogalomszótár:
+
+## 7. Fejlesztői igényspecifikáció:
