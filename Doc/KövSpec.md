@@ -81,6 +81,28 @@ A Google Forms esetében más a folyamat:
 * A létrehozó a kitöltés után megkapja a válaszokat.
 
 ### 4. Igényelt folyamatok:
+#### 4.1 Megjelenés:
+- **4.1.1:** Online megjelenés.
+- **4.1.2:** Az oldalt bármilyen eszközről, illetve bármilyen böngészőből el lehessen érni.
+- **4.1.3:** Az oldal legyen reszponzív.
+#### 4.2 Regisztráció, bejelentkezés:
+- **4.2.1:** Legyen lehetőség a felhasználó regisztrációjára.
+- **4.2.2:** A regisztrációhoz legyen szükséges egy felhasználónév, egy email, illetve egy jelszó. A jelszó karakterei legyenek elrejtve.
+- **4.2.3:** A jelszó legyen legalább 6 karakter, illetve tartalmazzok betűket, illetve számokat.
+- **4.2.4:** A jelszót meg kell erősítenie a felhasználónak, így kötelezően meg kell adnia ismét.
+- **4.2.5:** Sikeres regisztráció esetén tárolódjanak el a felhasználó adatai, illetve a regisztráció ideje egy adatbázisban. A jelszó legyen titkosítva, mielőtt a frontend atküldené a backendre.
+- **4.2.6:** A sikeres regisztációt követően a fejhasználó tudjon bejelentkezni.
+- **4.2.7:** A felhasználó a bejelentkezést követően meg tudja nézni a saját kérdéssorozatait.
+- **4.2.8:** A felhasználó a bejelentkezést követően meg tudja nézni a saját adatait, illetve tudja módosítani a jelszavát.
+#### 4.3 Kérdéssorozatok kitöltése:
+- **4.3.1:** A felhasználó tudjon kérdéssorozatokat kitölteni.
+- **4.3.2:** A kérdéssorozatokat csak akkor lehessen kitölteni, ha a felhasználó bejelentkezett az oldalra.
+- **4.3.3:** A kérdéssorozat legalján legyen egy gomb amely a kérdéssorozat befejezését indikálja (pl. küldés/kész).
+- **4.3.4:** A kérdés kitöltését követően az adott válaszokat mentse el a rendszer egy adatbázisba.
+#### 4.4 Kérdéssorozat létrehozása, elemzése:
+- **4.4.1:** Minden felhasználó tudjon kérdéssorozatokat létrehozni, szerkeszteni, illetve törölni (adatbázis műveletek).
+- **4.4.2:** Minden felhasználó a saját kérdéssorozata fölött rendelkezik, úgymond ő az adminja.
+- **4.4.3:** A felhasználó meg tudja nézni a kérdéssorozatára kapott válaszok elemzését, statisztikáját.
 
 ### 5. Rendszerre vonatkozó szabályok
 
