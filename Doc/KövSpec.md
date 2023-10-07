@@ -106,6 +106,6 @@ A Google Forms esetében más a folyamat:
 
 ### 5. Rendszerre vonatkozó szabályok
 
-## 6. Fogalomszótár:
+## 6. Követelménylista:
 
-## 7. Fejlesztői igényspecifikáció:
+## 7. Fogalomszótár:
