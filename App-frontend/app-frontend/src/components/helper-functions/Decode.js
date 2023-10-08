@@ -1,4 +1,4 @@
-export const decode = (encodedString) => {
+export const Decode = (encodedString) => {
     let decodedString = '';
     let shift = 3;
   
