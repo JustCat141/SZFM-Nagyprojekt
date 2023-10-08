@@ -63,6 +63,14 @@ Egy Flask alkalmazást a projekt gyökérmappájába létrehozni.
 
 Definiálni útvonalakat (endpoints) a Flask alkalmazásban a frontend és backend kommunikációhoz, például a regisztrációhoz, bejelentkezéshez, kérdőívek létrehozásához, adatok lekérdezéséhez.
 
+Konfigurálni az adatbázist.
+
+Implementálni felhasználói autentikációt.
+
+Elkészíteni a kérdőívek és válaszok modelljét az adatbázisban(blokkokat).
+
+Kezelni a HTTP kéréseket a frontendtől, ellenőrizd őket és hajtsd végre a megfelelő adatbázisműveleteket.
+
 # Fizikai környezet
 Az alkalmazás web platformra készül, böngészőből érhető el. A projekthez tartozik mobil nézet, így mobilról is ugyan úgy használható.
 
