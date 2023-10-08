@@ -128,3 +128,15 @@ A Google Forms esetében más a folyamat:
 | Felület     | K17 | Kérdéssorozat létrehozása, szerkesztése | Ezen a felületen lehet szerkeszteni az adott kvízt.                                                                                                                                                                                                                                                                              |
 
 ## 7. Fogalomszótár:
+
+<h2>8. Fejlesztői igényspecifikáció:</h2>
+<h3>-Fejlesztői vízió (Vágyálom):</h3> 
+A fejlesztő számára az ideális helyzet az lenne, hogy olyan megrendelések érkezzenek, amelyeket a jelenlegi kapacitásai határidőn belül és kiváló minőségben képes teljesíteni. Ez lehetővé tenné számára, hogy a projektek tervezésében és kivitelezésében a legjobb munkát nyújtsa.
+
+A fejlesztők képesek lennének minden részletet kivitelezni a megrendelői igények alapján, anélkül, hogy hiányosságok vagy hibák maradnának a végeredményben. Modern fejlesztési módszereket és eljárásokat alkalmaznának, hogy a projekt hatékony és innovatív legyen.
+
+A fejlesztők számára fontos lenne a folyamatos és zökkenőmentes kommunikáció a megrendelővel. Ez lehetővé tenné, hogy az igények és elvárások mindvégig tiszták és átláthatóak legyenek, és lehetővé tenné a projekt szakmai irányítását.
+
+A fejlesztő számára az is lényeges, hogy minden projektet biztos alapokra építsen. Ez magában foglalja a szükséges kutatást, tervezést és tesztelést, hogy a végeredmény stabil és megbízható legyen.
+
+Ezen vágyálmok megvalósítása segítene a fejlesztőnek abban, hogy sikeres és kielégítő projekteken dolgozhasson, és hosszú távon is jó kapcsolatot alakítson ki a megbízóival.
