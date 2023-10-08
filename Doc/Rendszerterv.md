@@ -57,6 +57,12 @@ Kezelni kell az állapotokat és az eseményeket a React állapotkezelési és e
 
 Implementálni felhasználói értesítéseket és hibaüzeneteket a felhasználóbarát felhasználói élmény érdekében a login felületen akár.
 
+### Backend (Flask, Python):
+
+Egy Flask alkalmazást a projekt gyökérmappájába létrehozni.
+
+Definiálni útvonalakat (endpoints) a Flask alkalmazásban a frontend és backend kommunikációhoz, például a regisztrációhoz, bejelentkezéshez, kérdőívek létrehozásához, adatok lekérdezéséhez.
+
 # Fizikai környezet
 Az alkalmazás web platformra készül, böngészőből érhető el. A projekthez tartozik mobil nézet, így mobilról is ugyan úgy használható.
 
