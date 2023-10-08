@@ -40,6 +40,10 @@ A web alkalmazásnak:
 - Html, Css, JavaScript, React Js frontend, Python backend, JSON fájlok az adatok tárolására
 - Az egyes részeknek megfelelően kell kommunikálni egymással
 
+# Architektúrális terv
+
+Egy olyan webalkalmazás, amely Python-Flask backendet és egy ReactJs frontendet használ. A ReactJs magába foglalja a HTML, CSS, Javascript technológiákat is, illetve magát a React keretrendszert is. A frontend a fetch API-t használja a backend API-val való kommunikációhoz. Az adatábzishoz MySql adatbázist választottunk.
+
 # Fizikai környezet
 Az alkalmazás web platformra készül, böngészőből érhető el. A projekthez tartozik mobil nézet, így mobilról is ugyan úgy használható.
 
