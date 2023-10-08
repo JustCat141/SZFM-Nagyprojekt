@@ -71,6 +71,12 @@ Elkészíteni a kérdőívek és válaszok modelljét az adatbázisban(blokkokat
 
 Kezelni a HTTP kéréseket a frontendtől, ellenőrizd őket és hajtsd végre a megfelelő adatbázisműveleteket.
 
+### Adatbázis (MySQL):
+
+Létrehozni egy MySQL adatbázist a szükséges táblákkal, például a felhasználók, kérdőívek és válaszok táblájával.
+
+Definiálni egyedülálló kulcsokat és indexeket az adatbázis teljesítményének optimalizálása érdekében.
+
 # Fizikai környezet
 Az alkalmazás web platformra készül, böngészőből érhető el. A projekthez tartozik mobil nézet, így mobilról is ugyan úgy használható.
 
