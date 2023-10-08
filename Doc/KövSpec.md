@@ -39,14 +39,9 @@ a későbbi felhasználás érdekében.
 <h2>Megrendelői igényspecifikáció</h2>
 
 <h3>2. Vágyálom rendszer: </h3>
-Szükség van egy olyan reszponzív webes rendszerre amely először is
-felhasználóbarát, lehetőség van a regisztrációra, bejelentkezésre, jelszó
-megváltoztatására és segítségével felmérést lehet végezni egy adott
-témakörben, majd ez automatikusan ki kell értékelődjön. Ezután szükséges
-volna hogy statisztikákat tudjunk kiállítani egy adott felméréssel
-kapcsolatban. További elvárás hogy a reszponzivitás mellett a design is
-igazodjon a megrendelő vállalatának a színeihez és bárki számára könnyen
-kezelhető legyen.
+Biztosítani kell egy reszponzív webes alkalmazást, amely elsősorban a felhasználók számára kényelmes és egyszerű használatot nyújt. Az alkalmazásnak lehetőséget kell biztosítania a felhasználók számára a regisztrációra, bejelentkezésre és a jelszavak változtatására. Ezenkívül a rendszernek lehetőséget kell nyújtania felmérések létrehozására egy meghatározott témában, majd ezen felmérések automatikus kiértékelésére is szükség van. Az eredményekből származó statisztikák létrehozása is elengedhetetlen. A designnak az ügyfél vállalati színeihez kell igazodnia, emellett a felhasználói felületnek könnyen használhatónak és áttekinthetőnek kell lennie mindenki számára.
+
+Ez a projekt komoly és sokrétű, és nagy figyelmet és gondos tervezést igényel a különböző komponensek közötti szoros integráció érdekében. Az alkalmazásnak elsődlegesen a felhasználói élményre kell összpontosítania, különösen a regisztráció, bejelentkezés és felmérések készítése során. A reszponzív design elengedhetetlen ahhoz, hogy az alkalmazás bármilyen eszközön tökéletesen működjön, és az ügyfél vállalati színeinek alkalmazása egy egységes és meghatározó megjelenést biztosít az alkalmazásnak. Az áttekinthető és könnyen navigálható felhasználói felület biztosítja, hogy a felhasználók kényelmesen és hatékonyan használhassák az alkalmazást.
 
 <h3> 3. Jelenlegi folyamatok: </h3>
 Jelenleg külön egy erre a célra felvett ember végzi a feladatot, 
