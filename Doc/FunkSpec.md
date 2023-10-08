@@ -41,3 +41,9 @@ A HTML egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, �
 A CSS a számítástechnikában egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le. Ezenkívül használható bármilyen XML alapú dokumentum stílusának leírására is, mint például az SVG, XUL stb.
 ### Javascript:
 A JavaScript programozási nyelv egy objektumorientált, prototípus-alapú szkriptnyelv, amelyet weboldalakon elterjedten használnak. Ebből fejlődött ki a TypeScript, ami a JavaScript típusos változatának tekinthető.
+### React:
+A React egy ingyenes és nyílt forráskódú előtérben használható JavaScript-könyvtár, amely összetevőkön alapuló felhasználói felületek létrehozására szolgál. A Meta és az egyes fejlesztőkből és cégekből álló közösség tartja karban.
+### Python:
+A Python egy általános célú, nagyon magas szintű programozási nyelv, melyet Guido van Rossum holland programozó kezdett el fejleszteni 1989 végén, majd hozott nyilvánosságra 1991-ben. A nyelv tervezési filozófiája az olvashatóságot és a programozói munka megkönnyítését helyezi előtérbe a futási sebességgel szemben.
+### Flask:
+ Flask egy Python nyelven írt mikro webes keretrendszer. Mikrokeretrendszernek minősül, mivel nem igényel különleges eszközöket vagy könyvtárakat.
