@@ -53,3 +53,7 @@ A frontend a programoknak, weboldalaknak az a része, amelyik a felhasználóval
 A backend a programoknak, weboldalaknak a hátsó, a felhasználó elől rejtett, a tényleges számításokat végző része. Feladata a front‑end (a felhasználóval kapcsolatban lévő rész) felől érkező adatok feldolgozása, és az eredményeknek a front‑end felé történő visszajuttatása.
 ### Adatbázis:
 A számítástechnikában az adatbázis elektronikusan tárolt és elérhető adatok szervezett gyűjteménye. A kis adatbázisok fájlrendszerben tárolhatók, míg a nagy adatbázisok clusterekben vagy felhőalapú tárolókban vannak elhelyezve. Az adatbázisok tervezése kiterjed a formális technikákra és a gyakorlati megfontolásokra, beleértve az adatmodellezést, a hatékony adatreprezentációt és tárolást, a lekérdezési nyelveket, az érzékeny adatok biztonságát és védelmét.
+### Admin:
+Az "admin" rövidítése az "adminisztrátor" szónak. Az adminisztrátor egy olyan személy vagy felhasználó, aki speciális jogosultságokkal rendelkezik egy rendszer, weboldal, vagy alkalmazás felett.
+### Kliens:
+A "kliens" rövidítése a "kliensszámítógépnek" vagy "kliensprogramnak". Egy kliens egy olyan számítógép vagy alkalmazás, amely kapcsolódik egy hálózathoz vagy szolgáltatáshoz, és kéréseket küld egy szervernek adatainak lekérdezéséhez, szolgáltatások igénybevételéhez vagy kommunikációhoz. A kliens aktív szerepet játszik a kapcsolatban, és a szerver az általa küldött kérésekre válaszol.
