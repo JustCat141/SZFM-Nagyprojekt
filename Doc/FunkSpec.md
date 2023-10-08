@@ -125,6 +125,42 @@ A megnyitott kérdőív a következőképpen rendeződik el:
 A Kérdőív felülete:
 ![Kérdőív felülete](./images/scetch_questionnaire_page.png)
 
+# 8. Forgatókönyv
+
+#### 1. Forgatókönyv a felhasználói regisztrációhoz:
+1. A felhasználó a főoldalon választja a "Regisztráció" lehetőséget.
+2. A felhasználónak meg kell adnia a kötelező adatokat: felhasználónév, e-mail cím, jelszó.
+3. A rendszer ellenőrzi az adatok helyességét és az emailcím egyediségét.
+4. Ha az adatok megfelelőek, a rendszer regisztrálja a felhasználót és átirányítja a felhasználót a belépési oldalra, ha nem hibaüzenetet dob.
+
+#### 2. Forgatókönyv a felhasználói bejelentkezéshez:
+1. A felhasználó a főoldalon választja a "Bejelentkezés" lehetőséget.
+2. A felhasználónak meg kell adnia a regisztrált e-mail címét és jelszavát.
+3. A rendszer ellenőrzi az adatok helyességét.
+4. Ha az adatok megfelelőek, a rendszer belépteti a felhasználót és átirányítja a felhasználót a főoldalra. Nem megfelelő adat esetén a rendszer hibaüzenetet ad.
+
+#### 3. Forgatókönyv meglévő kérdőív kitöltéséhez:
+1. A felhasználó belép a rendszerbe, és megad egy kérdőív azonosítót, vagy linken keresztül megnyitja a kitölteni kívánt kérdőívet.
+2. A felhasználó kitölti a kérdéseket és megadja a válaszokat.
+3. A felhasználó elküldi a kitöltött kérdőívet.
+
+#### 4. Forgatókönyv új kérdőív létrehozásához:
+1. A felhasználó belép a rendszerbe és választja a "Kérdőív Létrehozása" lehetőséget.
+2. A felhasználó megadja a kérdőív címét és opcionálisan a leírását.
+3. A felhasználó hozzáad kérdéseket, válaszlehetőségeket és beállítja a kérdőív tulajdonságait.
+4. A felhasználó elkészíti a kérdőívet és elmenti.
+
+#### 5. Forgatókönyv meglévő kérdőív törléséhez:
+1. A felhasználó belép a rendszerbe és kiválasztja a már létező kérdőívek közül azt, amelyet törölni szeretne.
+2. A felhasználót egy ablak fogadja, amellyel megerősíti a törlési szándékát.
+
+#### 6. Forgatókönyv saját kérdőív statisztikáinak megtekintéséhez:
+1. A felhasználó belép a rendszerbe és választja a "Saját Kérdőívjeim" lehetőséget a menüből.
+2. A felhasználó kiválasztja a megtekinteni kívánt kérdőívet a listából.
+3. A felhasználó kattint a "Statisztikák" vagy hasonló gombra a kiválasztott kérdőívhez tartozó sorban.
+4. A rendszer betölti a kérdőív statisztikáit, például kitöltések száma, válaszok eloszlása stb.
+5. A felhasználó megtekinti és elemezi a statisztikákat a kérdőív teljesítményének felmérése céljából.
+
 # Fogalomszótár
 ### Google forms: 
 A Google Forms egy felmérés-adminisztrációs szoftver, amely a Google által kínált ingyenes, webalapú Google Docs Editors programcsomag része. A szolgáltatás magában foglalja a Google Dokumentumokat, a Google Táblázatokat, a Google Diákat, a Google Rajzokat, a Google Webhelyeket és a Google Keepet is.
