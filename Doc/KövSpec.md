@@ -140,3 +140,18 @@ A fejlesztők számára fontos lenne a folyamatos és zökkenőmentes kommuniká
 A fejlesztő számára az is lényeges, hogy minden projektet biztos alapokra építsen. Ez magában foglalja a szükséges kutatást, tervezést és tesztelést, hogy a végeredmény stabil és megbízható legyen.
 
 Ezen vágyálmok megvalósítása segítene a fejlesztőnek abban, hogy sikeres és kielégítő projekteken dolgozhasson, és hosszú távon is jó kapcsolatot alakítson ki a megbízóival.
+
+
+<h3>-Fejlesztői cél:</h3> 
+A saját tudását felhasználva a megrendelő igényeinek maximális kielégítése: A fejlesztő elsődleges feladata az, hogy a megbízó által megfogalmazott igényeket a lehető legjobban megvalósítsa. Ehhez a projektek során szükséges folyamatos tanulás és fejlődés.
+
+További projektekben is a bizalom elnyerése a megrendelő részéről: A megbízók bizalmát megnyerni és megtartani kulcsfontosságú a fejlesztő számára. Ha a megbízó elégedett a korábbi munkával, nagyobb az esélye újabb projektek kapcsán való együttműködésre.
+
+Egy olyan termék elkészítése, amely mindkét oldalról pozitív véleményt vált ki: A fejlesztőnek olyan terméket kell létrehoznia, amely nemcsak a megbízót, hanem a végső felhasználókat is elégedetté teszi. A jó termék az elégedett felhasználókat eredményezi, ami hosszú távú sikerhez vezet.
+
+Fejlesztő portfóliójának a bővítéséül szolgál: A fejlesztő minden projektet lehetőségként kell kezeljen a személyes portfóliójának bővítésére. A változatos projektek és tapasztalatok hozzájárulnak a fejlesztő szakmai fejlődéséhez és hírnevének növeléséhez.
+
+A fejlesztési görbe normális ütemtervben halad, nem stagnál: A fejlesztőnek folyamatosan fejlődnie kell, de nem szabad elhamarkodottan cselekednie. Az egyensúly fontos: a fejlesztésnek folyamatosnak és stabilnak kell lennie, de ne szabad beleesni a túlzott rohanásba.
+
+A felmerülő problémák, akadályok hamar orvosolhatók: A fejlesztőnek proaktívan kell reagálnia a projekt során felmerülő problémákra és akadályokra. Az időben történő problémamegoldás kulcsfontosságú a projekt sikere szempontjából.
+
