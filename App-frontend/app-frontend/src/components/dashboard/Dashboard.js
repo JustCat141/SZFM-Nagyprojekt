@@ -1,7 +1,7 @@
-// dashboard.js
 import React from 'react';
 import { useSelector } from 'react-redux';
 import UserQuestionnairesList from './UserQuestionnairesList';
+import { classes } from '../../styles/Dashboard.module.css';
 
 function Dashboard() {
   // Use useSelector to access the user state from Redux store
@@ -26,9 +26,6 @@ function Dashboard() {
                 <div>
                     <UserQuestionnairesList />
                 </div>
-
-
-
             </div>
         </div>
       ) : (
