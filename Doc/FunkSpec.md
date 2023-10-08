@@ -56,7 +56,42 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 A megrendelő szeretne egy olyan online felületet, ahol egy felhasznaló a regisztráció, majd a  bejelentkezés után (azonosító és jelszó megadása után) kérdőívet tölthet ki. Amennyiben szeretné, saját maga is tud létrehozni kérdőívet, egyedi blokkokkal és kérdésekkel vagy válaszokkal. Minden felhasználó hozzáfér a többi felhasználó kérdőíveihez is.
 ![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram2.png)
 
-# Képernyő tervek
+# 6. Használati esetek
+1. Felhasználói regisztráció
+    - Leírás:  A felhasználó regisztrálja magát az alkalmazásban, hogy hozzáférhessen a rendszerhez.
+    - Főbb lépések:
+        1. A felhasználó kiválasztja a "Regisztráció" lehetőséget a kezdőoldalon.
+        2. Megadja a szükséges regisztrációs információkat (felhasználónév, e-mail cím, jelszó).
+        3. Elküldi a regisztrációs adatokat a rendszernek.
+        4. A rendszer ellenőrzi az adatokat és regisztrálja a felhasználót.
+2. Felhasználói bejelentkezés
+    - Leírás: A felhasználó bejelentkezik az alkalmazásba, hogy hozzáférhessen a funkcionalitásokhoz.
+    - Főbb lépések:
+        1. A felhasználó kiválasztja a "Bejelentkezés" lehetőséget a kezdőoldalon.
+        2. Megadja a regisztrált e-mail címét és jelszavát.
+        3. Elküldi a bejelentkezési adatokat a rendszernek.
+        4. A rendszer ellenőrzi az adatokat és bejelentkezteti a felhasználót.
+3. Kérdőív kitöltése
+    - Leírás: A felhasználó kitölt egy meglévő kérdőívet. A kérdőívet egy adott azonosítóval, vagy egy linken keresztül éri el.
+    - Főbb lépések:
+        1. A felhasználó kiválasztja a "Kérdőív keresése" opciót a főmenüben, majd rákeres a kérdőív azonosítójára, vagy egy adott linken keresztül megnyitja a kérdőívet.
+        2. Válaszol a kérdésekre.
+        3. Elküldi a válaszait.
+4. Kérdőív statisztikájának megtekintése
+    - Leírás: Felhasználó megtekintheti egy saját kérdőív statisztikáit.
+    - Főbb lépések:
+        1. A felhasználó kiválasztja a kívánt kérdőívet a kérdőív listából.
+        2. A rendszernek meg kell jelenítenie a kérdőív kitöltéseinek összesített statisztikáit, például válaszok gyakoriságát, átlagos válaszokat és egyéb releváns statisztikai adatokat.
+
+4. Kérdőív létrehozása
+    - Leírás: A felhasználó létrehoz egy új kérdőívet a nevének és a kérdéseknek a megadásával.
+    - Főbb lépések:
+        1. A felhasználó a felületen kiválasztja az "Új kérdőív létrehozása" opciót.
+        2. Megadja a kérdőív nevét. Opcionálisan a leírását.
+        3. Hozzáad kérdéseket a kérdőívhez.
+        4. Beküldi a kérdőívet.
+        5. Sikeres létrehozás esetén a rendszer visszaigazolja a kérdőív létrejöttét és egyedi azonosítót generál hozzá.
+# 7. Képernyő tervek
 
 A projekt tervezése során a számítógépes megjelenítés mellett a telefonos megjelenítést is preferáljuk, és ebben a kontextusban néhány tervezési elvet alkalmaztunk. A grafikus felhasználói felület (GUI) letisztult és könnyen kezelhető lesz, hogy a felhasználók könnyedén és hatékonyan használhassák az alkalmazást.
 
