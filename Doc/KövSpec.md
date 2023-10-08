@@ -48,8 +48,7 @@ Jelenleg külön egy erre a célra felvett ember végzi a feladatot,
 valamint időszakonként diákok szokták diákmunka keretein belül. 
 Ez a modell több okból is problémás és nem fenntartható hosszú távon,
 előnye nincs sok, de hátránya annál több. 
-Itt az ideje hogy egy digitális megoldással kiváltsuk ezt az elavult
-kérdőívezési módszert.
+Mindezek a tényezők összességében azt mutatják, hogy itt az ideje egy modern digitális megoldás bevezetésének, amely hatékonyabb, pontosabb és fenntarthatóbb. Egy ilyen digitális rendszer lehetővé teszi a kérdőívek automatizált kezelését, az adatok pontosabb gyűjtését és értékelését, valamint az erőforrások hatékonyabb felhasználását, így előnyöket teremt mind az időtartam, mind pedig a minőség szempontjából.
 
 A folyamat a következőképpen néz ki jelenleg:
 
