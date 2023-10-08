@@ -106,6 +106,29 @@ A Google Forms esetében más a folyamat:
 
 ### 5. Rendszerre vonatkozó szabályok
 
+**5.1 Felhasználói regisztráció és bejelentkezés**
+- **5.1.1:** Az alkalmazásnak lehetőséget kell biztosítania a felhasználók regisztrációjára, amelyhez a következő információkat kell bekérnie: felhasználónév, e-mail cím, jelszó.
+- **5.1.2:** A rendszernek ellenőriznie kell, hogy a regisztrált e-mail cím egyedinek számít-e a rendszerben, és jeleznie kell, ha az már használatban van.
+- **5.1.3:** A jelszavaknak biztonságosan kell tárolódnia a rendszerben. Fontos, hogy titkosításra kerüljön.
+- **5.1.4:** A felhasználóknak lehetőségük kell, hogy legyen bejelentkezni a rendszerbe, megadva a regisztrált e-mail címüket és jelszavukat.
+
+**5.2 Kérdőív kitöltése**
+- **5.2.1:** A felhasználóknak lehetőségük kell, hogy legyen a meglévő kérdőívek kitöltésére.
+- **5.2.2:** A kitöltött kérdőívekről a rendszernek tárolnia kell az adatokat, beleértve a kitöltés időpontját és a válaszokat.
+- **5.2.3:** A rendszernek biztosítania kell, hogy egy felhasználó csak egyszer tölthesse ki ugyanazt a kérdőívet.
+
+**5.3 Kérdőív létrehozása, vezérlése**
+- **5.3.1:**  A felhasználóknak lehetőségük kell, hogy legyenek új kérdőívek létrehozására, amelyekhez meg kell adniuk a kérdőív nevét és a kérdéseket.
+- **5.3.2:** A kérdőíveknek tartalmazniuk kell legalább egy kérdést, és opcionálisan több kérdést is lehet hozzáadni.
+- **5.3.3:** A rendszernek ellenőriznie kell, hogy a létrehozott kérdőív legalább egy válaszlehetőséget tartalmaz-e minden kérdéshez.
+- **5.3.4:** A létrehozott kérdőíveknek egyedi azonosítóval kell rendelkezniük.
+
+**5.4 Felhasználói jogosultságok**
+- **5.4.1:** Az alkamazásban minden felhasználónak jogosultságot kell biztosítani az adataik módosítására, például a felhasználónév, illetve a jelszó.
+- **5.4.2:** Minden felhasználó kitöltheti a mások által készített kérdőíveket, pontosan egyszer.
+- **5.4.3:** Minden felhasználó tudjon saját kérdőívet létrehozni, illetve azt megosztani másokkal. 
+- **5.4.4:** Minden felhasználó a saját kérdőíve felett rendelkezik. Létrehozás után tudja törölni. 
+
 ## 6. Követelménylista:
 | Modul       | ID  | Név                                     | Leírás                                                                                                                                                                                                                                                                                                                           |
 | ----------- | --- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
