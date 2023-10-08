@@ -39,22 +39,16 @@ a későbbi felhasználás érdekében.
 <h2>Megrendelői igényspecifikáció</h2>
 
 <h3>2. Vágyálom rendszer: </h3>
-Szükség van egy olyan reszponzív webes rendszerre amely először is
-felhasználóbarát, lehetőség van a regisztrációra, bejelentkezésre, jelszó
-megváltoztatására és segítségével felmérést lehet végezni egy adott
-témakörben, majd ez automatikusan ki kell értékelődjön. Ezután szükséges
-volna hogy statisztikákat tudjunk kiállítani egy adott felméréssel
-kapcsolatban. További elvárás hogy a reszponzivitás mellett a design is
-igazodjon a megrendelő vállalatának a színeihez és bárki számára könnyen
-kezelhető legyen.
+Biztosítani kell egy reszponzív webes alkalmazást, amely elsősorban a felhasználók számára kényelmes és egyszerű használatot nyújt. Az alkalmazásnak lehetőséget kell biztosítania a felhasználók számára a regisztrációra, bejelentkezésre és a jelszavak változtatására. Ezenkívül a rendszernek lehetőséget kell nyújtania felmérések létrehozására egy meghatározott témában, majd ezen felmérések automatikus kiértékelésére is szükség van. Az eredményekből származó statisztikák létrehozása is elengedhetetlen. A designnak az ügyfél vállalati színeihez kell igazodnia, emellett a felhasználói felületnek könnyen használhatónak és áttekinthetőnek kell lennie mindenki számára.
+
+Ez a projekt komoly és sokrétű, és nagy figyelmet és gondos tervezést igényel a különböző komponensek közötti szoros integráció érdekében. Az alkalmazásnak elsődlegesen a felhasználói élményre kell összpontosítania, különösen a regisztráció, bejelentkezés és felmérések készítése során. A reszponzív design elengedhetetlen ahhoz, hogy az alkalmazás bármilyen eszközön tökéletesen működjön, és az ügyfél vállalati színeinek alkalmazása egy egységes és meghatározó megjelenést biztosít az alkalmazásnak. Az áttekinthető és könnyen navigálható felhasználói felület biztosítja, hogy a felhasználók kényelmesen és hatékonyan használhassák az alkalmazást.
 
 <h3> 3. Jelenlegi folyamatok: </h3>
 Jelenleg külön egy erre a célra felvett ember végzi a feladatot, 
 valamint időszakonként diákok szokták diákmunka keretein belül. 
 Ez a modell több okból is problémás és nem fenntartható hosszú távon,
 előnye nincs sok, de hátránya annál több. 
-Itt az ideje hogy egy digitális megoldással kiváltsuk ezt az elavult
-kérdőívezési módszert.
+Mindezek a tényezők összességében azt mutatják, hogy itt az ideje egy modern digitális megoldás bevezetésének, amely hatékonyabb, pontosabb és fenntarthatóbb. Egy ilyen digitális rendszer lehetővé teszi a kérdőívek automatizált kezelését, az adatok pontosabb gyűjtését és értékelését, valamint az erőforrások hatékonyabb felhasználását, így előnyöket teremt mind az időtartam, mind pedig a minőség szempontjából.
 
 A folyamat a következőképpen néz ki jelenleg:
 
@@ -162,7 +156,11 @@ A fejlesztők számára fontos lenne a folyamatos és zökkenőmentes kommuniká
 
 A fejlesztő számára az is lényeges, hogy minden projektet biztos alapokra építsen. Ez magában foglalja a szükséges kutatást, tervezést és tesztelést, hogy a végeredmény stabil és megbízható legyen.
 
-Ezen vágyálmok megvalósítása segítene a fejlesztőnek abban, hogy sikeres és kielégítő projekteken dolgozhasson, és hosszú távon is jó kapcsolatot alakítson ki a megbízóival.
+Az ilyen vágyálmok megvalósítása nemcsak a fejlesztőnek, hanem minden érintett félnek hatalmas előnyökkel járhat, és hozzájárulhat a hosszú távú sikerekhez és kielégítő projektkezeléshez.
+
+Egy sikeres projekt megvalósítása az elsődleges cél mind a fejlesztő, mind a megbízó számára. A projekt sikeressége azt jelenti, hogy a tervezett célokat hatékonyan és eredményesen érték el, a költségvetés keretén belül és az időzítésnek megfelelően. Ha egy fejlesztő képes megvalósítani az ilyen vágyálmokat, akkor rendkívül megbízható és hatékony partnerként lép fel a projekt teljes időtartama alatt.
+
+A megbízók számára az ilyen vágyálmok megvalósítása azt jelenti, hogy könnyen és bizalommal dolgozhatnak együtt a fejlesztővel. Az átlátható kommunikáció, a hatékony projektkezelés és a minőségi munka hosszú távon is fenntartható és sikeres kapcsolatot eredményezhet. A megbízók hajlamosak visszatérő ügyfelekké válni, ha elégedettek a fejlesztő munkájával és a projektek eredményeivel.
 
 
 <h3>-Fejlesztői cél:</h3> 
