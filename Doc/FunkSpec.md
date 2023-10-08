@@ -32,6 +32,9 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 
 <h3> 4. Jelenlegi üzleti folyamatok modellje:</h3>
 
+# Igényelt üzleti folyamatok modellje
+![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram.png)
+
 # Fogalomszótár
 ### Google forms: 
 A Google Forms egy felmérés-adminisztrációs szoftver, amely a Google által kínált ingyenes, webalapú Google Docs Editors programcsomag része. A szolgáltatás magában foglalja a Google Dokumentumokat, a Google Táblázatokat, a Google Diákat, a Google Rajzokat, a Google Webhelyeket és a Google Keepet is.
