@@ -57,3 +57,7 @@ A számítástechnikában az adatbázis elektronikusan tárolt és elérhető ad
 Az "admin" rövidítése az "adminisztrátor" szónak. Az adminisztrátor egy olyan személy vagy felhasználó, aki speciális jogosultságokkal rendelkezik egy rendszer, weboldal, vagy alkalmazás felett.
 ### Kliens:
 A "kliens" rövidítése a "kliensszámítógépnek" vagy "kliensprogramnak". Egy kliens egy olyan számítógép vagy alkalmazás, amely kapcsolódik egy hálózathoz vagy szolgáltatáshoz, és kéréseket küld egy szervernek adatainak lekérdezéséhez, szolgáltatások igénybevételéhez vagy kommunikációhoz. A kliens aktív szerepet játszik a kapcsolatban, és a szerver az általa küldött kérésekre válaszol.
+### Reszponzitivás:
+A "reszponzivitás" azt jelenti, hogy egy weboldal vagy alkalmazás képes alkalmazkodni és megjeleníteni magát különböző méretű és típusú eszközökön, például számítógépeken, táblagépeken és mobiltelefonokon. 
+### Felhasználói felület/ UI: 
+Az "UI" rövidítése az "User Interface" vagyis a "felhasználói felület" szónak. A felhasználói felület a számítógépes rendszer vagy alkalmazás olyan része, amely lehetővé teszi a felhasználók számára az interakciót és kommunikációt a szoftverrel. 
