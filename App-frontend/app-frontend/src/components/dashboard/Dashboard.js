@@ -1,7 +1,9 @@
+// dashboard.js
 import React from 'react';
 import { useSelector } from 'react-redux';
 import UserQuestionnairesList from './UserQuestionnairesList';
-import { classes } from '../../styles/Dashboard.module.css';
+import { classes } from "../../styles/Dashboard.module.css";
+
 
 function Dashboard() {
   // Use useSelector to access the user state from Redux store
@@ -10,22 +12,25 @@ function Dashboard() {
   return (
     <div>
       {user ? (
-        <div>
-            <div>
-                <div>
-                    <img 
+        <div className={classes['dashboard-page']}>
+            <div className={classes['dasboard-header']}>
+                <div className={classes['dasboard-header-image-box']}>
+                    <img className={classes['dasboard-header-image']} 
                      src=""/>
                 </div>
             </div>
-            <div>
-                <div>
-                    <button>Kérdőív keresése</button>
-                    <button>Kérdőív létrehozása</button>
+            <div className={classes['dasboard-main-page ']}>
+                <div className={classes['dasboard-action-buttons']}>
+                    <button className={classes['dashboard-button']}>Kérdőív keresése</button>
+                    <button className={classes['dashboard-button']}>Kérdőív létrehozása</button>
                 </div>
                 <div>Saját kérdéssorok</div>
                 <div>
                     <UserQuestionnairesList />
                 </div>
+
+
+
             </div>
         </div>
       ) : (
