@@ -53,7 +53,7 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 <h3> 4. Jelenlegi üzleti folyamatok modellje:</h3>
 
 # Igényelt üzleti folyamatok modellje
-![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram.png)
+![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram2.png)
 
 # Képernyő tervek
 
