@@ -7,6 +7,17 @@
 # Követelmények
 
 ## Funkcionális követelmények:
+- Felhasználó létrehozása 
+- Felhasználó tárolása
+- Felhasználó adatainak módosítása
+- Kérdőív létrehozása
+- Kérdőív tárolása
+- Kérdőív módosítása
+- Kérdőív törlése
+- Kérdőívre adott válaszok tárolása
+- Kérdőívre adott válaszok kiértékelése
+- Webes eszközön működés.
+- Felhasználóbarát felület.
 
 ## Nem funkcionális követelmények:
 
