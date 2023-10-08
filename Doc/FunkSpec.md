@@ -35,3 +35,9 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 # Fogalomszótár
 ### Google forms: 
 A Google Forms egy felmérés-adminisztrációs szoftver, amely a Google által kínált ingyenes, webalapú Google Docs Editors programcsomag része. A szolgáltatás magában foglalja a Google Dokumentumokat, a Google Táblázatokat, a Google Diákat, a Google Rajzokat, a Google Webhelyeket és a Google Keepet is.
+### HTML:
+A HTML egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, és mára már internetes szabvánnyá vált a W3C támogatásával. Az aktuális változata az 5, mely az SGML általános jelölőnyelv egy konkrét alkalmazása.
+### CSS:
+A CSS a számítástechnikában egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le. Ezenkívül használható bármilyen XML alapú dokumentum stílusának leírására is, mint például az SVG, XUL stb.
+### Javascript:
+A JavaScript programozási nyelv egy objektumorientált, prototípus-alapú szkriptnyelv, amelyet weboldalakon elterjedten használnak. Ebből fejlődött ki a TypeScript, ami a JavaScript típusos változatának tekinthető.
