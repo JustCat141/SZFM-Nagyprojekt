@@ -24,7 +24,7 @@ function Dashboard() {
                     <button className={classes['dashboard-button']}>Kérdőív keresése</button>
                     <button className={classes['dashboard-button']}>Kérdőív létrehozása</button>
                 </div>
-                <div>Saját kérdéssorok</div>
+                <div className={classes['dashboard-main-page-title']}>Saját kérdéssorok</div>
                 <div>
                     <UserQuestionnairesList />
                 </div>
