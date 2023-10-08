@@ -53,6 +53,7 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 <h3> 4. Jelenlegi üzleti folyamatok modellje:</h3>
 
 # Igényelt üzleti folyamatok modellje
+A megrendelő szeretne egy olyan online felületet, ahol egy felhasznaló a regisztráció, majd a  bejelentkezés után (azonosító és jelszó megadása után) kérdőívet tölthet ki. Amennyiben szeretné, saját maga is tud létrehozni kérdőívet, egyedi blokkokkal és kérdésekkel vagy válaszokkal. Minden felhasználó hozzáfér a többi felhasználó kérdőíveihez is.
 ![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram2.png)
 
 # Képernyő tervek
