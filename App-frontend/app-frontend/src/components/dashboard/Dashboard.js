@@ -1,6 +1,7 @@
 // dashboard.js
 import React from 'react';
 import { useSelector } from 'react-redux';
+import UserQuestionnairesList from './UserQuestionnairesList';
 
 function Dashboard() {
   // Use useSelector to access the user state from Redux store
@@ -10,8 +11,25 @@ function Dashboard() {
     <div>
       {user ? (
         <div>
-          <h2>Welcome, {user.username}!</h2>
-          {/* Render other user information */}
+            <div>
+                <div>
+                    <img 
+                     src=""/>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button>Kérdőív keresése</button>
+                    <button>Kérdőív létrehozása</button>
+                </div>
+                <div>Saját kérdéssorok</div>
+                <div>
+                    <UserQuestionnairesList />
+                </div>
+
+
+
+            </div>
         </div>
       ) : (
         <p>User not logged in</p>
