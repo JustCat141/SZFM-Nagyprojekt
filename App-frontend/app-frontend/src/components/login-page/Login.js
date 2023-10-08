@@ -1,7 +1,7 @@
 // Login.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '../global-states/authSlice';
+import { login } from './authSlice';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -11,8 +11,6 @@ function Login() {
 
   const handleLogin = () => {
     // You should perform your authentication logic here
-
-
     // If authentication is successful, dispatch the login action
     dispatch(login({ username, password }));
   };
