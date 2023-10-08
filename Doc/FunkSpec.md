@@ -55,6 +55,40 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 # Igényelt üzleti folyamatok modellje
 ![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram.png)
 
+# Képernyő tervek
+
+A projekt tervezése során a számítógépes megjelenítés mellett a telefonos megjelenítést is preferáljuk, és ebben a kontextusban néhány tervezési elvet alkalmaztunk. A grafikus felhasználói felület (GUI) letisztult és könnyen kezelhető lesz, hogy a felhasználók könnyedén és hatékonyan használhassák az alkalmazást.
+
+A letisztult és könnyen kezelhető GUI több előnnyel jár:
+
+- Felhasználóbarát: Az egyszerű és intuitív tervezés segíti a felhasználókat a könnyű használatban, minimalizálva az esetleges frusztrációt vagy félreértéseket.
+- Gyors tanulási idő: A letisztult tervezés minimalizálja a tanulási időt, így a diákok gyorsan megtanulhatják az alkalmazás működését.
+- Hatékony információáramlás: Az egyszerűsített felület segíti a hatékony információátadást és tanulást, mivel a felhasználók kevesebb időt töltenek el a navigációval és a feladatok elvégzésével.
+- Professzionális megjelenés: A letisztult design professzionális megjelenést kölcsönöz az alkalmazásnak, ami növeli az elfogadottságot és a használhatóságot.
+
+Az alábbiakban pár képernyőtervet szemléltetünk.
+
+A Login/Bejelentkezés felülete:
+![Login/Bejelentkezés felülete](./images/scetch_login_page.png)
+
+A regisztráció felülete:
+![Regisztráció felülete](./images/scetch_regist_page.png)
+
+A belépést követően a felhasználó a Home pagen találja magát.
+
+A Home Page felülete:
+![Home Page felülete](./images/sketch_homepage.png)
+
+Egy kérdőív eléréséhez használhatunk egy linket, vagy a kérdőívhez tartozó azonosítót. Az azonosító beírásához a Home Pagen található Kérdőív keresése gombra kell kattintani ekkor a következő ablak ugrik fel:
+
+A kereső doboz terve:
+![Kereső doboz](./images/sketch_homepage_search.png)
+
+A megnyitott kérdőív a következőképpen rendeződik el:
+
+A Kérdőív felülete:
+![Kérdőív felülete](./images/scetch_questionnaire_page.png)
+
 # Fogalomszótár
 ### Google forms: 
 A Google Forms egy felmérés-adminisztrációs szoftver, amely a Google által kínált ingyenes, webalapú Google Docs Editors programcsomag része. A szolgáltatás magában foglalja a Google Dokumentumokat, a Google Táblázatokat, a Google Diákat, a Google Rajzokat, a Google Webhelyeket és a Google Keepet is.
