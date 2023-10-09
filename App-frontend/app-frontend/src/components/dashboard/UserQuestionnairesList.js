@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { classes } from '../../styles/UserQuestionnairesList.module.css'
+import classes from '../../styles/UserQuestionnairesList.module.css'
 
 
 const UserQuestionnairesList = () => {
@@ -8,8 +8,9 @@ const UserQuestionnairesList = () => {
     return (
         <div className={classes["UserQuestionnairesList-box"]}>
             <ul className={classes["UserQuestionnairesList-list"]}>
-            {
-                UserQuestionnairesList.forEach(questionnaire => {
+            {   UserQuestionnairesList.length > 0 ?
+                (
+                    UserQuestionnairesList.forEach(questionnaire => {
                     return ( 
                         <li key={questionnaire.id}
                         className={classes["UserQuestionnairesList-list-item"]}>
@@ -18,10 +19,14 @@ const UserQuestionnairesList = () => {
                             </div>
                         </li>
                     );
-                })
-            }
+                    }
+                    )
+                )
+                :(
+                <p>Nincs saját kérdéssorod, hozz létre egyet.</p>
+            )}
             </ul>
-        </div>
+        </div> 
     );
 }
 

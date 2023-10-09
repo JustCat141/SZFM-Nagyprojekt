@@ -5,6 +5,7 @@ const authSlice = createSlice({
   initialState: {
     isLoggedIn: false,
     user: null, // You can store user information here
+    UserQuestionnairesList: []
   },
   reducers: {
     login: (state, action) => {
