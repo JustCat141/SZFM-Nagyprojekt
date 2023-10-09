@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import classes from "../../styles/Search.module.css";
+
 const Search = () => {
     const [searchInput, setSearchInput] = useState("");
     
