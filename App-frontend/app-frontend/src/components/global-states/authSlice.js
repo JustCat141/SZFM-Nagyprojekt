@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { LoadForFill } from "../helper-functions/LoadForFill";
+import { LoadForAnalyze } from "../helper-functions/LoadForAnalyze";
+import { GenerateId } from "../helper-functions/GenerateId";
 
 
 const authSlice = createSlice({
@@ -49,7 +51,19 @@ const authSlice = createSlice({
       state.isOpenForEdit = false;
       state.CurrentForEdit = {};
     },
-    
+    OpenEdit: (state, action) => {
+      console.log(action);
+      state.currentQuestionnaireId = GenerateId();
+      state.isOpenForEdit = true;
+      
+      state.isOpenForAnalyze = false;
+      state.CurrentForAnalyze = {};
+      
+      state.isOpenForFill = false;
+      state.CurrentForFill = {};
+      
+    },
+
   },
 });
 
