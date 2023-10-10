@@ -1,11 +1,15 @@
-import { useState } from "react";
+import {React,  useState } from "react";
 
 import classes from "../../styles/Search.module.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { OpenFill } from '../global-states/authSlice';
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState("");
+    const dispatch = useDispatch();
     
     const handleSearch = () => {
+    dispatch(OpenFill(1510));
     }
     
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { OpenEdit } from '../global-states/authSlice';
 import UserQuestionnairesList from './UserQuestionnairesList';
 import classes from "../../styles/Dashboard.module.css";
 import Search from "../search/Search"
@@ -8,9 +9,10 @@ import Search from "../search/Search"
 function Dashboard() {
   const user = useSelector((state) => state.auth.user);
   const [searchisOpen, setIsSearchOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const newQuestionnaireHandler = () => {
-      
+    dispatch(OpenEdit());
   }
 
   const questionnaireSearchHandler = () => {

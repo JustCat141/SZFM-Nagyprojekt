@@ -61,11 +61,21 @@ const authSlice = createSlice({
       
       state.isOpenForFill = false;
       state.CurrentForFill = {};
+    },
+    OpenDashboard: (state, action) => {
+      console.log(action);
+      state.currentQuestionnaireId = null;
+      state.isOpenForEdit = false;
       
+      state.isOpenForAnalyze = false;
+      state.CurrentForAnalyze = {};
+      
+      state.isOpenForFill = false;
+      state.CurrentForFill = {};
     },
 
   },
 });
 
-export const { login, logout, OpenAnalyzer } = authSlice.actions;
+export const { login, logout, OpenAnalyzer, OpenEdit, OpenFill, OpenDashboard } = authSlice.actions;
 export default authSlice.reducer;
