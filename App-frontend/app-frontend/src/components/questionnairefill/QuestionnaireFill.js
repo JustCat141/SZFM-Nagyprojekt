@@ -3,10 +3,15 @@ import { useState } from 'react'; // Import useState
 import Card from "../helper-functions/Card.js";
 import './fill.css'; // Import the fill.css file
 import { SendFill } from '../helper-functions/SendFill.js';
+import { OpenDashboard } from '../global-states/authSlice'; // Import OpenDashboard
+
+
+
 const QuestionnaireFill = () => {
   const questionnaireData = useSelector((state) => state.auth.CurrentForFill);
   const questions = questionnaireData.quests;
 
+  const dispatch = useDispatch();
   // State to track the active answers for each question
   const [activeAnswers, setActiveAnswers] = useState(questions.map(() => []));
 
@@ -53,6 +58,9 @@ const QuestionnaireFill = () => {
     // Now, the 'answers' state contains all the selected answers for each question
     // You can send this 'answers' array to your server using the 'SendFill' function
     SendFill({ questionnaireDataId: questionnaireData.id, answers });
+
+    // Dispatch the OpenDashboard action when the submission is complete
+    dispatch(OpenDashboard());
   };
 
   return (
