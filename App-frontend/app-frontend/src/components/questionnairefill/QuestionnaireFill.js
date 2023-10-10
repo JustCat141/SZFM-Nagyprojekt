@@ -2,13 +2,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react'; // Import useState
 import Card from "../helper-functions/Card.js";
 import './fill.css'; // Import the fill.css file
-
+import { SendFill } from '../helper-functions/SendFill.js';
 const QuestionnaireFill = () => {
   const questionnaireData = useSelector((state) => state.auth.CurrentForFill);
   const questions = questionnaireData.quests;
 
   // State to track the active answers for each question
   const [activeAnswers, setActiveAnswers] = useState(questions.map(() => []));
+
+  // State to store all the answers
+  const [answers, setAnswers] = useState([]);
 
   const handleAnswerClick = (questionIndex, answerIndex) => {
     // Clone the current activeAnswers array
@@ -29,6 +32,27 @@ const QuestionnaireFill = () => {
 
     // Update the state
     setActiveAnswers(newActiveAnswers);
+
+    // Collect all the answers
+    const collectedAnswers = questions.map((question, qIndex) => {
+      if (newActiveAnswers[qIndex].length === 0) {
+        return null; // No answer selected for this question
+      }
+
+      if (question.type === 'one') {
+        return question.answers[newActiveAnswers[qIndex][0]]; // Single choice answer
+      } else if (question.type === 'multiple') {
+        return newActiveAnswers[qIndex].map((index) => question.answers[index]); // Multiple choice answers
+      }
+    });
+
+    setAnswers(collectedAnswers.filter((answer) => answer !== null));
+  };
+
+  const handleSubmit = () => {
+    // Now, the 'answers' state contains all the selected answers for each question
+    // You can send this 'answers' array to your server using the 'SendFill' function
+    SendFill({ questionnaireDataId: questionnaireData.id, answers });
   };
 
   return (
@@ -68,6 +92,7 @@ const QuestionnaireFill = () => {
           </li>
         ))}
       </ul>
+      <button onClick={handleSubmit}>Beküldés</button>
     </div>
   );
 }
