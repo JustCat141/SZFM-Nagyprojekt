@@ -18,13 +18,20 @@ function Login() {
     console.log(Decode(Encode(`${username} ${password}`))); 
     
     // You should perform your authentication logic here
-
+    
+    //Note, you can do the fetch in the same request
+    //so you are asking for list of questionnaires of the
+    //user, and if there is no user the server will refuse
+    //and then no login
     
     // Fetch the list of questionnaires from the database
 
-
-    // If authentication is successful, dispatch the login action
-    dispatch(login({ username, password }));
+    let user = { username, password};
+    let questionnaireList = [{id: 1510, name: "Nyelvi tudás kérdőív"}, 
+                            {id: 1500, name: "Milyen boltokban vásárolsz?"}, 
+                            {id: 1610, name: "template 01"}, 
+                            {id: 1700, name: "BL kérdőív"}];
+    dispatch(login({ user, questionnaireList}));
   };
 
   return (

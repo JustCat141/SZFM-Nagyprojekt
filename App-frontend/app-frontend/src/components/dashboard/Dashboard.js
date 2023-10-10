@@ -38,13 +38,10 @@ function Dashboard() {
                 <div>
                     <UserQuestionnairesList />
                 </div>
-
-
-
             </div>
         </div>
       ) : (
-        <p>User not logged in</p>
+        <p>No user found, try to reload the page</p>
       )}
     </div>
   );
