@@ -1,63 +1,67 @@
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react'; // Import useState
-import Card from "../helper-functions/Card.js";
-import './fill.css'; // Import the fill.css file
+import Card from '../helper-functions/Card.js';
+import './fill.css';
 import { SendFill } from '../helper-functions/SendFill.js';
-import { OpenDashboard } from '../global-states/authSlice'; // Import OpenDashboard
-
-
+import { OpenDashboard } from '../global-states/authSlice';
 
 const QuestionnaireFill = () => {
   const questionnaireData = useSelector((state) => state.auth.CurrentForFill);
   const questions = questionnaireData.quests;
 
   const dispatch = useDispatch();
-  // State to track the active answers for each question
   const [activeAnswers, setActiveAnswers] = useState(questions.map(() => []));
-
-  // State to store all the answers
-  const [answers, setAnswers] = useState([]);
+  const [inputFieldValues, setInputFieldValues] = useState(questions.map(() => ''));
 
   const handleAnswerClick = (questionIndex, answerIndex) => {
-    // Clone the current activeAnswers array
     const newActiveAnswers = [...activeAnswers];
-    
-    // If the question type is 'one', replace the previous active answers
+
     if (questions[questionIndex].type === 'one') {
       newActiveAnswers[questionIndex] = [answerIndex];
     } else if (questions[questionIndex].type === 'multiple') {
-      // If the question type is 'multiple', toggle the active answer
       const answerIndexInArray = newActiveAnswers[questionIndex].indexOf(answerIndex);
       if (answerIndexInArray === -1) {
-        newActiveAnswers[questionIndex].push(answerIndex); // Select the answer
+        newActiveAnswers[questionIndex].push(answerIndex);
       } else {
-        newActiveAnswers[questionIndex].splice(answerIndexInArray, 1); // Deselect the answer
+        newActiveAnswers[questionIndex].splice(answerIndexInArray, 1);
       }
     }
 
-    // Update the state
     setActiveAnswers(newActiveAnswers);
+  };
 
-    // Collect all the answers
-    const collectedAnswers = questions.map((question, qIndex) => {
-      if (newActiveAnswers[qIndex].length === 0) {
-        return null; // No answer selected for this question
-      }
-
-      if (question.type === 'one') {
-        return question.answers[newActiveAnswers[qIndex][0]]; // Single choice answer
-      } else if (question.type === 'multiple') {
-        return newActiveAnswers[qIndex].map((index) => question.answers[index]); // Multiple choice answers
-      }
-    });
-
-    setAnswers(collectedAnswers.filter((answer) => answer !== null));
+  const handleInputChange = (questionIndex, event) => {
+    const newInputFieldValues = [...inputFieldValues];
+    newInputFieldValues[questionIndex] = event.target.value;
+    setInputFieldValues(newInputFieldValues);
   };
 
   const handleSubmit = () => {
-    // Now, the 'answers' state contains all the selected answers for each question
-    // You can send this 'answers' array to your server using the 'SendFill' function
-    SendFill({ questionnaireDataId: questionnaireData.id, answers });
+    // Collect all the answers and input field values
+    const collectedAnswers = questions.map((question, qIndex) => {
+      if (activeAnswers[qIndex].length > 0) {
+        if (question.type === 'one') {
+          return question.answers[activeAnswers[qIndex][0]];
+        } else if (question.type === 'multiple') {
+          return activeAnswers[qIndex].map((index) => question.answers[index]);
+        }
+      } else if (question.type === 'type') {
+        return inputFieldValues[qIndex]; // Include the input field value
+      }
+
+      // Handle cases where there are no selected answers and no input field value
+      return null;
+    });
+
+    // Remove null values from collectedAnswers
+    const filteredAnswers = collectedAnswers.filter((answer) => answer !== null);
+
+    // Log the collected answers and input field values to the console for debugging
+    console.log('Collected Answers:', filteredAnswers);
+    console.log('Input Field Values:', inputFieldValues);
+
+    // Call the SendFill function
+    SendFill({ questionnaireDataId: questionnaireData.id, answers: filteredAnswers });
 
     // Dispatch the OpenDashboard action when the submission is complete
     dispatch(OpenDashboard());
@@ -83,7 +87,7 @@ const QuestionnaireFill = () => {
                       <li
                         key={answerIndex}
                         className={`answer ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
-                        onClick={() => handleAnswerClick(questionIndex, answerIndex)} // Handle click
+                        onClick={() => handleAnswerClick(questionIndex, answerIndex)}
                       >
                         {answer}
                       </li>
@@ -93,6 +97,8 @@ const QuestionnaireFill = () => {
                   <input
                     type="text"
                     placeholder="Your answer"
+                    value={inputFieldValues[questionIndex]}
+                    onChange={(event) => handleInputChange(questionIndex, event)}
                   />
                 )}
               </div>
@@ -103,6 +109,6 @@ const QuestionnaireFill = () => {
       <button onClick={handleSubmit}>Beküldés</button>
     </div>
   );
-}
+};
 
 export default QuestionnaireFill;
