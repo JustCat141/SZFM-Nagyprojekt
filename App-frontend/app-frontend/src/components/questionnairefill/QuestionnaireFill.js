@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../helper-functions/Card.js';
 import './fill.css';
+import classes from "../../styles/QuestionnaireFill.module.css";
 import { SendFill } from '../helper-functions/SendFill.js';
 import { OpenDashboard } from '../global-states/authSlice';
 
@@ -68,45 +69,57 @@ const QuestionnaireFill = () => {
   };
 
   return (
-    <div>
+    <div className={classes['questionnaire-page']}>
       Fill
-      <Card>
-        <p>{questionnaireData.title}</p>
-        <p>{questionnaireData.desc}</p>
+      <Card className={classes['questionnaire-header-card']}>
+        <p className={classes['questionnaire-title']}>{questionnaireData.title}</p>
+        <p className={classes['questionnaire-description']}>{questionnaireData.desc}</p>
       </Card>
-      <ul>
+      <ul className={classes['questionnaire-card-list']}>
         {questions.map((question, questionIndex) => (
-          <li key={question.q_id}>
-            <Card>
-              <div>
-                <p>{question.question}</p>
-                <p>{question.description}</p>
+          <li key={question.q_id}
+          className={classes['questionnaire-card-list-item']}>
+            <Card className={classes['questionnaire-question-card']}>
+              <div className={classes['questionnaire-question-box']}>
+                <p className={classes['questionnaire-question-title']}>{question.question}</p>
+                <p className={classes['questionnaire-question-description']}>{question.description}</p>
                 {Array.isArray(question.answers) ? (
-                  <ul>
+                  <ul className={classes['questionnaire-answers-list']}>
                     {question.answers.map((answer, answerIndex) => (
                       <li
                         key={answerIndex}
-                        className={`answer ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
+                        className={`questionnaire-answers-list-item ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
                         onClick={() => handleAnswerClick(questionIndex, answerIndex)}
                       >
-                        {answer}
+                        <p className={classes['questionnaire-answer-text']}>
+                            {answer}
+                            </p>
                       </li>
                     ))}
                   </ul>
                 ) : (
+
+                    <div className={classes['questionnaire-answer-type-box']}>
                   <input
-                    type="text"
-                    placeholder="Your answer"
-                    value={inputFieldValues[questionIndex]}
-                    onChange={(event) => handleInputChange(questionIndex, event)}
+                  className={classes['questionnaire-answers-type-text']}
+                  type="text"
+                  placeholder="Your answer"
+                  value={inputFieldValues[questionIndex]}
+                  onChange={(event) => handleInputChange(questionIndex, event)}
                   />
+                  </div>
                 )}
               </div>
             </Card>
           </li>
         ))}
       </ul>
-      <button onClick={handleSubmit}>Beküldés</button>
+      <div className={classes['questionnaire-button-box ']}>
+      <button 
+       className={classes['questionnaire-button-text']}
+      onClick={handleSubmit}>Beküldés</button>
+
+      </div>
     </div>
   );
 };
