@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../helper-functions/Card.js';
 import './fill.css';
-import classes from "../../styles/QuestionnaireFill.module.css";
 import { SendFill } from '../helper-functions/SendFill.js';
 import { OpenDashboard } from '../global-states/authSlice';
 
@@ -13,6 +12,8 @@ const QuestionnaireFill = () => {
   const dispatch = useDispatch();
   const [activeAnswers, setActiveAnswers] = useState(questions.map(() => []));
   const [inputFieldValues, setInputFieldValues] = useState(questions.map(() => ''));
+  const [inputFieldErrors, setInputFieldErrors] = useState(questions.map(() => ''));
+  const [multipleChoiceErrors, setMultipleChoiceErrors] = useState(questions.map(() => []));
 
   const handleAnswerClick = (questionIndex, answerIndex) => {
     const newActiveAnswers = [...activeAnswers];
@@ -29,15 +30,89 @@ const QuestionnaireFill = () => {
     }
 
     setActiveAnswers(newActiveAnswers);
+
+    // Clear the error for this question when an answer is selected
+    clearErrors(questionIndex);
   };
 
   const handleInputChange = (questionIndex, event) => {
     const newInputFieldValues = [...inputFieldValues];
     newInputFieldValues[questionIndex] = event.target.value;
     setInputFieldValues(newInputFieldValues);
+
+    // Clear the error for this input field when the input field is filled
+    clearErrors(questionIndex);
   };
 
-  const handleSubmit = () => {
+  const clearErrors = (questionIndex) => {
+    // Clear errors for the given question
+    setInputFieldErrors((prevErrors) => {
+      const newErrors = [...prevErrors];
+      newErrors[questionIndex] = '';
+      return newErrors;
+    });
+
+    setMultipleChoiceErrors((prevErrors) => {
+      const newErrors = [...prevErrors];
+      newErrors[questionIndex] = [];
+      return newErrors;
+    });
+  };
+
+  const handleSubmit = async () => {
+    // Create separate arrays for error states for each type of question
+    const newInputFieldErrors = questions.map(() => '');
+    const newMultipleChoiceErrors = questions.map(() => []);
+
+    // Initialize anyFieldEmpty to true
+    let anyFieldEmpty = true;
+
+    // Check if any input fields are empty and set error states
+    inputFieldValues.forEach((value, index) => {
+      if (value === '') {
+        anyFieldEmpty = false; // At least one field is empty
+        newInputFieldErrors[index] = 'This field is required.';
+      }
+    });
+
+    // Update error states for input fields
+    setInputFieldErrors(newInputFieldErrors);
+
+    // Check if any multiple choice questions have no selected answers and set error states
+    activeAnswers.forEach((selectedAnswers, index) => {
+      if (questions[index].type === 'multiple' && selectedAnswers.length === 0) {
+        anyFieldEmpty = false; // At least one multiple choice question is unanswered
+        newMultipleChoiceErrors[index] = ['Please select at least one answer.'];
+      } else if (questions[index].type === 'one' && selectedAnswers.length === 0) {
+        anyFieldEmpty = false; // At least one one-choice question is unanswered
+        newMultipleChoiceErrors[index] = ['Please select an answer.'];
+      }
+    });
+
+    // Update error states for multiple choice questions
+    setMultipleChoiceErrors(newMultipleChoiceErrors);
+
+   /*  if (!anyFieldEmpty) {
+      // Do not proceed with the submission if any field is empty
+      return;
+    } */
+
+    // Check if all questions are answered
+    const allQuestionsAnswered = questions.every((question, index) => {
+      if (question.type === 'type' && inputFieldValues[index] === '') {
+        return false; // Input field is empty
+      } else if (question.type !== 'type' && activeAnswers[index].length === 0) {
+        return false; // No answer selected for non-input field
+      }
+      return true;
+    });
+
+    if (!allQuestionsAnswered) {
+      // Display an error message if not all questions are answered
+      alert('Please answer all questions before submitting.');
+      return;
+    }
+
     // Collect all the answers and input field values
     const collectedAnswers = questions.map((question, qIndex) => {
       if (activeAnswers[qIndex].length > 0) {
@@ -46,7 +121,7 @@ const QuestionnaireFill = () => {
         } else if (question.type === 'multiple') {
           return activeAnswers[qIndex].map((index) => question.answers[index]);
         }
-      } else if (question.type === 'type') {
+      } else if (question.type === 'input') {
         return inputFieldValues[qIndex]; // Include the input field value
       }
 
@@ -61,65 +136,68 @@ const QuestionnaireFill = () => {
     console.log('Collected Answers:', filteredAnswers);
     console.log('Input Field Values:', inputFieldValues);
 
-    // Call the SendFill function
-    SendFill({ questionnaireDataId: questionnaireData.id, answers: filteredAnswers });
+    // Attempt to send data using SendFill
+    console.log('Sending Data...');
+    try {
+      const response = await SendFill({ questionnaireDataId: questionnaireData.id, answers: filteredAnswers });
+      console.log('Data Sent Successfully', response);
 
-    // Dispatch the OpenDashboard action when the submission is complete
-    dispatch(OpenDashboard());
+      // Dispatch the OpenDashboard action when the submission is complete
+      dispatch(OpenDashboard());
+    } catch (error) {
+      console.error('Error Sending Data:', error);
+      alert('An error occurred while sending data. Please try again later.');
+    }
   };
 
   return (
-    <div className={classes['questionnaire-page']}>
+    <div>
       Fill
-      <Card className={classes['questionnaire-header-card']}>
-        <p className={classes['questionnaire-title']}>{questionnaireData.title}</p>
-        <p className={classes['questionnaire-description']}>{questionnaireData.desc}</p>
+      <Card>
+        <p>{questionnaireData.title}</p>
+        <p>{questionnaireData.desc}</p>
       </Card>
-      <ul className={classes['questionnaire-card-list']}>
+      <ul>
         {questions.map((question, questionIndex) => (
-          <li key={question.q_id}
-          className={classes['questionnaire-card-list-item']}>
-            <Card className={classes['questionnaire-question-card']}>
-              <div className={classes['questionnaire-question-box']}>
-                <p className={classes['questionnaire-question-title']}>{question.question}</p>
-                <p className={classes['questionnaire-question-description']}>{question.description}</p>
+          <li key={question.q_id}>
+            <Card>
+              <div>
+                <p>{question.question}</p>
+                <p>{question.description}</p>
                 {Array.isArray(question.answers) ? (
-                  <ul className={classes['questionnaire-answers-list']}>
+                  <ul>
                     {question.answers.map((answer, answerIndex) => (
                       <li
                         key={answerIndex}
-                        className={`questionnaire-answers-list-item ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
+                        className={`answer ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
                         onClick={() => handleAnswerClick(questionIndex, answerIndex)}
                       >
-                        <p className={classes['questionnaire-answer-text']}>
-                            {answer}
-                            </p>
+                        {answer}
                       </li>
                     ))}
                   </ul>
                 ) : (
-
-                    <div className={classes['questionnaire-answer-type-box']}>
-                  <input
-                  className={classes['questionnaire-answers-type-text']}
-                  type="text"
-                  placeholder="Your answer"
-                  value={inputFieldValues[questionIndex]}
-                  onChange={(event) => handleInputChange(questionIndex, event)}
-                  />
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your answer"
+                      value={inputFieldValues[questionIndex]}
+                      onChange={(event) => handleInputChange(questionIndex, event)}
+                    />
+                    {inputFieldErrors[questionIndex] && (
+                      <p className="error-message">{inputFieldErrors[questionIndex]}</p>
+                    )}
                   </div>
+                )}
+                {multipleChoiceErrors[questionIndex].length > 0 && (
+                  <p className="error-message">{multipleChoiceErrors[questionIndex][0]}</p>
                 )}
               </div>
             </Card>
           </li>
         ))}
       </ul>
-      <div className={classes['questionnaire-button-box ']}>
-      <button 
-       className={classes['questionnaire-button-text']}
-      onClick={handleSubmit}>Beküldés</button>
-
-      </div>
+      <button onClick={handleSubmit}>Beküldés</button>
     </div>
   );
 };
