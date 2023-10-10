@@ -1,5 +1,5 @@
 const QuestionnaireAnalyzer = () => {
-    return (<div>Analyzer</div>);
+    return (<div>Editor</div>);
 }
 
 export default QuestionnaireAnalyzer;

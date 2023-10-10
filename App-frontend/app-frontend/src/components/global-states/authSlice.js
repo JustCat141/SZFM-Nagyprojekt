@@ -57,6 +57,7 @@ const authSlice = createSlice({
       state.isOpenForEdit = true;
       
       state.isOpenForAnalyze = false;
+      
       state.CurrentForAnalyze = {};
       
       state.isOpenForFill = false;

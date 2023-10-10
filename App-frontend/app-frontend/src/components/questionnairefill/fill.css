@@ -1,0 +1,7 @@
+.answer {
+    cursor: pointer;
+}
+
+.active {
+    background-color: aqua;
+}
