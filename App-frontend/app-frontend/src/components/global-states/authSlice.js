@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { LoadForFill } from "../helper-functions/LoadForFill";
+
 
 const authSlice = createSlice({
   name: 'auth',
@@ -27,6 +29,18 @@ const authSlice = createSlice({
       console.log(action);
       state.currentQuestionnaireId = action.payload;
       state.isOpenForAnalyze = true;
+    },
+    OpenFill: (state, action) => {
+      console.log(action);
+      state.currentQuestionnaireId = action.payload;
+      state.isOpenForFill = true;
+      state.CurrentForFill = LoadForFill(action.payload);
+
+      state.isOpenForAnalyze = false;
+      state.CurrentForAnalyze = {};
+      
+      state.isOpenForEdit = false;
+      state.CurrentForEdit = {};
     },
     
   },
