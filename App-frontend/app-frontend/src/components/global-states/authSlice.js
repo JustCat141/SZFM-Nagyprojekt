@@ -29,6 +29,13 @@ const authSlice = createSlice({
       console.log(action);
       state.currentQuestionnaireId = action.payload;
       state.isOpenForAnalyze = true;
+      state.CurrentForAnalyze = LoadForAnalyze(action.payload);
+
+      state.isOpenForFill = false;
+      state.CurrentForFill = {};
+      
+      state.isOpenForEdit = false;
+      state.CurrentForEdit = {};
     },
     OpenFill: (state, action) => {
       console.log(action);
