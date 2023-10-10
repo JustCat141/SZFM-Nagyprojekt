@@ -17,6 +17,9 @@ function App() {
   console.log(store.getState().auth.isOpenForAnalyze);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const isOpenForAnalyze = useSelector((state) => state.auth.isOpenForAnalyze);
+  const isOpenForFill = useSelector((state) => state.auth.isOpenForFill);
+  const isOpenForEdit = useSelector((state) => state.auth.isOpenForEdit);
+
   
   return (<>
       {isLoggedIn ? (
@@ -24,8 +27,13 @@ function App() {
           isOpenForAnalyze === true 
         ? 
         <QuestionnaireAnalyzer />
-        : 
-        <Dashboard />
+        : (
+            isOpenForFill 
+              ?
+                <QuestionnaireFill />
+              :
+                <Dashboard />
+          )
         )
       ) : (
         <Login />
