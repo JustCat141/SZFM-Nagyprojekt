@@ -41,9 +41,6 @@ const Register = () => {
     const OpenLogin = () => {
         dispatch(CloseRegister());
     }
-
-    
-
     return (
         <div>
             <div>
@@ -51,30 +48,38 @@ const Register = () => {
             </div>
             <div>
                 <p>Regisztráció</p>
-                <input
-                    type="text"
-                    placeholder="Felhasználónév"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="E-mail"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Jelszó"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Jelszó megerősítése"
-                    value={passwordConfirmation}
-                    onChange={(e) => setPasswordConfirmation(e.target.value)}
-                />
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Felhasználónév"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <input
+                        type="password"
+                        placeholder="Jelszó"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <input
+                        type="password"
+                        placeholder="Jelszó megerősítése"
+                        value={passwordConfirmation}
+                        onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    />
+                </div>
                 <p>{errorMessage}</p>
                 <Button func={handleRegister} text={"Regisztráció"}/>
                 <Button func={OpenLogin} text={"Bejelentkezés"}/>
