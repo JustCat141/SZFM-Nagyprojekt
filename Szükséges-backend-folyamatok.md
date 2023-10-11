@@ -6,11 +6,7 @@
 | Kérdéssor lista | Get | Kérdéssor eredményei kiértékeléshez | Kérdéssor azonosítója |
 | Kérdéssor kereső | Get | Elérhető kérdéssorok egy listája az azonosítóikkal és címükkel, kitöltéshez | Kérdéssor azonosítója/neve |
 | Kérdéssor generáló | Post | 200-as response code ha sikeres | Kérdéssor |
-| Kérdéssor generáló | Get | Még szabad kérdéssor azonosító | -- |
 | Kérdéssor Kitöltő rész | Post | 200-as response code ha sikeres | Kérdéssor azonosítója és válaszok |
-
-  
- 
 
 
 Kitöltéshez visszaküldött objektum struktúrája:

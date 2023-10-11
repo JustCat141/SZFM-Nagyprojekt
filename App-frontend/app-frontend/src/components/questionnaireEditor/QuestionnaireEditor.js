@@ -3,7 +3,7 @@ import QuestionList from "./QuestionList";
 import { Button } from "../helper-functions/Button";
 import Card from "../helper-functions/Card";
 import OptionList from "./OptionList";
-import {SendQuestionnaire} from "../helper-functions/SendQuestionnaire.js";
+import { SendQuestionnaire } from "../helper-functions/SendQuestionnaire.js";
 
 const QuestionnaireEditor = () => {
   const [questionList, setQuestionList] = useState([]);
@@ -17,10 +17,14 @@ const QuestionnaireEditor = () => {
   const [questionDescription, setQuestionDescription] = useState("");
   const [optionList, setOptionList] = useState([]);
   const [newOptionText, setNewOptionText] = useState("");
-  const [questionType, setQuestionType] = useState("type"); // Default question type
+  const [questionType, setQuestionType] = useState("one"); // Default question type
   const [isOptionListHidden, setIsOptionListHidden] = useState(false);
 
-  const questionTypes = ["one", "multiple", "type"]; // Add more types as needed
+  const questionTypes = [
+    { label: "egy válaszos", value: "one" },
+    { label: "több válaszos", value: "multiple" },
+    { label: "szöveg mező", value: "type" },
+  ];
 
   const handleNewQuestion = () => {
     if (!questionTitle) {
@@ -35,7 +39,6 @@ const QuestionnaireEditor = () => {
       answers: isOptionListHidden ? [] : optionList,
     };
 
-
     setNewQuestionId(newQuestionId + 1);
     setQuestionList([...questionList, newQuestion]);
 
@@ -44,7 +47,6 @@ const QuestionnaireEditor = () => {
     setQuestionDescription("");
     setOptionList([]);
     setIsOptionListHidden(false); // Reset the option list visibility
-    
   };
 
   const handleNewOption = () => {
@@ -60,17 +62,15 @@ const QuestionnaireEditor = () => {
       desc: questionnaireDescription,
       questions: questionList,
     };
-  
+
     SendQuestionnaire(questionnaire);
   };
-  
 
   const mainTitleSaveHandler = () => {
     setIsSavedTitle(true);
-  }
+  };
 
   return (
-    
     <div>
       <Card>
         <div>
@@ -91,10 +91,12 @@ const QuestionnaireEditor = () => {
               value={questionnaireDescription}
               onChange={(e) => setQuestionnaireDescription(e.target.value)}
             />
-            <Button text={"Kérdőív cím és leírás rögzítése"} func={mainTitleSaveHandler} />
+            <Button
+              text={"Kérdőív cím és leírás rögzítése"}
+              func={mainTitleSaveHandler}
+            />
           </div>
-        ) : <div></div>
-        }
+        ) : <div></div>}
       </Card>
       <Card>
         <input
@@ -110,7 +112,7 @@ const QuestionnaireEditor = () => {
           onChange={(e) => setQuestionDescription(e.target.value)}
         />
         <div>
-          <label>Question Type:</label>
+          <label>Kérdés típusa:</label>
           <select
             value={questionType}
             onChange={(e) => {
@@ -124,8 +126,8 @@ const QuestionnaireEditor = () => {
             }}
           >
             {questionTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
+              <option key={type.value} value={type.value}>
+                {type.label}
               </option>
             ))}
           </select>
