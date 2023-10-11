@@ -3,6 +3,7 @@ import { Button } from '../helper-functions/Button';
 import { SendNewuser } from '../helper-functions/SendNewUser';
 import { CloseRegister } from '../global-states/authSlice';
 import { useDispatch } from 'react-redux';
+import classes from "../../styles/Register.module.css";
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -42,38 +43,43 @@ const Register = () => {
         dispatch(CloseRegister());
     }
     return (
-        <div>
-            <div>
-                <img src="" alt="Logo" />
+        <div className={classes["register-page"]}>
+            <div className={classes["register-header"]}>
+                <img src="" alt="Logo" 
+                 className={classes["register-header-logo"]}/>
             </div>
-            <div>
-                <p>Regisztráció</p>
-                <div>
+            <div className={classes["register-box"]}>
+                <p className={classes["register-title"]}>Regisztráció</p>
+                <div className={classes["register-input-box"]}>
                     <input
+                        className={classes["register-input-text"]}
                         type="text"
                         placeholder="Felhasználónév"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className={classes["register-input-box"]}>
                     <input
+                        className={classes["register-input-text"]}
                         type="text"
                         placeholder="E-mail"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className={classes["register-input-box"]}>
                     <input
+                        className={classes["register-input-text"]}
                         type="password"
                         placeholder="Jelszó"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className={classes["register-input-box"]}>
                     <input
+                        className={classes["register-input-text"]}
                         type="password"
                         placeholder="Jelszó megerősítése"
                         value={passwordConfirmation}
