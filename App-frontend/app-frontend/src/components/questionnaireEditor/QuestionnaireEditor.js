@@ -8,12 +8,20 @@ const QuestionnaireEditor = () => {
   const [questionList, setQuestionList] = useState([]);
   const [newQuestionId, setNewQuestionId] = useState(1);
 
+  const [questionnaireTitle, setQuestionnaireTitle] = useState("");
+  const [questionnaireDescription, setQuestionnaireDescription] = useState("");
+
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
   const [optionList, setOptionList] = useState([]);
   const [newOptionText, setNewOptionText] = useState("");
 
   const handleNewQuestion = () => {
+    if (!questionTitle) {
+      // Don't add a question without text
+      return;
+    }
+
     const newQuestion = {
       id: newQuestionId,
       title: questionTitle,
@@ -32,8 +40,8 @@ const QuestionnaireEditor = () => {
   };
 
   const handleNewOption = () => {
-    // Add a new option to the optionList
-    if (newOptionText) {
+    if (questionTitle && newOptionText) {
+      // Only add an option if there's a question with text
       setOptionList([...optionList, newOptionText]);
       setNewOptionText("");
     }
@@ -49,27 +57,47 @@ const QuestionnaireEditor = () => {
       <Card>
         <input
           name="title"
-          placeholder="Questionnaire Title"
-          value={questionTitle}
-          onChange={(e) => setQuestionTitle(e.target.value)}
+          placeholder="Kérdőív címe"
+          value={questionnaireTitle}
+          onChange={(e) => setQuestionnaireTitle(e.target.value)}
         />
         <input
           name="desc"
-          placeholder="Questionnaire Description"
-          value={questionDescription}
-          onChange={(e) => setQuestionDescription(e.target.value)}
+          placeholder="Kérdőív leírása"
+          value={questionnaireDescription}
+          onChange={(e) => setQuestionnaireDescription(e.target.value)}
         />
       </Card>
       <QuestionList questions={questionList} />
       <Card>
         <input
           name="question"
-          placeholder="Question Text"
+          placeholder="Kérdés"
+          value={questionTitle}
+          onChange={(e) => setQuestionTitle(e.target.value)}
+        />
+        <input
+          name="question"
+          placeholder="Kérdés leírása"
+          value={questionDescription}
+          onChange={(e) => setQuestionDescription(e.target.value)}
+        />
+        <Card>
+        <OptionList options={optionList} />
+        <input
+          name="option"
+          placeholder="Válaszlehetőség"
           value={newOptionText}
           onChange={(e) => setNewOptionText(e.target.value)}
+          disabled={!questionTitle} // Disable the input when there's no question text
         />
-        <OptionList options={optionList} />
-        <Button text={"Új válaszlehetőség"} func={handleNewOption} />
+        <Button
+          text={"Új válaszlehetőség"}
+          func={handleNewOption}
+          disabled={!questionTitle} // Disable the button when there's no question text
+        />
+        </Card>
+     
       </Card>
       <div>
         <Button text={"Új kérdés"} func={handleNewQuestion} />
