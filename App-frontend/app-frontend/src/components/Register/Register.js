@@ -1,15 +1,48 @@
 import React, { useState } from 'react';
+import { Button } from '../helper-functions/Button';
+import { SendNewuser } from '../helper-functions/SendNewUser';
+import { CloseRegister } from '../global-states/authSlice';
+import { useDispatch } from 'react-redux';
 
 const Register = () => {
+    const dispatch = useDispatch();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleRegister = () => {
-        // Add registration logic here
-        // You can access username, email, password, and passwordConfirmation for registration.
+        if (username.length > 0 && email.length > 0 && password.length > 0) {
+
+            if (email.includes('@')) {
+
+                if (password === passwordConfirmation) {
+
+                    setErrorMessage("");
+                    const user = {username, email, password};
+                    SendNewuser(user);
+                    OpenLogin();
+                }
+                else {
+                    setErrorMessage("A két jelszó nem egyezik meg");
+                }
+
+            }
+            else {
+                setErrorMessage("Kérlek valós email címet adj meg");
+            }
+        }
+        else {  
+            setErrorMessage("Kérlek tölts ki minden mezőt.");
+        }
     };
+
+    const OpenLogin = () => {
+        dispatch(CloseRegister());
+    }
+
+    
 
     return (
         <div>
@@ -42,42 +75,12 @@ const Register = () => {
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                 />
-                <button onClick={handleRegister}>Regisztráció</button>
+                <p>{errorMessage}</p>
+                <Button func={handleRegister} text={"Regisztráció"}/>
+                <Button func={OpenLogin} text={"Bejelentkezés"}/>
             </div>
         </div>
     );
 };
 
 export default Register;
-
-/*
-<div className={classes['login-page']}>
-          <div className={classes['login-page-logo-image-box']}>
-            <img src="" className={classes['login-page-logo-image']}/>
-          </div>
-          <div className={classes['login-box']}>
-            <p className={classes['login-main-title']}>Bejelentkezés</p>
-            <div className={classes['login-input-box']}>
-              <input
-                type="text"
-                placeholder="Felhasználónév"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className={classes['login-input-text']}
-              />
-            </div>
-            <div>
-              <input
-                type="password"
-                placeholder="Jelszó"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className={classes['login-input-text']}
-              />
-            </div>
-            <Button func={handleLogin} text={"Bejelentkezés"}/>
-            <Button func={handleRegister} text={"Regisztráció"}/>
-          </div>
-    </div>
-    */
-    
