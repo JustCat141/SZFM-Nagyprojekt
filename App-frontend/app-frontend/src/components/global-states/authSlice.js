@@ -8,6 +8,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {
     isLoggedIn: false,
+    isRegistering: false,
     user: null,
     UserQuestionnairesList: [],
     isOpenForEdit: false,
@@ -73,10 +74,37 @@ const authSlice = createSlice({
       
       state.isOpenForFill = false;
       state.CurrentForFill = {};
+
+      state.isRegistering = false;
     },
+    OpenRegister: (state, action) => {
+      state.currentQuestionnaireId = null;
+      state.isOpenForEdit = false;
+      
+      state.isOpenForAnalyze = false;
+      state.CurrentForAnalyze = {};
+      
+      state.isOpenForFill = false;
+      state.CurrentForFill = {};
+
+      state.isRegistering = true; 
+    },
+    CloseRegister: (state, action) => {
+      state.currentQuestionnaireId = null;
+      state.isOpenForEdit = false;
+      
+      state.isOpenForAnalyze = false;
+      state.CurrentForAnalyze = {};
+      
+      state.isOpenForFill = false;
+      state.CurrentForFill = {};
+
+      state.isRegistering = false;
+      state.user = action.payload; 
+    }
 
   },
 });
 
-export const { login, logout, OpenAnalyzer, OpenEdit, OpenFill, OpenDashboard } = authSlice.actions;
+export const { login, logout, OpenAnalyzer, OpenEdit, OpenFill, OpenDashboard, OpenRegister, CloseRegister } = authSlice.actions;
 export default authSlice.reducer;

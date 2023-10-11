@@ -1,7 +1,7 @@
 // Login.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '../global-states/authSlice';
+import { login, OpenRegister } from '../global-states/authSlice';
 import classes from "../../styles/Login.module.css";
 import {Encode} from '../helper-functions/Encode';
 import { Decode } from "../helper-functions/Decode"
@@ -36,6 +36,10 @@ function Login() {
     dispatch(login({ user, questionnaireList}));
   };
 
+  const handleRegister = () => {
+    dispatch(OpenRegister());
+  };
+
   return (
     <div>
       {isLoggedIn ? (
@@ -66,6 +70,7 @@ function Login() {
               />
             </div>
             <Button func={handleLogin} text={"Bejelentkezés"}/>
+            <Button func={handleRegister} text={"Regisztráció"}/>
           </div>
         </div>
       )}

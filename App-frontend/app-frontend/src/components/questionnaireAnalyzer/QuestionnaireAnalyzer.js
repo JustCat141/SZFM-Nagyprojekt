@@ -6,9 +6,9 @@ import { OpenDashboard } from '../global-states/authSlice';
 import { Button } from "../helper-functions/Button";
 
 
-const QuestionnaireAnalyzer = () => {
+const QuestionnaireAnalyzer = (id) => {
   const dispatch = useDispatch();
-  const questionnaireData = LoadForAnalyze(1551);
+  const questionnaireData = LoadForAnalyze(id);
   console.log(questionnaireData);
   const questions = questionnaireData.quests;
 

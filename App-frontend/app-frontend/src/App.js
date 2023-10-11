@@ -7,13 +7,14 @@ import Dashboard from './components/dashboard/Dashboard';
 import QuestionnaireAnalyzer from './components/questionnaireAnalyzer/QuestionnaireAnalyzer';
 import QuestionnaireFill from './components/questionnaireFill/QuestionnaireFill';
 import QuestionnaireEditor from './components/questionnaireEditor/QuestionnaireEditor';  
-
+import Register from './components/Register/Register';
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const isOpenForAnalyze = useSelector((state) => state.auth.isOpenForAnalyze);
   const isOpenForFill = useSelector((state) => state.auth.isOpenForFill);
   const isOpenForEdit = useSelector((state) => state.auth.isOpenForEdit);
+  const isRegistering = useSelector((state) => state.auth.isRegistering);
 
   
   return (<>
@@ -32,14 +33,22 @@ function App() {
                     ?
                       <QuestionnaireEditor/>
                     :
-                      <Dashboard />
+                      ( 
+                            <Dashboard />
+                      )
                 )
 
           )
         )
-      ) : (
-        <Login />
-      )}
+      ) 
+      : (
+          isRegistering 
+            ? 
+              <Register />
+            :
+              <Login />
+        )
+        }
     </>
   );
 }

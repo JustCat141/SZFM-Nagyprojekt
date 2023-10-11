@@ -4,8 +4,11 @@ import { Button } from "../helper-functions/Button";
 import Card from "../helper-functions/Card";
 import OptionList from "./OptionList";
 import { SendQuestionnaire } from "../helper-functions/SendQuestionnaire.js";
+import {  useDispatch } from 'react-redux';
+import { OpenDashboard } from '../global-states/authSlice';
 
 const QuestionnaireEditor = () => {
+  const dispatch = useDispatch();
   const [questionList, setQuestionList] = useState([]);
   const [newQuestionId, setNewQuestionId] = useState(1);
   const [isSavedTitle, setIsSavedTitle] = useState(false);
@@ -64,6 +67,8 @@ const QuestionnaireEditor = () => {
     };
 
     SendQuestionnaire(questionnaire);
+    
+    dispatch(OpenDashboard());
   };
 
   const mainTitleSaveHandler = () => {
