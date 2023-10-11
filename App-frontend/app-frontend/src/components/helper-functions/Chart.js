@@ -7,7 +7,7 @@ const Chart = (props) => {
   const actualWidth = (answerNumber * 100) / maxWidth; // Calculate actual width
 
   const chartStyle = {
-    maxWidth: `${actualWidth}rem`, // Set maxWidth dynamically
+    maxWidth: `${actualWidth}rem`, // Set maxWidth dynami   cally
   };
 
   const fill = {
@@ -17,13 +17,13 @@ const Chart = (props) => {
   };
 
   return (
-    <div className="Chart">
-      <div style={{ maxWidth: `${maxWidth}rem`, height: "2rem"}}>
-        <div style={chartStyle}>
-          <div className="fill" style={fill}></div>
-          <div >
-            <p>0</p>
-            <p>{answerNumber}</p>
+    <div className={classes["Chart"]}>
+      <div className={classes["chart-box-full"]} style={{ maxWidth: `${maxWidth}rem`, height: "2rem"}}>
+        <div className={classes["chart-box-partial"]} style={chartStyle}>
+          <div className={classes["chart-box-filled"]} style={fill}></div>
+          <div className={classes["chart-text-box"]}>
+            <p className={classes["chart-text"]}>0</p>
+            <p className={classes["chart-text"]}>{answerNumber}</p>
           </div>
         </div>
       </div>
