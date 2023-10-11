@@ -5,7 +5,7 @@ import { OpenEdit } from '../global-states/authSlice';
 import UserQuestionnairesList from './UserQuestionnairesList';
 import classes from "../../styles/Dashboard.module.css";
 import Search from "../search/Search"
-
+import { Button } from '../helper-functions/Button';
 function Dashboard() {
   const user = useSelector((state) => state.auth.user);
   const [searchisOpen, setIsSearchOpen] = useState(false);
@@ -33,8 +33,8 @@ function Dashboard() {
             <div className={classes['dasboard-main-page ']}>
               {searchisOpen ?<Search /> : <></>}
                 <div className={classes['dasboard-action-buttons']}>
-                    <button onClick={questionnaireSearchHandler} className={classes['dashboard-button']}>Kérdőív keresése</button>
-                    <button onClick={newQuestionnaireHandler} className={classes['dashboard-button']}>Kérdőív létrehozása</button>
+                    <Button func={questionnaireSearchHandler} text={"Kérdőív keresése"}/>
+                    <Button func={newQuestionnaireHandler} text={"Kérdőív létrehozása"}/>
                 </div>
                 <div className={classes['dashboard-main-page-title']}>Saját kérdéssorok</div>
                 <div>

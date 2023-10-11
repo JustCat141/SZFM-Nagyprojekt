@@ -3,6 +3,8 @@ import Card from "../helper-functions/Card";
 import Chart from "../helper-functions/Chart";
 import {  useDispatch } from 'react-redux';
 import { OpenDashboard } from '../global-states/authSlice';
+import { Button } from "../helper-functions/Button";
+
 
 const QuestionnaireAnalyzer = () => {
   const dispatch = useDispatch();
@@ -45,7 +47,7 @@ const QuestionnaireAnalyzer = () => {
           </li>
         ))}
       </ul>
-      <button onClick={handleClose}>Bezárás</button>
+      <Button func={handleClose} text={'Bezárás'}/>
     </div>
   );
 };

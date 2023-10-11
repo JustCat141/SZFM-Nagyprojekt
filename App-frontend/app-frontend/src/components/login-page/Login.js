@@ -6,6 +6,8 @@ import classes from "../../styles/Login.module.css";
 import {Encode} from '../helper-functions/Encode';
 import { Decode } from "../helper-functions/Decode"
 import Dashboard from '../dashboard/Dashboard';
+import { Button } from '../helper-functions/Button';
+
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -63,10 +65,7 @@ function Login() {
                 className={classes['login-input-text']}
               />
             </div>
-            <div className={classes['login-button-box']}>
-              <button className={classes['login-button-text']}
-              onClick={handleLogin}>Bejelentkezés</button>
-            </div>
+            <Button func={handleLogin} text={"Bejelentkezés"}/>
           </div>
         </div>
       )}

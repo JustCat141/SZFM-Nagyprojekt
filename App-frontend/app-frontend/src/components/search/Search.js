@@ -3,7 +3,7 @@ import {React,  useState } from "react";
 import classes from "../../styles/Search.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { OpenFill } from '../global-states/authSlice';
-
+import { Button } from "../helper-functions/Button";
 const Search = () => {
     const [searchInput, setSearchInput] = useState("");
     const dispatch = useDispatch();
@@ -24,12 +24,7 @@ const Search = () => {
                     onChange={(e) => setSearchInput(e.target.value)}
                 />
                 </div>
-            <div className={classes['search-box-button-box']}>
-                <button 
-                    className={classes['search-box-button']}
-                    onClick={handleSearch}>Keresés
-                </button>
-            </div>
+            <Button func={handleSearch} text={"Keresés"}/>
         </div>
     )
 }
