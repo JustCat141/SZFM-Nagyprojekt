@@ -7,6 +7,7 @@ import OptionList from "./OptionList";
 const QuestionnaireEditor = () => {
   const [questionList, setQuestionList] = useState([]);
   const [newQuestionId, setNewQuestionId] = useState(1);
+  const [isSavedTitle, setIsSavedTitle] = useState(false);
 
   const [questionnaireTitle, setQuestionnaireTitle] = useState("");
   const [questionnaireDescription, setQuestionnaireDescription] = useState("");
@@ -15,10 +16,13 @@ const QuestionnaireEditor = () => {
   const [questionDescription, setQuestionDescription] = useState("");
   const [optionList, setOptionList] = useState([]);
   const [newOptionText, setNewOptionText] = useState("");
+  const [questionType, setQuestionType] = useState("one"); // Default question type
+  const [isOptionListHidden, setIsOptionListHidden] = useState(false);
+
+  const questionTypes = ["one", "multiple", "type"]; // Add more types as needed
 
   const handleNewQuestion = () => {
     if (!questionTitle) {
-      // Don't add a question without text
       return;
     }
 
@@ -26,8 +30,8 @@ const QuestionnaireEditor = () => {
       id: newQuestionId,
       title: questionTitle,
       description: questionDescription,
-      type: "one", // Default type (you can change it)
-      answers: optionList, // Use the optionList as answers
+      type: questionType,
+      answers: isOptionListHidden ? [] : optionList,
     };
 
     setNewQuestionId(newQuestionId + 1);
@@ -37,11 +41,11 @@ const QuestionnaireEditor = () => {
     setQuestionTitle("");
     setQuestionDescription("");
     setOptionList([]);
+    setIsOptionListHidden(false); // Reset the option list visibility
   };
 
   const handleNewOption = () => {
     if (questionTitle && newOptionText) {
-      // Only add an option if there's a question with text
       setOptionList([...optionList, newOptionText]);
       setNewOptionText("");
     }
@@ -52,23 +56,36 @@ const QuestionnaireEditor = () => {
     // You can send the questionList data or perform any other action
   };
 
+  const mainTitleSaveHandler = () => {
+    setIsSavedTitle(true);
+  }
+
   return (
     <div>
       <Card>
-        <input
-          name="title"
-          placeholder="Kérdőív címe"
-          value={questionnaireTitle}
-          onChange={(e) => setQuestionnaireTitle(e.target.value)}
-        />
-        <input
-          name="desc"
-          placeholder="Kérdőív leírása"
-          value={questionnaireDescription}
-          onChange={(e) => setQuestionnaireDescription(e.target.value)}
-        />
+        <div>
+          <p>{questionnaireTitle}</p>
+          <p>{questionnaireDescription}</p>
+        </div>
+        {!isSavedTitle ? (
+          <div>
+            <input
+              name="title"
+              placeholder="Kérdőív címe"
+              value={questionnaireTitle}
+              onChange={(e) => setQuestionnaireTitle(e.target.value)}
+            />
+            <input
+              name="desc"
+              placeholder="Kérdőív leírása"
+              value={questionnaireDescription}
+              onChange={(e) => setQuestionnaireDescription(e.target.value)}
+            />
+            <Button text={"Kérdőív cím és leírás rögzítése"} func={mainTitleSaveHandler} />
+          </div>
+        ) : <div></div>
+        }
       </Card>
-      <QuestionList questions={questionList} />
       <Card>
         <input
           name="question"
@@ -82,22 +99,44 @@ const QuestionnaireEditor = () => {
           value={questionDescription}
           onChange={(e) => setQuestionDescription(e.target.value)}
         />
-        <Card>
-        <OptionList options={optionList} />
-        <input
-          name="option"
-          placeholder="Válaszlehetőség"
-          value={newOptionText}
-          onChange={(e) => setNewOptionText(e.target.value)}
-          disabled={!questionTitle} // Disable the input when there's no question text
-        />
-        <Button
-          text={"Új válaszlehetőség"}
-          func={handleNewOption}
-          disabled={!questionTitle} // Disable the button when there's no question text
-        />
-        </Card>
-     
+        <div>
+          <label>Question Type:</label>
+          <select
+            value={questionType}
+            onChange={(e) => {
+              setQuestionType(e.target.value);
+              // Check if the OptionList should be hidden
+              if (e.target.value === "type") {
+                setIsOptionListHidden(true);
+              } else {
+                setIsOptionListHidden(false);
+              }
+            }}
+          >
+            {questionTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
+        {!isOptionListHidden && ( // Conditionally render OptionList based on visibility
+          <Card>
+            <OptionList options={optionList} />
+            <input
+              name="option"
+              placeholder="Válaszlehetőség"
+              value={newOptionText}
+              onChange={(e) => setNewOptionText(e.target.value)}
+              disabled={!questionTitle}
+            />
+            <Button
+              text={"Új válaszlehetőség"}
+              func={handleNewOption}
+              disabled={!questionTitle}
+            />
+          </Card>
+        )}
       </Card>
       <div>
         <Button text={"Új kérdés"} func={handleNewQuestion} />
