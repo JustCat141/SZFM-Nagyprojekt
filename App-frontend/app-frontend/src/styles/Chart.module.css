@@ -1,0 +1,23 @@
+.Chart {
+    /*Fő chart objektum*/
+}
+
+.chart-box-full {
+    /*A teljes chart, végtől végig*/
+}
+
+.chart-box-partial {
+    /*A részleges chart*/
+}
+
+.chart-box-filled {
+    /*A részleges kitöltött része*/
+}
+
+.chart-text-box {
+    /*Szöveget tartalmazó doboz*/
+}
+
+.chart-text {
+    /*Chart szövegei*/
+}

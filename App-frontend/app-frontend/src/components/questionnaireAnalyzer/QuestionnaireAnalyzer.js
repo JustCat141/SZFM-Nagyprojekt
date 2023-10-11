@@ -1,12 +1,18 @@
 import { LoadForAnalyze } from "../helper-functions/LoadForAnalyze";
 import Card from "../helper-functions/Card";
 import Chart from "../helper-functions/Chart";
-
+import {  useDispatch } from 'react-redux';
+import { OpenDashboard } from '../global-states/authSlice';
 
 const QuestionnaireAnalyzer = () => {
+  const dispatch = useDispatch();
   const questionnaireData = LoadForAnalyze(1551);
   console.log(questionnaireData);
   const questions = questionnaireData.quests;
+
+  const handleClose = () => {
+    dispatch(OpenDashboard());
+  }
 
   return (
     <div>
@@ -39,6 +45,7 @@ const QuestionnaireAnalyzer = () => {
           </li>
         ))}
       </ul>
+      <button onClick={handleClose}>Bezárás</button>
     </div>
   );
 };
