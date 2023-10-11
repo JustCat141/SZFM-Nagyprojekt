@@ -98,6 +98,9 @@ const QuestionnaireEditor = () => {
           </div>
         ) : <div></div>}
       </Card>
+
+       {questionList && <QuestionList questions={questionList}/>}
+ 
       <Card>
         <input
           name="question"
