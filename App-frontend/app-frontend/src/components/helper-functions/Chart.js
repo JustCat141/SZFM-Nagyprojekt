@@ -11,7 +11,7 @@ const Chart = (props) => {
   const chartStyle = {
     maxWidth: `${actualWidth}rem`, // Set maxWidth dynamically
     height: "1rem",
-//    backgroundColor: RandomColor(),
+    backgroundColor: RandomColor(),
   };
 
   console.log(actualWidth);
