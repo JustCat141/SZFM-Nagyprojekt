@@ -92,10 +92,6 @@ const QuestionnaireFill = () => {
     // Update error states for multiple choice questions
     setMultipleChoiceErrors(newMultipleChoiceErrors);
 
-   /*  if (!anyFieldEmpty) {
-      // Do not proceed with the submission if any field is empty
-      return;
-    } */
 
     // Check if all questions are answered
     const allQuestionsAnswered = questions.every((question, index) => {
