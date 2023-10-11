@@ -3,6 +3,7 @@ import QuestionList from "./QuestionList";
 import { Button } from "../helper-functions/Button";
 import Card from "../helper-functions/Card";
 import OptionList from "./OptionList";
+import {SendQuestionnaire} from "../helper-functions/SendQuestionnaire.js";
 
 const QuestionnaireEditor = () => {
   const [questionList, setQuestionList] = useState([]);
@@ -16,7 +17,7 @@ const QuestionnaireEditor = () => {
   const [questionDescription, setQuestionDescription] = useState("");
   const [optionList, setOptionList] = useState([]);
   const [newOptionText, setNewOptionText] = useState("");
-  const [questionType, setQuestionType] = useState("one"); // Default question type
+  const [questionType, setQuestionType] = useState("type"); // Default question type
   const [isOptionListHidden, setIsOptionListHidden] = useState(false);
 
   const questionTypes = ["one", "multiple", "type"]; // Add more types as needed
@@ -34,6 +35,7 @@ const QuestionnaireEditor = () => {
       answers: isOptionListHidden ? [] : optionList,
     };
 
+
     setNewQuestionId(newQuestionId + 1);
     setQuestionList([...questionList, newQuestion]);
 
@@ -42,6 +44,7 @@ const QuestionnaireEditor = () => {
     setQuestionDescription("");
     setOptionList([]);
     setIsOptionListHidden(false); // Reset the option list visibility
+    
   };
 
   const handleNewOption = () => {
@@ -52,15 +55,22 @@ const QuestionnaireEditor = () => {
   };
 
   const handleSubmit = () => {
-    // Handle the submission logic
-    // You can send the questionList data or perform any other action
+    const questionnaire = {
+      title: questionnaireTitle,
+      desc: questionnaireDescription,
+      questions: questionList,
+    };
+  
+    SendQuestionnaire(questionnaire);
   };
+  
 
   const mainTitleSaveHandler = () => {
     setIsSavedTitle(true);
   }
 
   return (
+    
     <div>
       <Card>
         <div>
@@ -120,7 +130,7 @@ const QuestionnaireEditor = () => {
             ))}
           </select>
         </div>
-        {!isOptionListHidden && ( // Conditionally render OptionList based on visibility
+        {!isOptionListHidden && questionType !== "type" && ( // Conditionally render OptionList based on visibility
           <Card>
             <OptionList options={optionList} />
             <input
