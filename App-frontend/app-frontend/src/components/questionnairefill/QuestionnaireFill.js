@@ -1,53 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../helper-functions/Card.js';
 import './fill.css';
 import { SendFill } from '../helper-functions/SendFill.js';
 import { OpenDashboard } from '../global-states/authSlice';
-import { Square, SquareOutline, Ellipse, EllipseOutline } from 'react-ionicons'
-
+import { Square, SquareOutline, Ellipse, EllipseOutline } from 'react-ionicons';
+import { LoadForFill } from '../helper-functions/LoadForFill.js';
 
 const QuestionnaireFill = () => {
-  const questionnaireData = useSelector((state) => state.auth.CurrentForFill);
-  const questions = questionnaireData.quests;
-
+  const [questionnaireData, setQuestionnaireData] = useState(null);
   const dispatch = useDispatch();
-  const [activeAnswers, setActiveAnswers] = useState(questions.map(() => []));
-  const [inputFieldValues, setInputFieldValues] = useState(questions.map(() => ''));
-  const [inputFieldErrors, setInputFieldErrors] = useState(questions.map(() => ''));
-  const [multipleChoiceErrors, setMultipleChoiceErrors] = useState(questions.map(() => []));
+  const [activeAnswers, setActiveAnswers] = useState([]); // Initialize activeAnswers as an empty array
+  const [inputFieldValues, setInputFieldValues] = useState([]);
+  const [inputFieldErrors, setInputFieldErrors] = useState([]);
+  const [multipleChoiceErrors, setMultipleChoiceErrors] = useState([]);
 
-  const handleAnswerClick = (questionIndex, answerIndex) => {
-    const newActiveAnswers = [...activeAnswers];
-
-    if (questions[questionIndex].type === 'one') {
-      newActiveAnswers[questionIndex] = [answerIndex];
-    } else if (questions[questionIndex].type === 'multiple') {
-      const answerIndexInArray = newActiveAnswers[questionIndex].indexOf(answerIndex);
-      if (answerIndexInArray === -1) {
-        newActiveAnswers[questionIndex].push(answerIndex);
-      } else {
-        newActiveAnswers[questionIndex].splice(answerIndexInArray, 1);
+  useEffect(() => {
+    async function fetchQuestionnaireData() {
+      try {
+        // Replace '1551' with the actual ID you want to load
+        const data = await LoadForFill(1551);
+        setQuestionnaireData(data);
+      } catch (error) {
+        console.error('Error fetching questionnaire data:', error);
       }
     }
 
-    setActiveAnswers(newActiveAnswers);
-
-    // Clear the error for this question when an answer is selected
-    clearErrors(questionIndex);
-  };
-
-  const handleInputChange = (questionIndex, event) => {
-    const newInputFieldValues = [...inputFieldValues];
-    newInputFieldValues[questionIndex] = event.target.value;
-    setInputFieldValues(newInputFieldValues);
-
-    // Clear the error for this input field when the input field is filled
-    clearErrors(questionIndex);
-  };
+    fetchQuestionnaireData();
+  }, []);
 
   const clearErrors = (questionIndex) => {
-    // Clear errors for the given question
     setInputFieldErrors((prevErrors) => {
       const newErrors = [...prevErrors];
       newErrors[questionIndex] = '';
@@ -61,92 +43,103 @@ const QuestionnaireFill = () => {
     });
   };
 
+  const handleAnswerClick = (questionIndex, answerIndex) => {
+    const newActiveAnswers = [...activeAnswers];
+    if (!newActiveAnswers[questionIndex]) {
+      newActiveAnswers[questionIndex] = []; // Initialize as an empty array if not already
+    }
+
+    if (questionnaireData.quests[questionIndex].type === 'one') {
+      newActiveAnswers[questionIndex] = [answerIndex];
+    } else if (questionnaireData.quests[questionIndex].type === 'multiple') {
+      const answerIndexInArray = newActiveAnswers[questionIndex].indexOf(answerIndex);
+      if (answerIndexInArray === -1) {
+        newActiveAnswers[questionIndex].push(answerIndex);
+      } else {
+        newActiveAnswers[questionIndex].splice(answerIndexInArray, 1);
+      }
+    }
+
+    setActiveAnswers(newActiveAnswers);
+    clearErrors(questionIndex);
+  };
+
+
+
+  const handleInputChange = (questionIndex, event) => {
+    const newInputFieldValues = [...inputFieldValues];
+    newInputFieldValues[questionIndex] = event.target.value;
+    setInputFieldValues(newInputFieldValues);
+
+    clearErrors(questionIndex);
+  };
+
   const handleSubmit = async () => {
-    // Create separate arrays for error states for each type of question
-    const newInputFieldErrors = questions.map(() => '');
-    const newMultipleChoiceErrors = questions.map(() => []);
+    if (!questionnaireData || !questionnaireData.quests) {
+      alert('No questionnaire data found. Please try again later.');
+      return;
+    }
 
-    // Initialize anyFieldEmpty to true
-    let anyFieldEmpty = true;
+    const newInputFieldErrors = questionnaireData.quests.map(() => '');
+    const newMultipleChoiceErrors = questionnaireData.quests.map(() => []);
 
-    // Check if any input fields are empty and set error states
+    let anyFieldEmpty = false;
+
     inputFieldValues.forEach((value, index) => {
-      if (value === '') {
-        anyFieldEmpty = false; // At least one field is empty
+      if (value.trim() === '') {
+        anyFieldEmpty = true;
         newInputFieldErrors[index] = 'This field is required.';
       }
     });
 
-    // Update error states for input fields
     setInputFieldErrors(newInputFieldErrors);
 
-    // Check if any multiple choice questions have no selected answers and set error states
     activeAnswers.forEach((selectedAnswers, index) => {
-      if (questions[index].type === 'multiple' && selectedAnswers.length === 0) {
-        anyFieldEmpty = false; // At least one multiple choice question is unanswered
+      if (
+        questionnaireData.quests[index].type === 'multiple' &&
+        (!selectedAnswers || selectedAnswers.length === 0)
+      ) {
+        anyFieldEmpty = true;
         newMultipleChoiceErrors[index] = ['Please select at least one answer.'];
-      } else if (questions[index].type === 'one' && selectedAnswers.length === 0) {
-        anyFieldEmpty = false; // At least one one-choice question is unanswered
+      } else if (
+        questionnaireData.quests[index].type === 'one' &&
+        (!selectedAnswers || selectedAnswers.length === 0)
+      ) {
+        anyFieldEmpty = true;
         newMultipleChoiceErrors[index] = ['Please select an answer.'];
       }
     });
 
-    // Update error states for multiple choice questions
     setMultipleChoiceErrors(newMultipleChoiceErrors);
 
-
-    // Check if all questions are answered
-    const allQuestionsAnswered = questions.every((question, index) => {
-      if (question.type === 'type' && inputFieldValues[index] === '') {
-        return false; // Input field is empty
-      } else if (question.type !== 'type' && activeAnswers[index].length === 0) {
-        return false; // No answer selected for non-input field
-      }
-      return true;
-    });
-
-    if (!allQuestionsAnswered) {
-      // Display an error message if not all questions are answered
-      alert('Please answer all questions before submitting.');
+    if (anyFieldEmpty) {
+      alert('Please fill out all required fields before submitting.');
       return;
     }
 
-    // Collect all the answers and input field values
-    const collectedAnswers = questions.map((question, qIndex) => {
-      if (activeAnswers[qIndex].length > 0) {
-        if (question.type === 'one') {
-          return question.answers[activeAnswers[qIndex][0]];
-        } else if (question.type === 'multiple') {
-          return activeAnswers[qIndex].map((index) => question.answers[index]);
-        }
-      } else if (question.type === 'input') {
-        return inputFieldValues[qIndex]; // Include the input field value
-      }
+    // Rest of your handleSubmit code for sending data...
 
-      // Handle cases where there are no selected answers and no input field value
-      return null;
-    });
-
-    // Remove null values from collectedAnswers
-    const filteredAnswers = collectedAnswers.filter((answer) => answer !== null);
-
-    // Log the collected answers and input field values to the console for debugging
-    console.log('Collected Answers:', filteredAnswers);
-    console.log('Input Field Values:', inputFieldValues);
-
-    // Attempt to send data using SendFill
     console.log('Sending Data...');
     try {
-      const response = await SendFill({ questionnaireDataId: questionnaireData.id, answers: filteredAnswers });
+      const response = await SendFill({
+        questionnaireDataId: questionnaireData.id,
+        answers: {
+          inputFieldValues,
+          activeAnswers,
+        },
+      });
       console.log('Data Sent Successfully', response);
 
-      // Dispatch the OpenDashboard action when the submission is complete
       dispatch(OpenDashboard());
     } catch (error) {
       console.error('Error Sending Data:', error);
       alert('An error occurred while sending data. Please try again later.');
     }
   };
+
+  if (!questionnaireData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -156,48 +149,51 @@ const QuestionnaireFill = () => {
         <p>{questionnaireData.desc}</p>
       </Card>
       <ul>
-        {questions.map((question, questionIndex) => (
+        {questionnaireData.quests.map((question, questionIndex) => (
           <li key={question.q_id}>
             <Card>
               <div>
                 <p>{question.question}</p>
                 <p>{question.description}</p>
                 {Array.isArray(question.answers) ? (
-
-
-
-   <ul>
-   {question.answers.map((answer, answerIndex) => (
-     <li key={answerIndex}>
-       <div
-         className={`answer ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
-         onClick={() => handleAnswerClick(questionIndex, answerIndex)}
-       >
-         {question.type === 'one' ? (
-           activeAnswers[questionIndex].includes(answerIndex) ? (
-             <Ellipse /> // Active "one" type question
-           ) : (
-             <EllipseOutline /> // Inactive "one" type question
-           )
-         ) : (
-           activeAnswers[questionIndex].includes(answerIndex) ? (
-             <Square /> // Active "multiple" type question
-           ) : (
-             <SquareOutline /> // Inactive "multiple" type question
-           )
-         ) }{answer} 
-       </div>
-     </li>
-   ))}
- </ul>
-
-
-) : (
+                  <ul>
+                    {question.answers.map((answer, answerIndex) => (
+                      <li key={answerIndex}>
+                        <div
+                          className={`answer ${
+                            activeAnswers[questionIndex] &&
+                            activeAnswers[questionIndex].includes(answerIndex)
+                              ? 'active'
+                              : ''
+                          }`}
+                          onClick={() => handleAnswerClick(questionIndex, answerIndex)}
+                        >
+                          {question.type === 'one' ? (
+                            activeAnswers[questionIndex] &&
+                            activeAnswers[questionIndex].includes(answerIndex) ? (
+                              <Ellipse />
+                            ) : (
+                              <EllipseOutline />
+                            )
+                          ) : (
+                            activeAnswers[questionIndex] &&
+                            activeAnswers[questionIndex].includes(answerIndex) ? (
+                              <Square />
+                            ) : (
+                              <SquareOutline />
+                            )
+                          )}
+                          {answer}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
                   <div>
                     <input
                       type="text"
                       placeholder="Your answer"
-                      value={inputFieldValues[questionIndex]}
+                      value={inputFieldValues[questionIndex] || ''}
                       onChange={(event) => handleInputChange(questionIndex, event)}
                     />
                     {inputFieldErrors[questionIndex] && (
@@ -205,14 +201,16 @@ const QuestionnaireFill = () => {
                     )}
                   </div>
                 )}
-                {multipleChoiceErrors[questionIndex].length > 0 && (
-                  <p className="error-message">{multipleChoiceErrors[questionIndex][0]}</p>
-                )}
+                {multipleChoiceErrors[questionIndex] &&
+                  multipleChoiceErrors[questionIndex].length > 0 && (
+                    <p className="error-message">{multipleChoiceErrors[questionIndex][0]}</p>
+                  )}
               </div>
             </Card>
           </li>
         ))}
       </ul>
+
       <button onClick={handleSubmit}>Beküldés</button>
     </div>
   );
