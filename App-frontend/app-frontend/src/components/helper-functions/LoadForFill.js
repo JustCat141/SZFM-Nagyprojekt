@@ -1,5 +1,26 @@
 export const LoadForFill = (id) => {
-    // Return the dummy_data for testing
+  const apiUrl = 'https://large-project-a6e2e-default-rtdb.europe-west1.firebasedatabase.app/dummy_data.json';
+
+  // Make a GET request to the API
+  fetch(apiUrl)
+    .then((response) => {
+      // Check if the response status is OK (status code 200)
+      if (response.status === 200) {
+        // Parse the response body as JSON
+        return response.json();
+      } else {
+        throw new Error('Failed to fetch data');
+      }
+    })
+    .then((data) => {
+      // Log the data
+      console.log('Fetched Data:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
+
     return {
       id: "1550",
       title: "Bl-Döntő",
