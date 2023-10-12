@@ -1,51 +1,20 @@
 export const LoadForAnalyze = id => {
     //implementation of loading for analyzers
+    const apiUrl = 'https://large-project-a6e2e-default-rtdb.europe-west1.firebasedatabase.app/dummy_analyze.json';
 
-    //dummy_data
-    const dummy_data = {
-        title: "Bl-Döntő",
-        desc: "Kérdőív leírása. Ez adja meg az egész kérdőívre vonatkozó leírást",
-        quests: [
-            {
-                q_id: "1",
-                type: "type",
-                question: "Kérdés #1",
-                given_answers: [
-                    "Answer #1",
-                    "Answer #2",
-                    "Answer #3",
-                    "Answer #4",
-                    "Answer #5",
-                ]
-            },
-            {
-                q_id: "2",
-                type: "multiple",
-                question: "Kérdés #2",
-                answers: ["Opció #1", "Opció #2", "Opció #3", "Opció #4"],
-                given_answers: [
-                    2,
-                    15,
-                    9,
-                    17,
-                ]
-            },
-            {
-                q_id: "3",
-                type: "one",
-                question: "Kérdés #3",
-                answers: ["Opció #1", "Opció #2", "Opció #3", "Opció #4"],
-                given_answers: [
-                    2,
-                    5,
-                    9,
-                    7,
-                ]
-            },
-        ],
+    // Return a Promise that resolves to the fetched data
+    return fetch(apiUrl)
+      .then((response) => {
+        // Check if the response status is OK (status code 200)
+        if (response.status === 200) {
+          // Parse the response body as JSON and return it
+          return response.json();
+        } else {
+          throw new Error('Failed to fetch data');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
 
-    };
-
-
-    return dummy_data;
 }

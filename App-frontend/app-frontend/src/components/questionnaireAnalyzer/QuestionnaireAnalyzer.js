@@ -1,20 +1,37 @@
 import { LoadForAnalyze } from "../helper-functions/LoadForAnalyze";
 import Card from "../helper-functions/Card";
 import Chart from "../helper-functions/Chart";
-import {  useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { OpenDashboard } from '../global-states/authSlice';
 import { Button } from "../helper-functions/Button";
-
+import { useEffect, useState } from "react";
 
 const QuestionnaireAnalyzer = (id) => {
+  const [questionnaireData, setQuestionnaireData] = useState(null);
   const dispatch = useDispatch();
-  const questionnaireData = LoadForAnalyze(id);
-  console.log(questionnaireData);
-  const questions = questionnaireData.quests;
 
   const handleClose = () => {
     dispatch(OpenDashboard());
   }
+
+  useEffect(() => {
+    async function fetchQuestionnaireData() {
+      try {
+        const data = await LoadForAnalyze(1551);
+        setQuestionnaireData(data);
+      } catch (error) {
+        console.error('Error fetching questionnaire data:', error);
+      }
+    }
+
+    fetchQuestionnaireData();
+  }, []);
+
+  if (!questionnaireData) {
+    return <div>Loading...</div>; 
+  }
+
+  const questions = questionnaireData.quests;
 
   return (
     <div>
@@ -26,7 +43,7 @@ const QuestionnaireAnalyzer = (id) => {
 
       <ul>
         {questions.map((question, questionIndex) => (
-          <li key={question.q_id}>
+          <li key={questionIndex}>
             <Card>
               <div>
                 <p>{question.question}</p>
@@ -38,7 +55,7 @@ const QuestionnaireAnalyzer = (id) => {
                   ))
                 ) : (
                   question.answers.map((answer, answerIndex) => (
-                    <Chart key={answerIndex} answerText={answer} 
+                    <Chart key={answerIndex} answerText={answer}
                     answerNumber={question.given_answers[answerIndex]} />
                   )))
                 }
@@ -47,7 +64,7 @@ const QuestionnaireAnalyzer = (id) => {
           </li>
         ))}
       </ul>
-      <Button func={handleClose} text={'Bezárás'}/>
+      <Button func={handleClose} text={'Bezárás'} />
     </div>
   );
 };
