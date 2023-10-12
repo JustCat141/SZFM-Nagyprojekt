@@ -4,6 +4,8 @@ import Card from '../helper-functions/Card.js';
 import './fill.css';
 import { SendFill } from '../helper-functions/SendFill.js';
 import { OpenDashboard } from '../global-states/authSlice';
+import { Square, SquareOutline, Ellipse, EllipseOutline } from 'react-ionicons'
+
 
 const QuestionnaireFill = () => {
   const questionnaireData = useSelector((state) => state.auth.CurrentForFill);
@@ -161,18 +163,36 @@ const QuestionnaireFill = () => {
                 <p>{question.question}</p>
                 <p>{question.description}</p>
                 {Array.isArray(question.answers) ? (
-                  <ul>
-                    {question.answers.map((answer, answerIndex) => (
-                      <li
-                        key={answerIndex}
-                        className={`answer ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
-                        onClick={() => handleAnswerClick(questionIndex, answerIndex)}
-                      >
-                        {answer}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
+
+
+
+   <ul>
+   {question.answers.map((answer, answerIndex) => (
+     <li key={answerIndex}>
+       <div
+         className={`answer ${activeAnswers[questionIndex].includes(answerIndex) ? 'active' : ''}`}
+         onClick={() => handleAnswerClick(questionIndex, answerIndex)}
+       >
+         {question.type === 'one' ? (
+           activeAnswers[questionIndex].includes(answerIndex) ? (
+             <Ellipse /> // Active "one" type question
+           ) : (
+             <EllipseOutline /> // Inactive "one" type question
+           )
+         ) : (
+           activeAnswers[questionIndex].includes(answerIndex) ? (
+             <Square /> // Active "multiple" type question
+           ) : (
+             <SquareOutline /> // Inactive "multiple" type question
+           )
+         ) }{answer} 
+       </div>
+     </li>
+   ))}
+ </ul>
+
+
+) : (
                   <div>
                     <input
                       type="text"
