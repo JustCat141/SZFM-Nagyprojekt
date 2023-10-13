@@ -6,7 +6,6 @@ const QuestionList = (props) => {
     return <div className={classes["question-list-box"]}>
         {
             questions.map((question, index) => {
-                {console.log(question);}
                 return (
                     <Card key={index} >
                         <div className={classes["question-box"]} >
