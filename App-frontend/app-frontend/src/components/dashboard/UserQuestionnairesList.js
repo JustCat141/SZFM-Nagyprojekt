@@ -7,8 +7,6 @@ const UserQuestionnairesList = () => {
   const userQuestionnairesList = useSelector((state) => state.auth.UserQuestionnairesList);
   const dispatch = useDispatch(); // Initialize useDispatch
 
-  console.log(userQuestionnairesList.length);
-
   const questionnaireOpen = (id) => {
     dispatch(OpenAnalyzer(id));
 

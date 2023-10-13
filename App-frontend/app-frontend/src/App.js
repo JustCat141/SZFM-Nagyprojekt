@@ -13,6 +13,7 @@ function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const isOpenForAnalyze = useSelector((state) => state.auth.isOpenForAnalyze);
   const isOpenForFill = useSelector((state) => state.auth.isOpenForFill);
+  const CurrentForFill = useSelector((state) => state.auth.CurrentForFill);
   const isOpenForEdit = useSelector((state) => state.auth.isOpenForEdit);
   const isRegistering = useSelector((state) => state.auth.isRegistering);
 
@@ -26,7 +27,7 @@ function App() {
         : (
             isOpenForFill 
               ?
-                <QuestionnaireFill />
+                <QuestionnaireFill currentForFill={CurrentForFill}/>
               :
                 (
                   isOpenForEdit 

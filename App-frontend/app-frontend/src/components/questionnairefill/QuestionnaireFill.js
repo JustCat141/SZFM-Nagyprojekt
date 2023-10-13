@@ -5,17 +5,32 @@ import './fill.css';
 import { SendFill } from '../helper-functions/SendFill.js';
 import { OpenDashboard } from '../global-states/authSlice';
 import { Square, SquareOutline, Ellipse, EllipseOutline } from 'react-ionicons';
-import { LoadForFill } from '../helper-functions/LoadForFill.js';
-
+import Error from "../helper-functions/Error.js";
+import {Button} from "../helper-functions/Button.js";
 const QuestionnaireFill = (props) => {
-  const [questionnaireData, setQuestionnaireData] = useState(props.data);
+  const [questionnaireData, setQuestionnaireData] = useState(props.currentForFill);
   const dispatch = useDispatch();
   const [activeAnswers, setActiveAnswers] = useState([]); // Initialize activeAnswers as an empty array
   const [inputFieldValues, setInputFieldValues] = useState([]);
   const [inputFieldErrors, setInputFieldErrors] = useState([]);
   const [multipleChoiceErrors, setMultipleChoiceErrors] = useState([]);
+  
+  const [questionErrors, setQuestionErrors] = useState([]);
+  const [allGood, setAllGood] = useState(true);
+  const [allAnswers, setAllAnswers] = useState([]);
 
-console.log(props);
+  useEffect(() => {
+    const errors = [];
+    const answers = [];
+    const questions = questionnaireData.quests;
+    questions.forEach((question) => {
+      errors.push(false);
+      answers.push(null);
+    });
+    setQuestionErrors(errors);
+    setAllAnswers(answers);
+  }, []);
+
   const clearErrors = (questionIndex) => {
     setInputFieldErrors((prevErrors) => {
       const newErrors = [...prevErrors];
@@ -32,6 +47,7 @@ console.log(props);
 
   const handleAnswerClick = (questionIndex, answerIndex) => {
     const newActiveAnswers = [...activeAnswers];
+    const alls = [...allAnswers];
     if (!newActiveAnswers[questionIndex]) {
       newActiveAnswers[questionIndex] = []; // Initialize as an empty array if not already
     }
@@ -46,66 +62,62 @@ console.log(props);
         newActiveAnswers[questionIndex].splice(answerIndexInArray, 1);
       }
     }
+    if (newActiveAnswers[questionIndex].length === 0) {
+      alls[questionIndex] = null;
+    } else {
+      alls[questionIndex] = newActiveAnswers[questionIndex];
+    }
 
     setActiveAnswers(newActiveAnswers);
+    setAllAnswers(alls);
     clearErrors(questionIndex);
   };
-
-
-
-  const handleInputChange = (questionIndex, event) => {
+  
+    const handleInputChange = (questionIndex, event) => {
     const newInputFieldValues = [...inputFieldValues];
     newInputFieldValues[questionIndex] = event.target.value;
     setInputFieldValues(newInputFieldValues);
-
+    const alls = [...allAnswers];
+    if (!newInputFieldValues[questionIndex][0]) {
+      alls[questionIndex] = null;
+    }
+    else {
+      alls[questionIndex] = newInputFieldValues;
+    }
+    setAllAnswers(alls);
     clearErrors(questionIndex);
   };
 
-  const handleSubmit = async () => {
-    if (!questionnaireData || !questionnaireData.quests) {
-      alert('No questionnaire data found. Please try again later.');
-      return;
-    }
-
-    const newInputFieldErrors = questionnaireData.quests.map(() => '');
-    const newMultipleChoiceErrors = questionnaireData.quests.map(() => []);
-
-    let anyFieldEmpty = false;
-
-    inputFieldValues.forEach((value, index) => {
-      if (value.trim() === '') {
-        anyFieldEmpty = true;
-        newInputFieldErrors[index] = 'This field is required.';
+  const Check = () => {
+    let allGood = true; // Initialize allGood to true
+  
+    allAnswers.forEach((answer) => {
+      console.log(answer);
+      if (answer === null) {
+        console.log("No answer");
+        allGood = false; // Set allGood to false if any answer is null
       }
     });
+  
+    setAllGood(allGood); // Update the allGood state
+  };
+  
 
-    setInputFieldErrors(newInputFieldErrors);
 
-    activeAnswers.forEach((selectedAnswers, index) => {
-      if (
-        questionnaireData.quests[index].type === 'multiple' &&
-        (!selectedAnswers || selectedAnswers.length === 0)
-      ) {
-        anyFieldEmpty = true;
-        newMultipleChoiceErrors[index] = ['Please select at least one answer.'];
-      } else if (
-        questionnaireData.quests[index].type === 'one' &&
-        (!selectedAnswers || selectedAnswers.length === 0)
-      ) {
-        anyFieldEmpty = true;
-        newMultipleChoiceErrors[index] = ['Please select an answer.'];
-      }
-    });
-
-    setMultipleChoiceErrors(newMultipleChoiceErrors);
-
-    if (anyFieldEmpty) {
-      alert('Please fill out all required fields before submitting.');
+  const handleSubmit = () => {
+    Check();
+    console.log(allGood);
+    if (!allGood) {
+      console.log("no answers")
       return;
+    } else {
+      console.log(allAnswers);
+      console.log(allGood);
+      Send();
     }
+  };
 
-    // Rest of your handleSubmit code for sending data...
-
+  const Send = async () => {
     console.log('Sending Data...');
     try {
       const response = await SendFill({
@@ -192,13 +204,15 @@ console.log(props);
                   multipleChoiceErrors[questionIndex].length > 0 && (
                     <p className="error-message">{multipleChoiceErrors[questionIndex][0]}</p>
                   )}
+                  {questionErrors[questionIndex] && <Error text={"Kérlek válaszold meg ezt a kérdést"}/>}
               </div>
             </Card>
           </li>
         ))}
       </ul>
 
-      <button onClick={handleSubmit}>Beküldés</button>
+      {!allGood && <Error text={"Kérlek tölts ki minden mezőt!"}/>}
+      <Button func={handleSubmit} text={"Beküldés"}/>
     </div>
   );
 };
