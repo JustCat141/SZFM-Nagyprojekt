@@ -8,11 +8,12 @@ import { Decode } from "../helper-functions/Decode"
 import Dashboard from '../dashboard/Dashboard';
 import { Button } from '../helper-functions/Button';
 import { LoadForLogin } from '../helper-functions/LoadForLogin';
+import  Error  from "../helper-functions/Error"
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, seterror] = useState(false);
+  const [error, setError] = useState(false);
   const [QestionnaireList, setQuestionnaireList] = useState([]);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
@@ -20,16 +21,22 @@ function Login() {
   const handleLogin = async () => {
     console.log(Encode(`${username} ${password}`)); 
     console.log(Decode(Encode(`${username} ${password}`))); 
-    let questionnaireList;
+  
     try {
-      const data = await LoadForLogin(1551);
-       questionnaireList = data;
-       let user = { username, password};
-      dispatch(login({ user, questionnaireList }));
+      const response = await LoadForLogin(1551);
+      if (response.status === 200) {
+        const data = await response.json();
+        let user = { username, password };
+        dispatch(login({ user, questionnaireList: data }));
+      } else {
+        // Handle the error here
+        console.error('Failed to fetch data');
+        setError(true);
+      }
     } catch (error) {
       console.error('Error during login:', error);
+      setError(true);
     }
-    console.log(questionnaireList);
   };
 
   const handleRegister = () => {
@@ -38,7 +45,6 @@ function Login() {
 
   return (
     <div>
-      {!error ? (
         <div className={classes['login-page']}>
           <div className={classes['login-page-logo-image-box']}>
             <img src="" className={classes['login-page-logo-image']}/>
@@ -63,13 +69,13 @@ function Login() {
                 className={classes['login-input-text']}
               />
             </div>
+      {error && <Error text={"Hibás email cím vagy jelszó"}/>}
+
             <Button func={handleLogin} text={"Bejelentkezés"}/>
             <Button func={handleRegister} text={"Regisztráció"}/>
           </div>
         </div>
-      ) : (
-        <Error text={"Hibás email cím vagy jelszó"}/>
-        )
+      
       }
     </div>
   );

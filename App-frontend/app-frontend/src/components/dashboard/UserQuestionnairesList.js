@@ -17,23 +17,23 @@ const UserQuestionnairesList = () => {
 return (
   <div className={classes['UserQuestionnairesList-box']}>
     <ul className={classes['UserQuestionnairesList-list']}>
-      {userQuestionnairesList.length > 0 ? (
-        userQuestionnairesList.map((questionnaire, questionnaireIndex) => (
+  {userQuestionnairesList && userQuestionnairesList.length > 0 ? (
+    userQuestionnairesList.map((questionnaire, questionnaireIndex) => (
+      <li
+        key={questionnaireIndex}
+        onClick={() => questionnaireOpen(questionnaire.id)}
+        className={classes['UserQuestionnairesList-list-item']}
+      >
+        <div className={classes['UserQuestionnairesList-list-item-text']}>
+          {questionnaire.title}
+        </div>
+      </li>
+    ))
+  ) : (
+    <p>Nincs saját kérdéssorod, hozz létre egyet.</p>
+  )}
+</ul>
 
-          <li
-            key={questionnaireIndex}
-            onClick={() => questionnaireOpen(questionnaire.id)}
-            className={classes['UserQuestionnairesList-list-item']}
-          >
-            <div className={classes['UserQuestionnairesList-list-item-text']}>
-              {questionnaire.title}
-            </div>
-          </li>
-        ))
-      ) : (
-        <p>Nincs saját kérdéssorod, hozz létre egyet.</p>
-      )}
-    </ul>
   </div>
 );
 };
