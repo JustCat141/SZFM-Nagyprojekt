@@ -4,6 +4,8 @@ import { SendNewuser } from '../helper-functions/SendNewUser';
 import { CloseRegister } from '../global-states/authSlice';
 import { useDispatch } from 'react-redux';
 import classes from "../../styles/Register.module.css";
+import Error from '../helper-functions/Error';
+
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -86,7 +88,7 @@ const Register = () => {
                         onChange={(e) => setPasswordConfirmation(e.target.value)}
                     />
                 </div>
-                <p>{errorMessage}</p>
+                {errorMessage && <Error text={errorMessage}/>}
                 <Button func={handleRegister} text={"Regisztráció"}/>
                 <Button func={OpenLogin} text={"Bejelentkezés"}/>
             </div>
