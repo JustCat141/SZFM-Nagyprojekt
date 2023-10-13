@@ -12,6 +12,7 @@ import { LoadForLogin } from '../helper-functions/LoadForLogin';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, seterror] = useState(false);
   const [QestionnaireList, setQuestionnaireList] = useState([]);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
@@ -37,9 +38,7 @@ function Login() {
 
   return (
     <div>
-      {isLoggedIn ? (
-        <Dashboard />
-      ) : (
+      {!error ? (
         <div className={classes['login-page']}>
           <div className={classes['login-page-logo-image-box']}>
             <img src="" className={classes['login-page-logo-image']}/>
@@ -68,7 +67,10 @@ function Login() {
             <Button func={handleRegister} text={"Regisztráció"}/>
           </div>
         </div>
-      )}
+      ) : (
+        <Error text={"Hibás email cím vagy jelszó"}/>
+        )
+      }
     </div>
   );
 }

@@ -14,7 +14,8 @@ export const LoadForLogin = (id) => {
       })
       .catch((error) => {
         console.error('Error:', error);
+        // Return both data and error for handling in the calling function
+        return { data: null, error };
       });
-      
   };
   
