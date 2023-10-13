@@ -7,7 +7,7 @@ import {Encode} from '../helper-functions/Encode';
 import { Decode } from "../helper-functions/Decode"
 import Dashboard from '../dashboard/Dashboard';
 import { Button } from '../helper-functions/Button';
-
+import { LoadForLogin } from '../helper-functions/LoadForLogin';
 
 function Login() {
   const [username, setUsername] = useState('');
