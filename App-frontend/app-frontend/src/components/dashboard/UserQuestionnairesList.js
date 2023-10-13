@@ -7,32 +7,35 @@ const UserQuestionnairesList = () => {
   const userQuestionnairesList = useSelector((state) => state.auth.UserQuestionnairesList);
   const dispatch = useDispatch(); // Initialize useDispatch
 
+  console.log(userQuestionnairesList.length);
+
   const questionnaireOpen = (id) => {
     dispatch(OpenAnalyzer(id));
 
 };
 
-  return (
-    <div className={classes["UserQuestionnairesList-box"]}>
-      <ul className={classes["UserQuestionnairesList-list"]}>
-        {userQuestionnairesList.length > 0 ? (
-          userQuestionnairesList.map((questionnaire) => (
-            <li
-              key={questionnaire.id}
-              onClick={() => questionnaireOpen(questionnaire.id)} // Use a function to pass the ID
-              className={classes["UserQuestionnairesList-list-item"]}
-            >
-              <div className={classes["UserQuestionnairesList-list-item-text"]}>
-                {questionnaire.name}
-              </div>
-            </li>
-          ))
-        ) : (
-          <p>Nincs saját kérdéssorod, hozz létre egyet.</p>
-        )}
-      </ul>
-    </div>
-  );
+return (
+  <div className={classes['UserQuestionnairesList-box']}>
+    <ul className={classes['UserQuestionnairesList-list']}>
+      {userQuestionnairesList.length > 0 ? (
+        userQuestionnairesList.map((questionnaire, questionnaireIndex) => (
+
+          <li
+            key={questionnaireIndex}
+            onClick={() => questionnaireOpen(questionnaire.id)}
+            className={classes['UserQuestionnairesList-list-item']}
+          >
+            <div className={classes['UserQuestionnairesList-list-item-text']}>
+              {questionnaire.title}
+            </div>
+          </li>
+        ))
+      ) : (
+        <p>Nincs saját kérdéssorod, hozz létre egyet.</p>
+      )}
+    </ul>
+  </div>
+);
 };
 
 export default UserQuestionnairesList;

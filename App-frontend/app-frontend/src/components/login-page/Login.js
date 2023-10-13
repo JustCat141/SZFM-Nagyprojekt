@@ -1,5 +1,5 @@
 // Login.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, OpenRegister } from '../global-states/authSlice';
 import classes from "../../styles/Login.module.css";
@@ -12,28 +12,23 @@ import { LoadForLogin } from '../helper-functions/LoadForLogin';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [QestionnaireList, setQuestionnaireList] = useState([]);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log(Encode(`${username} ${password}`)); 
     console.log(Decode(Encode(`${username} ${password}`))); 
-    
-    // You should perform your authentication logic here
-    
-    //Note, you can do the fetch in the same request
-    //so you are asking for list of questionnaires of the
-    //user, and if there is no user the server will refuse
-    //and then no login
-    
-    // Fetch the list of questionnaires from the database
-
-    let user = { username, password};
-    let questionnaireList = [{id: 1510, name: "Nyelvi tudás kérdőív"}, 
-                            {id: 1500, name: "Milyen boltokban vásárolsz?"}, 
-                            {id: 1610, name: "template 01"}, 
-                            {id: 1700, name: "BL kérdőív"}];
-    dispatch(login({ user, questionnaireList}));
+    let questionnaireList;
+    try {
+      const data = await LoadForLogin(1551);
+       questionnaireList = data;
+       let user = { username, password};
+      dispatch(login({ user, questionnaireList }));
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
+    console.log(questionnaireList);
   };
 
   const handleRegister = () => {

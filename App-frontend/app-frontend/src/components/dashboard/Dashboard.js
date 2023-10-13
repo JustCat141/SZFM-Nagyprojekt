@@ -19,7 +19,7 @@ function Dashboard() {
     setIsSearchOpen(true); 
   }
 
-
+  
   return (
     <div>
       {user ? (
