@@ -88,7 +88,7 @@ const Register = () => {
                         onChange={(e) => setPasswordConfirmation(e.target.value)}
                     />
                 </div>
-                {errorMessage && <Error text={errorMessage}/>}
+                    {errorMessage && <Error text={errorMessage}/>}
                 <Button func={handleRegister} text={"Regisztráció"}/>
                 <Button func={OpenLogin} text={"Bejelentkezés"}/>
             </div>

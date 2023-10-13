@@ -26,6 +26,7 @@ function Login() {
       const response = await LoadForLogin(1551);
       if (response.status === 200) {
         const data = await response.json();
+        console.log(data);
         let user = { username, password };
         dispatch(login({ user, questionnaireList: data }));
       } else {
@@ -76,7 +77,7 @@ function Login() {
           </div>
         </div>
       
-    </div>
+      </div>
   );
 }
 

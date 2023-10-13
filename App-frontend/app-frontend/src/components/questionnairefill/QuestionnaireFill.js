@@ -7,28 +7,15 @@ import { OpenDashboard } from '../global-states/authSlice';
 import { Square, SquareOutline, Ellipse, EllipseOutline } from 'react-ionicons';
 import { LoadForFill } from '../helper-functions/LoadForFill.js';
 
-const QuestionnaireFill = () => {
-  const [questionnaireData, setQuestionnaireData] = useState(null);
+const QuestionnaireFill = (props) => {
+  const [questionnaireData, setQuestionnaireData] = useState(props.data);
   const dispatch = useDispatch();
   const [activeAnswers, setActiveAnswers] = useState([]); // Initialize activeAnswers as an empty array
   const [inputFieldValues, setInputFieldValues] = useState([]);
   const [inputFieldErrors, setInputFieldErrors] = useState([]);
   const [multipleChoiceErrors, setMultipleChoiceErrors] = useState([]);
 
-  useEffect(() => {
-    async function fetchQuestionnaireData() {
-      try {
-        // Replace '1551' with the actual ID you want to load
-        const data = await LoadForFill(1551);
-        setQuestionnaireData(data);
-      } catch (error) {
-        console.error('Error fetching questionnaire data:', error);
-      }
-    }
-
-    fetchQuestionnaireData();
-  }, []);
-
+console.log(props);
   const clearErrors = (questionIndex) => {
     setInputFieldErrors((prevErrors) => {
       const newErrors = [...prevErrors];
