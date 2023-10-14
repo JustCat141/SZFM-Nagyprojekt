@@ -1,6 +1,8 @@
 .error-box {
     /*Hibaüzenet divje*/
+    background-color: red;
 }
 .error-text {
     /*Hibaüzenet szövege*/
+    color: black;
 }
