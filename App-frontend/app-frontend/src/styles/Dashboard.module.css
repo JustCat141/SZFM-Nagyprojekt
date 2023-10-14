@@ -3,7 +3,7 @@
 }
 
 .dashboard-header {
-    /*Header*/
+
 }
 
 .dashboard-header-image-box {
@@ -16,6 +16,9 @@
 
 .dashboard-main-page {
     /*Felhasználói kezelőfelület főoldal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashboard-action-button {
@@ -28,4 +31,8 @@
 
 .dashboard-main-page-title {
     /*Felhasználó kezelőfelületén megjelenő Saját kérdéssorok szövege*/ 
+    text-align: center;
+    font-size: 2rem;
+    padding: 3rem 2rem 0 2rem;
+    font-weight: bold;
 }
