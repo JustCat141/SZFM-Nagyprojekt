@@ -8,20 +8,38 @@
 
 .register-header-logo {
     /*Regisztráció oldal header logó kép*/
+    padding: 3rem;
 }
 
 .register-box {
     /*Reisztrációs fül div*/
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(81,81,143,1) 35%, rgba(0,212,255,1) 100%);
+    text-align: center;
+    height: 28rem;
+    width: 30rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .register-title {
     /*Regisztráció címe*/
+    font-size: 2rem;
+    padding: 1rem;
 }
 
 .register-input-box {
     /*Input fieldek doboza*/
+    padding: 0.3rem;
 }
 
 .register-input-text {
     /*Input fieldek szövege*/
+    padding: 0.3rem 0.6rem;
+    border-radius: 1rem;
+    background-color: #c9e0fe;
+}
+
+::placeholder {
+    color: rgba(2,0,36,1);
 }
