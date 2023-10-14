@@ -5,7 +5,7 @@ import authReducer from './components/global-states/authSlice';
 import Login from './components/login-page/Login'; // Import your Login component
 import Dashboard from './components/dashboard/Dashboard';
 import QuestionnaireAnalyzer from './components/questionnaireAnalyzer/QuestionnaireAnalyzer';
-import QuestionnaireFill from './components/questionnaireFill/QuestionnaireFill';
+import QuestionnaireFill from './components/questionnairefill/QuestionnaireFill';
 import QuestionnaireEditor from './components/questionnaireEditor/QuestionnaireEditor';  
 import Register from './components/Register/Register';
 
