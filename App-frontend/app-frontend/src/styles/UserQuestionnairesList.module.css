@@ -25,6 +25,19 @@
     font-weight: 600;
 }
 
-.UserQuestionnairesList-list-item-box {
-    /*Felhasználóhoz tartozó kérdőívek listaeleméhez tartozó szövegdoboz  */
+.UserQuestionnairesList-list-item:hover {
+    background-color: rgba(132, 159, 229, 0.396);
+    color: rgba(2,0,36,1);
+    box-shadow: inset 0 0 1rem rgba(1, 10, 33, 0.742);
+     
+ }
+
+ .UserQuestionnairesList-list-item-box {
+    /*Felhasználóhoz tartozó kérdőívek listaeleméhez tartozó szövegdoboz
+      */
+      font-weight: bolder;
+}
+
+div {
+    text-align: center;
 }
