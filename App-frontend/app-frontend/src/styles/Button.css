@@ -1,7 +1,11 @@
 .button-box {
     /*A gombot körülvevő div doboz*/
+    display: inline-block;
+    padding: 1.5rem 0.8rem 0 0.8rem;
 }
 
 .button-text {
     /*A gomb szövege*/
+    font-weight: bold;
+    font-size: 1rem;
 }
