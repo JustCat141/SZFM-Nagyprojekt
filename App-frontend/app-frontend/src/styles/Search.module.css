@@ -4,6 +4,9 @@
 
 .search-box-title {
     /*Keresődoboz címe*/
+    font-size: 1.5rem;
+    color: rgba(2,0,36,1);
+    font-weight: bold;
 }
 
 .search-box-id-input-box {
