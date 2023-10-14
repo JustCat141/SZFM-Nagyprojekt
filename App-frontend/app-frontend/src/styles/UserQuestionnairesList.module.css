@@ -1,13 +1,28 @@
 .UserQuestionnairesList-box {
     /*Felhasználóhoz tartozó kérdőívek boxa*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .UserQuestionnairesList-list {
     /*Felhasználóhoz tartozó kérdőívek listája*/
+    list-style: none;
+    padding: 0;
 }
 
 .UserQuestionnairesList-list-item {
     /*Felhasználóhoz tartozó kérdőívek listaeleme*/
+    padding: 0.6rem;
+    cursor: pointer;
+    background-color: rgb(58, 58, 150);
+    color: white;
+    border-radius: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: 20rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .UserQuestionnairesList-list-item-box {
