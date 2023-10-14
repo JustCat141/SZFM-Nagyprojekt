@@ -1,5 +1,11 @@
 .login-page {
     /*Login page stílusai*/
+    background-color: #dfdfe6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .login-page-logo-image-box {
