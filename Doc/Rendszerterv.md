@@ -148,7 +148,7 @@ Minden kérdőív egy vagy több kérdésből épül fel. Ezek a kérdések kül
 ### 3. Az adattárolás modellje
 A következő ábra az adatbázist, illetve az adattárolás módját szemlélteti.
 
-![Kép az adattárolás módjáról]()
+![Kép az adattárolás módjáról](./images/adatbazis_modell.png)
 
 # Implementációs terv
 
