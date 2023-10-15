@@ -112,3 +112,5 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 # Implementációs terv
 
 # Tesztterv
+
+# Telepítési terv
