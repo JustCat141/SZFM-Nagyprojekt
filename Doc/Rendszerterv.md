@@ -114,3 +114,5 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 # Tesztterv
 
 # Telepítési terv
+
+# Karbantartási terv
