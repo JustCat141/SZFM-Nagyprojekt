@@ -10,6 +10,8 @@ Ezen alpont az alkalmazásban zajló kulcsfontosságú üzleti folyamatokat tér
 
 ![Az üzleti folyamatok modelljének ábrája](./images/uzleti_folyamatok_modellje.png)
 
+*Az ábra a [draw.io](https://www.drawio.com/) segítségével készült.*
+
 # Követelmények
 
 ## Funkcionális követelmények:
