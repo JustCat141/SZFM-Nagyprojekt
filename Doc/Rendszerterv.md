@@ -4,6 +4,12 @@
 
 # Üzleti folyamatok modellje
 
+Ezen alpont az alkalmazásban zajló kulcsfontosságú üzleti folyamatokat térképezi fel, mint például a regisztráció, bejelentkezés, kérdőív készítés és kitöltés. Ez a részletes leírás segíti a fejlesztőket és érintetteket az alkalmazás üzleti folyamatainak és felhasználói interakcióinak megértésében, azok lépéseinek és szereplőinek jól strukturált bemutatásával.
+
+### Az alábbi ábrán a projekthez tartozó üzleti folyamatok modellje tekinthető meg:
+
+![Az üzleti folyamatok modelljének ábrája](./images/uzleti_folyamatok_modellje.png)
+
 # Követelmények
 
 ## Funkcionális követelmények:
