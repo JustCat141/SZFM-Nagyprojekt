@@ -110,3 +110,5 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 ## Adatok jelentése:
 
 # Implementációs terv
+
+# Tesztterv
