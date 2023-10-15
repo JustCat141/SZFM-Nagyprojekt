@@ -103,11 +103,7 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 
 # Architekturális terv
 
-# Adattárolás
-
-## Az adattárolás módja
-
-## Adatok jelentése:
+# Adatbázisterv, adattárolás
 
 # Implementációs terv
 
