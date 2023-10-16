@@ -35,30 +35,34 @@ const QuestionnaireAnalyzer = (id) => {
   const questions = questionnaireData.quests;
 
   return (
-    <div>
+    <div className={classes['analyzer-page']}>
       <Card>
-        <p>{questionnaireData.title}</p>
-        <p>{questionnaireData.desc}</p>
+        <p className={classes['main-text']}>{questionnaireData.title}</p>
+        <p className={classes['main-text']}>{questionnaireData.desc}</p>
       </Card>
 
-      <ul>
+      <ul className={classes["question-list"]}>
         {questions.map((question, questionIndex) => (
-          <li key={questionIndex}>
+          <li key={questionIndex}
+            className={classes['question-list-item']}>
             <Card>
-              <div>
-                <p>{question.question}</p>
+              <div className={classes['question-box']}>
+                <p className={classes['quesiton-text']}>{question.question}</p>
+                <div className={classes['answer-list']}>
                 {question.type === "type" ? (
                   question.given_answers.map((answer, answerIndex) => (
                     <Card key={answerIndex}>
-                      <p>{answer}</p>
+                      <p className={classes['answer-text']}>{answer}</p>
                     </Card>
                   ))
                 ) : (
                   question.answers.map((answer, answerIndex) => (
+
                     <Chart key={answerIndex} answerText={answer}
                     answerNumber={question.given_answers[answerIndex]} />
                   )))
                 }
+                </div>
               </div>
             </Card>
           </li>

@@ -2,6 +2,10 @@
  /*Elemző főoldal*/
 }
 
+.main-text {
+    /*Kérdőív címe és leírása*/
+}
+
 .question-list {
     /*Kérdés lista*/
 }
@@ -22,7 +26,7 @@
     /*Válasz lista*/
 }
 
-.answer-list-item {
-    /*Válasz lista elem*/
+.answer-list-text {
+    /*Válasz szövege ha a kérdés nem kiválasztós volt*/
 }
 
