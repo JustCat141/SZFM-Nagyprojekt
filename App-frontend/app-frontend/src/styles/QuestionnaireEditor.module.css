@@ -1,3 +1,7 @@
+.editor-page {
+    /*Kérdőív szerkesztő fő oldal*/
+}
+
 .main-title-div {
  /*Címet tartalmazó div*/
 }
@@ -18,6 +22,10 @@
     /*Kérdőív felső input fieldek*/
 }
 
+.question-list {
+    /*Már hozzáadott kérdések listája*/
+}
+
 .question-input-fields {
     /*Kérdés input field divje*/
 }
@@ -32,10 +40,6 @@
 
 .label-text {
     /*"Kérdés típusa" szöveget tartalmazó kiválasztó*/
-}
-
-.dropdown {
-    /*Típus lista*/
 }
 
 .type {

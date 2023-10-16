@@ -132,17 +132,18 @@ const QuestionnaireEditor = () => {
   };
 
   return (
-    <div>
+    <div className={classes['editor-page']}>
       <Card>{isSavedTitle &&
-        <div>
-          <p>{questionnaireTitle}</p>
+        <div className={classes['main-title-div']}>
+          <p className={classes['main-title']}>{questionnaireTitle}</p>
           {questionDescription &&
-          <p>{questionnaireDescription}</p>}
+          <p className={classes['main-desription']}>{questionnaireDescription}</p>}
         </div>}
         {!isSavedTitle ? (
-          <div>
+          <div className={classes['questionnaire-input-fields']}>
             <input
               name="title"
+              className={classes['questionnaire-input-field']}
               placeholder="Kérdőív címe"
               value={questionnaireTitle}
               onChange={(e) => {
@@ -153,6 +154,7 @@ const QuestionnaireEditor = () => {
               }}
             />
             <input
+          className={classes['questionnaire-input-field']}
               name="desc"
               placeholder="Kérdőív leírása"
               value={questionnaireDescription}
@@ -166,12 +168,14 @@ const QuestionnaireEditor = () => {
           </div>
         ) : <div></div>}
       </Card>
-
-       {questionList && <QuestionList questions={questionList}/>}
+            <div className={classes['question-list']}>
+               {questionList && <QuestionList questions={questionList}/>}
+            </div>
               
       <Card>
-        <div>
+        <div className={classes['question-input-fields']}>
         <input
+          className={classes['question-input-field']}
           name="question"
           placeholder="Kérdés"
           value={questionTitle}
@@ -183,14 +187,15 @@ const QuestionnaireEditor = () => {
           }}
         />
         <input
+          className={classes['question-input-field']}
           name="description"
           placeholder="Kérdés leírása"
           value={questionDescription}
           onChange={(e) => setQuestionDescription(e.target.value)}
         />
         </div>
-        <div>
-          <label>Kérdés típusa:</label>
+        <div className={classes['dropdown-div']}>
+          <label className={classes['label-text']}>Kérdés típusa:</label>
           <select
   value={questionType}
   onChange={(e) => {
@@ -203,7 +208,7 @@ const QuestionnaireEditor = () => {
   }}
 >
   {questionTypes.map((type) => (
-    <option key={type.value} value={type.value}>
+    <option key={type.value} value={type.value} className={classes['type']}>
       {type.label}
     </option>
   ))}
@@ -213,12 +218,13 @@ const QuestionnaireEditor = () => {
         </div>
         {!isOptionListHidden && questionType !== "type" && ( // Conditionally render OptionList based on visibility
           <Card>
-            <div>
+            <div className={classes['type-list-box']}>
               <OptionList options={optionList} />
             </div>
-            <div>
+            <div className={classes['option-input-box']}>
 
             <input
+              className={classes['option-input-text']}
               name="option"
               placeholder="Válaszlehetőség"
               value={newOptionText}
@@ -241,7 +247,7 @@ const QuestionnaireEditor = () => {
           </Card>
         )}
       </Card>
-      <div>
+      <div className={classes["button-error-box"]}>
         {questionTitleError && <Error text={"Kérlek adj kérdést"}/>}
         {optionNumberError && <Error text={"Kérlek adj hozzá további válaszlehetőségeket"}/>}
         <Button text={"Új kérdés"} func={handleNewQuestion} />
