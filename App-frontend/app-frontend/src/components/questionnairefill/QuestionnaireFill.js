@@ -19,18 +19,6 @@ const QuestionnaireFill = (props) => {
   const [allGood, setAllGood] = useState(true);
   const [allAnswers, setAllAnswers] = useState([]);
 
-  useEffect(() => {
-    const errors = [];
-    const answers = [];
-    const questions = questionnaireData.quests;
-    questions.forEach((question) => {
-      errors.push(false);
-      answers.push(null);
-    });
-    setQuestionErrors(errors);
-    setAllAnswers(answers);
-  }, []);
-
   const clearErrors = (questionIndex) => {
     setInputFieldErrors((prevErrors) => {
       const newErrors = [...prevErrors];
@@ -44,6 +32,20 @@ const QuestionnaireFill = (props) => {
       return newErrors;
     });
   };
+  
+  useEffect(() => {
+    let AllGood = true;
+    const errors = [];
+    const answers = [];
+    const questions = questionnaireData.quests;
+    questions.forEach((question) => {
+      errors.push(false);
+      answers.push(null);
+    });
+    setQuestionErrors(errors);
+    setAllAnswers(answers);
+  }, []);
+
 
   const handleAnswerClick = (questionIndex, answerIndex) => {
     const newActiveAnswers = [...activeAnswers];
@@ -92,9 +94,7 @@ const QuestionnaireFill = (props) => {
     let allGood = true; // Initialize allGood to true
   
     allAnswers.forEach((answer) => {
-      console.log(answer);
       if (answer === null) {
-        console.log("No answer");
         allGood = false; // Set allGood to false if any answer is null
       }
     });
@@ -106,19 +106,14 @@ const QuestionnaireFill = (props) => {
 
   const handleSubmit = () => {
     Check();
-    console.log(allGood);
     if (!allGood) {
-      console.log("no answers")
       return;
     } else {
-      console.log(allAnswers);
-      console.log(allGood);
       Send();
     }
   };
 
   const Send = async () => {
-    console.log('Sending Data...');
     try {
       const response = await SendFill({
         questionnaireDataId: questionnaireData.id,
@@ -127,12 +122,9 @@ const QuestionnaireFill = (props) => {
           activeAnswers,
         },
       });
-      console.log('Data Sent Successfully', response);
 
       dispatch(OpenDashboard());
     } catch (error) {
-      console.error('Error Sending Data:', error);
-      alert('An error occurred while sending data. Please try again later.');
     }
   };
 
@@ -142,14 +134,13 @@ const QuestionnaireFill = (props) => {
 
   return (
     <div>
-      Fill
       <Card>
         <p>{questionnaireData.title}</p>
         <p>{questionnaireData.desc}</p>
       </Card>
       <ul>
         {questionnaireData.quests.map((question, questionIndex) => (
-          <li key={question.q_id}>
+          <li key={questionIndex}>
             <Card>
               <div>
                 <p>{question.question}</p>

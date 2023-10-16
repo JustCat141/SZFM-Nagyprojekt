@@ -22,7 +22,7 @@ const authSlice = createSlice({
     login: (state, action) => {
       state.isLoggedIn = true;
       state.user = action.payload.user;
-     // state.UserQuestionnairesList = action.payload.questionnaireList;
+      state.UserQuestionnairesList = action.payload.questionnaireList;
     },
     logout: (state) => {
       state.isLoggedIn = false;

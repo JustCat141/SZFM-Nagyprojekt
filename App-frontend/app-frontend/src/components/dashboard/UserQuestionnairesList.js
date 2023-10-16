@@ -6,7 +6,7 @@ import { OpenAnalyzer } from '../global-states/authSlice'; // Import your action
 const UserQuestionnairesList = () => {
   const userQuestionnairesList = useSelector((state) => state.auth.UserQuestionnairesList);
   const dispatch = useDispatch(); // Initialize useDispatch
-
+  console.log(userQuestionnairesList);
   const questionnaireOpen = (id) => {
     dispatch(OpenAnalyzer(id));
 

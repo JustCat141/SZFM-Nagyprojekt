@@ -1,0 +1,60 @@
+.main-title-div {
+ /*Címet tartalmazó div*/
+}
+
+.main-title {
+    /*Kérdőív címe*/
+}
+
+.main-description {
+    /*Kérdőív leírása*/
+}
+
+.questionnaire-input-fields {
+    /*Kérdőív felső input field divje*/
+}
+
+.questionnaire-input-field {
+    /*Kérdőív felső input fieldek*/
+}
+
+.question-input-fields {
+    /*Kérdés input field divje*/
+}
+
+.question-input-field {
+    /*Kérdés input field*/
+}
+
+.dropdown-div {
+    /*Típust kiválasztó nagy div*/
+}
+
+.label-text {
+    /*"Kérdés típusa" szöveget tartalmazó kiválasztó*/
+}
+
+.dropdown {
+    /*Típus lista*/
+}
+
+.type {
+    /*Típus*/
+}
+
+.type-list-box {
+    /*Típus lista divje, kiírásnál*/
+}
+
+.option-input-box {
+    /*Válaszlehetőség input box*/
+}
+
+.option-input-text {
+    /*Válaszlehetőség input szöveg*/
+}
+
+.button-error-box{
+    /*Alsó gombokak és errort tartalmazó div*/    
+
+}

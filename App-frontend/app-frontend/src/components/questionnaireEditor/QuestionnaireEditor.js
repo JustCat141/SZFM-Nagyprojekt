@@ -7,6 +7,9 @@ import { SendQuestionnaire } from "../helper-functions/SendQuestionnaire.js";
 import {  useDispatch } from 'react-redux';
 import { OpenDashboard } from '../global-states/authSlice';
 import Error from "../helper-functions/Error";
+import classes from "../../styles/QuestionnaireEditor.module.css"
+
+
 const QuestionnaireEditor = () => {
   const dispatch = useDispatch();
   const [questionList, setQuestionList] = useState([]);
@@ -133,7 +136,8 @@ const QuestionnaireEditor = () => {
       <Card>{isSavedTitle &&
         <div>
           <p>{questionnaireTitle}</p>
-          <p>{questionnaireDescription}</p>
+          {questionDescription &&
+          <p>{questionnaireDescription}</p>}
         </div>}
         {!isSavedTitle ? (
           <div>
@@ -166,6 +170,7 @@ const QuestionnaireEditor = () => {
        {questionList && <QuestionList questions={questionList}/>}
               
       <Card>
+        <div>
         <input
           name="question"
           placeholder="Kérdés"
@@ -183,29 +188,36 @@ const QuestionnaireEditor = () => {
           value={questionDescription}
           onChange={(e) => setQuestionDescription(e.target.value)}
         />
+        </div>
         <div>
           <label>Kérdés típusa:</label>
           <select
-            value={questionType}
-            onChange={(e) => {
-              setQuestionType(e.target.value);
-              if (e.target.value === "type") {
-                setIsOptionListHidden(true);
-              } else {
-                setIsOptionListHidden(false);
-              }
-            }}
-          >
-            {questionTypes.map((type) => (
-              <option key={type.value} value={type.value}>
-                {type.label}
-              </option>
-            ))}
-          </select>
+  value={questionType}
+  onChange={(e) => {
+    setQuestionType(e.target.value);
+    if (e.target.value === "type") {
+      setIsOptionListHidden(true);
+    } else {
+      setIsOptionListHidden(false);
+    }
+  }}
+>
+  {questionTypes.map((type) => (
+    <option key={type.value} value={type.value}>
+      {type.label}
+    </option>
+  ))}
+
+</select>
+
         </div>
         {!isOptionListHidden && questionType !== "type" && ( // Conditionally render OptionList based on visibility
           <Card>
-            <OptionList options={optionList} />
+            <div>
+              <OptionList options={optionList} />
+            </div>
+            <div>
+
             <input
               name="option"
               placeholder="Válaszlehetőség"
@@ -224,6 +236,8 @@ const QuestionnaireEditor = () => {
               func={handleNewOption}
               disabled={!questionTitle}
             />
+            </div>
+
           </Card>
         )}
       </Card>

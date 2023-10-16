@@ -21,8 +21,6 @@ const Search = () => {
                 const response = await LoadForFill(searchInput);
                 if (response.status === 200) {
                     const data = await response.json();
-                    console.log(response);                
-                    console.log(data);
                     dispatch(OpenFill(data));
                         }
                     else {
