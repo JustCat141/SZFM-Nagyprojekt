@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { OpenDashboard } from '../global-states/authSlice';
 import { Button } from "../helper-functions/Button";
 import { useEffect, useState } from "react";
+import classes from "../../styles/Analyzer.module.css"
 
 const QuestionnaireAnalyzer = (id) => {
   const [questionnaireData, setQuestionnaireData] = useState(null);
@@ -35,7 +36,6 @@ const QuestionnaireAnalyzer = (id) => {
 
   return (
     <div>
-      Analyzer
       <Card>
         <p>{questionnaireData.title}</p>
         <p>{questionnaireData.desc}</p>
