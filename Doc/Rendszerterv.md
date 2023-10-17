@@ -170,6 +170,14 @@ A kérdőívek hatékonyságának és relevanciájának növelése érdekében f
 
 A böngészők gyakran frissítik verzióikat és új technológiai változásokat vezetnek be. Az alkalmazásnak folyamatosan frissített kompatibilitással kell rendelkeznie, hogy támogassa a legújabb böngészőverziókat. Ez magában foglalja az új HTML, CSS és JavaScript szabványoknak való megfelelést, valamint a böngészőspecifikus problémák kezelését.
 
+### Felhasználói bejelentkezési információk kezelése, módosítása és törlése:
+
+A felhasználók személyes adatainak védelme és kezelése kiemelt fontosságú. Az alkalmazásnak lehetőséget kell biztosítania a felhasználóknak arra, hogy módosítsák a bejelentkezési információikat, mint például a jelszavak vagy az e-mail címek.
+
+### Fiókok kezelése
+
+Regisztrált felhasználók szükség esetén törlésre kerülhetnek. Adatbázis terhelésének optimalizálása. Továbbá lehetnek például GDPR okokból is.
+
 # Tesztterv
 
 # Telepítési terv
