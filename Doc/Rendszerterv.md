@@ -150,8 +150,11 @@ A következő ábra az adatbázist, illetve az adattárolás módját szemlélte
 
 ![Kép az adattárolás módjáról](./images/adatbazis_modell.png)
 
+# Karbartási terv
+
+A weboldal folyamatos üzemeltetése és karbantartása a következőkön alapul:
+
+
 # Tesztterv
 
 # Telepítési terv
-
-# Karbantartási terv
