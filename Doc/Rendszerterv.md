@@ -162,6 +162,14 @@ Az elsődleges cél a felhasználók által bejelentett problémák és hibák g
 
 Az alkalmazásnak rugalmasan kell alkalmazkodnia a felhasználók igényeihez, amikor a kérdőív funkcióinak kibővítéséről van szó. Fontos, hogy a fejlesztők folyamatosan kommunikáljanak a felhasználókkal, és gyűjtsék be a visszajelzéseiket olyan funkciókról vagy javításokról, amelyekre szükség van a kérdőívek hatékonyabb létrehozásához és kezeléséhez. Ez magába foglalhatja a kérdőívek testre szabhatóságának növelését, különböző típusú kérdések hozzáadását.
 
+### Kérdőív kérdéseinek bővítése szükség esetén:
+
+A kérdőívek hatékonyságának és relevanciájának növelése érdekében fontos lehetőséget nyújtani a felhasználóknak a kérdések kibővítésére. Ezáltal az alkalmazásnak lehetőséget kell biztosítania a kérdések hozzáadására, meglévők módosítására és csoportosítására. Az új kérdések felvételének és testreszabásának lehetősége hozzájárul a felhasználói igényeknek megfelelő kérdőívek létrehozásához.
+
+### Kompatibilitás biztosítása az újabb böngészőverziókkal:
+
+A böngészők gyakran frissítik verzióikat és új technológiai változásokat vezetnek be. Az alkalmazásnak folyamatosan frissített kompatibilitással kell rendelkeznie, hogy támogassa a legújabb böngészőverziókat. Ez magában foglalja az új HTML, CSS és JavaScript szabványoknak való megfelelést, valamint a böngészőspecifikus problémák kezelését.
+
 # Tesztterv
 
 # Telepítési terv
