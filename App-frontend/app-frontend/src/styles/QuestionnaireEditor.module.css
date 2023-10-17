@@ -1,5 +1,7 @@
 .editor-page {
     /*Kérdőív szerkesztő fő oldal*/
+    background-color:#8e8ea1;
+    height: 100vh;
 }
 
 .main-title-div {
@@ -16,10 +18,14 @@
 
 .questionnaire-input-fields {
     /*Kérdőív felső input field divje*/
+    padding: 2rem
 }
 
 .questionnaire-input-field {
     /*Kérdőív felső input fieldek*/
+    padding: 0.6rem 1.5rem;
+    border-radius: 1rem;
+    margin: 0 1rem;
 }
 
 .question-list {
@@ -28,22 +34,33 @@
 
 .question-input-fields {
     /*Kérdés input field divje*/
+    padding: 2rem;
 }
 
 .question-input-field {
     /*Kérdés input field*/
+    padding: 0.6rem 1.5rem;
+    border-radius: 1rem;
+    margin: 0 1rem;
 }
 
 .dropdown-div {
     /*Típust kiválasztó nagy div*/
+    margin: 0.5rem;
 }
 
 .label-text {
     /*"Kérdés típusa" szöveget tartalmazó kiválasztó*/
+    font-size: 1.2rem;
+    padding: 1rem;
+    font-weight: bold;
 }
 
 .type {
     /*Típus*/
+    font-size: 1rem;
+    padding: 1rem;
+    font-weight: bolder;
 }
 
 .type-list-box {
@@ -52,13 +69,22 @@
 
 .option-input-box {
     /*Válaszlehetőség input box*/
+   
 }
 
 .option-input-text {
     /*Válaszlehetőség input szöveg*/
+    border-radius: 1rem;
+    padding: 0.3rem 0.5rem;
 }
 
 .button-error-box{
     /*Alsó gombokak és errort tartalmazó div*/    
 
+}
+
+select {
+    border-radius: 1rem;
+    padding: 0.6rem 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
