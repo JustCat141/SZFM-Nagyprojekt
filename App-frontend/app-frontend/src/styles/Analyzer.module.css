@@ -1,13 +1,21 @@
 .analyzer-page {
  /*Elemző főoldal*/
+    height: 13rem
 }
 
 .main-text {
     /*Kérdőív címe és leírása*/
+    margin: 0;
+    padding: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .question-list {
     /*Kérdés lista*/
+    height: 48rem;
+    background-color:#8e8ea1;
+    margin: 0;
 }
 
 .question-list-item {
@@ -30,3 +38,6 @@
     /*Válasz szövege ha a kérdés nem kiválasztós volt*/
 }
 
+button {
+    margin: 2rem;
+}
