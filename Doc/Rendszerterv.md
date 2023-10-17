@@ -154,6 +154,13 @@ A következő ábra az adatbázist, illetve az adattárolás módját szemlélte
 
 A weboldal folyamatos üzemeltetése és karbantartása a következőkön alapul:
 
+### Felhasználók által jelzett hibák kezelése:
+
+Az elsődleges cél a felhasználók által bejelentett problémák és hibák gyors és hatékony megoldása. Az ilyen problémák felismerése és kezelése kiemelt prioritást élvez, mivel zavarhatja a felhasználók számára az alkalmazás sima működését. A fejlesztőknek folyamatosan figyelemmel kell kísérniük a bejelentett hibákat, rögzíteniük kell azokat, majd a lehető leghamarabb megoldást kell kínálniuk.
+
+### Szükség esetén a kérdőív funkciók bővítése:
+
+Az alkalmazásnak rugalmasan kell alkalmazkodnia a felhasználók igényeihez, amikor a kérdőív funkcióinak kibővítéséről van szó. Fontos, hogy a fejlesztők folyamatosan kommunikáljanak a felhasználókkal, és gyűjtsék be a visszajelzéseiket olyan funkciókról vagy javításokról, amelyekre szükség van a kérdőívek hatékonyabb létrehozásához és kezeléséhez. Ez magába foglalhatja a kérdőívek testre szabhatóságának növelését, különböző típusú kérdések hozzáadását.
 
 # Tesztterv
 
