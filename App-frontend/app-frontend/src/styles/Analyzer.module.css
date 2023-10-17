@@ -14,7 +14,6 @@
 .question-list {
     /*Kérdés lista*/
     height: 44rem;
-    background-color:#8e8ea1;
     margin: 0;
     list-style: none;
     padding: 0;
@@ -43,7 +42,8 @@
     /*Válasz lista*/
     border: 2px solid black;
     width: 50rem;
-
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:#8e8ea1;
 }
 
 .answer-list-text {
