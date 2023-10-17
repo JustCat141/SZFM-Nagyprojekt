@@ -150,8 +150,6 @@ A következő ábra az adatbázist, illetve az adattárolás módját szemlélte
 
 ![Kép az adattárolás módjáról](./images/adatbazis_modell.png)
 
-# Implementációs terv
-
 # Tesztterv
 
 # Telepítési terv
