@@ -13,29 +13,42 @@
 
 .question-list {
     /*Kérdés lista*/
-    height: 48rem;
+    height: 44rem;
     background-color:#8e8ea1;
     margin: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .question-list-item {
     /*Kérdés lista elem*/
+    font-weight: bolder;
 }
 
 .question-box {
     /*Kérdés doboza*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .question-text {
     /*Kérdés szövege*/
+    font-size: 1.1rem;
+   
 }
 
 .answer-list {
     /*Válasz lista*/
+    border: 2px solid black;
+    width: 50rem;
+
 }
 
 .answer-list-text {
     /*Válasz szövege ha a kérdés nem kiválasztós volt*/
+    font-size: 1rem;
 }
 
 button {
