@@ -7,6 +7,8 @@ import { OpenDashboard } from '../global-states/authSlice';
 import { Square, SquareOutline, Ellipse, EllipseOutline } from 'react-ionicons';
 import Error from "../helper-functions/Error.js";
 import {Button} from "../helper-functions/Button.js";
+import classes from "../../styles/QuestionnaireFill.module.css";
+
 const QuestionnaireFill = (props) => {
   const [questionnaireData, setQuestionnaireData] = useState(props.currentForFill);
   const dispatch = useDispatch();
@@ -19,19 +21,6 @@ const QuestionnaireFill = (props) => {
   const [allGood, setAllGood] = useState(true);
   const [allAnswers, setAllAnswers] = useState([]);
 
-  const clearErrors = (questionIndex) => {
-    setInputFieldErrors((prevErrors) => {
-      const newErrors = [...prevErrors];
-      newErrors[questionIndex] = '';
-      return newErrors;
-    });
-
-    setMultipleChoiceErrors((prevErrors) => {
-      const newErrors = [...prevErrors];
-      newErrors[questionIndex] = [];
-      return newErrors;
-    });
-  };
   
   useEffect(() => {
     let AllGood = true;
@@ -46,6 +35,19 @@ const QuestionnaireFill = (props) => {
     setAllAnswers(answers);
   }, []);
 
+  const clearErrors = (questionIndex) => {
+    setInputFieldErrors((prevErrors) => {
+      const newErrors = [...prevErrors];
+      newErrors[questionIndex] = '';
+      return newErrors;
+    });
+
+    setMultipleChoiceErrors((prevErrors) => {
+      const newErrors = [...prevErrors];
+      newErrors[questionIndex] = [];
+      return newErrors;
+    });
+  };
 
   const handleAnswerClick = (questionIndex, answerIndex) => {
     const newActiveAnswers = [...activeAnswers];
@@ -133,29 +135,32 @@ const QuestionnaireFill = (props) => {
   }
 
   return (
-    <div>
+    <div className={classes['questionnaire-page']}>
       <Card>
-        <p>{questionnaireData.title}</p>
-        <p>{questionnaireData.desc}</p>
+        <p className={classes['questionnaire-title']}>{questionnaireData.title}</p>
+        <p  className={classes['questionnaire-description']}>{questionnaireData.desc}</p>
       </Card>
-      <ul>
+      <ul  className={classes['questionnaire-card-list']}>
         {questionnaireData.quests.map((question, questionIndex) => (
-          <li key={questionIndex}>
+          <li key={questionIndex}
+          className={classes['questionnaire-card-list-item']}>
             <Card>
-              <div>
-                <p>{question.question}</p>
-                <p>{question.description}</p>
+              <div  className={classes['questionnaire-question-box']}>
+                <p  className={classes['questionnaire-question-title']}>{question.question}</p>
+                <p  className={classes['questionnaire-question-description']}>{question.description}</p>
                 {Array.isArray(question.answers) ? (
-                  <ul>
+                  <ul   className={classes['questionnaire-answers-list']}>
                     {question.answers.map((answer, answerIndex) => (
-                      <li key={answerIndex}>
+                      <li key={answerIndex}
+                      className={classes['questionnaire-answers-list-item']}
+                      >
                         <div
                           className={`answer ${
                             activeAnswers[questionIndex] &&
                             activeAnswers[questionIndex].includes(answerIndex)
-                              ? 'active'
+                              ? "${classes['active']}"
                               : ''
-                          }`}
+                          }  `}
                           onClick={() => handleAnswerClick(questionIndex, answerIndex)}
                         >
                           {question.type === 'one' ? (
@@ -179,21 +184,22 @@ const QuestionnaireFill = (props) => {
                     ))}
                   </ul>
                 ) : (
-                  <div>
+                  <div className={classes["questionnaire-answer-type-box"]}>
                     <input
+                    className={classes["questionnaire-answer-type-text"]}
                       type="text"
                       placeholder="Your answer"
                       value={inputFieldValues[questionIndex] || ''}
                       onChange={(event) => handleInputChange(questionIndex, event)}
                     />
                     {inputFieldErrors[questionIndex] && (
-                      <p className="error-message">{inputFieldErrors[questionIndex]}</p>
+                      <Error text={`${inputFieldErrors[questionIndex]}`}/>
                     )}
                   </div>
                 )}
                 {multipleChoiceErrors[questionIndex] &&
                   multipleChoiceErrors[questionIndex].length > 0 && (
-                    <p className="error-message">{multipleChoiceErrors[questionIndex][0]}</p>
+                    <Error text={`${multipleChoiceErrors[questionIndex][0]}`}/>
                   )}
                   {questionErrors[questionIndex] && <Error text={"Kérlek válaszold meg ezt a kérdést"}/>}
               </div>
