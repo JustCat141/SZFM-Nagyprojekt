@@ -13,7 +13,10 @@
 
 .register-header-logo {
     /*Regisztráció oldal header logó kép*/
-    padding: 3rem;
+    content: url(../../public/Questionnaire-logos_white.png);
+    display: inline-block;
+    width: 15rem;
+    height: 15rem;
 }
 
 .register-box {

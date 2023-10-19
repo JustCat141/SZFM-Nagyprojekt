@@ -47,7 +47,7 @@ const Register = () => {
     return (
         <div className={classes["register-page"]}>
             <div className={classes["register-header"]}>
-                <img src="" alt="Logo" 
+                <img src alt="Logo" 
                  className={classes["register-header-logo"]}/>
             </div>
             <div className={classes["register-box"]}>
