@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.chart-text:first-child {
+    color:transparent;
+}
+
 .chart-text {
     /*Chart szövegei*/
     margin: 0;
