@@ -1,9 +1,13 @@
 .Chart {
     /*Fő chart objektum*/
+    display: flex;
+    justify-content: space-between;
 }
 
 .chart-box-full {
     /*A teljes chart, végtől végig*/
+    width: 100%;
+    margin: 1rem 0;
 }
 
 .chart-box-partial {
@@ -12,12 +16,17 @@
 
 .chart-box-filled {
     /*A részleges kitöltött része*/
+    border-radius: 0 1rem 1rem 0;
 }
 
 .chart-text-box {
     /*Szöveget tartalmazó doboz*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .chart-text {
     /*Chart szövegei*/
+    margin: 0;
 }
