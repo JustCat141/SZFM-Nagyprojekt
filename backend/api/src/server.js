@@ -2,11 +2,17 @@ import express from 'express'
 import cors from 'cors'
 import { pool } from './Config/DatabaseConfig.js'
 
+// Import routes
+import {userRouter} from './Routes/User.js'
+
 const port = process.env.PORT
 
 const app = express()
 app.use(express.json())
 app.use(cors())
+
+// Connect routes to the app
+app.use('/user',userRouter)
 
 app.listen(port, () => {
     console.log("Server is running on port " + port)
@@ -15,9 +21,4 @@ app.listen(port, () => {
 app.use((err, req, res, next) => {
     console.error(err.stack)
     res.status(500).send('Something broke!')
-})
-
-app.get('/', async (req,res) => {
-    const [data] = await pool.query('SELECT * FROM users')
-    res.status(200).send(data)
 })
