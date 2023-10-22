@@ -14,9 +14,9 @@ app.use(express.json())
 app.use(cors())
 
 // Connect routes to the app
-app.use('/user', userRouter)
-app.use('/questionnaire', questionnaireRouter)
-app.use('/answer',answerRouter)
+app.use('/api/user', userRouter)
+app.use('/api/questionnaire', questionnaireRouter)
+app.use('/api/answer',answerRouter)
 
 app.listen(port, () => {
     console.log("Server is running on port " + port)
