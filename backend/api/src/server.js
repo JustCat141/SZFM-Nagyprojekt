@@ -3,7 +3,8 @@ import cors from 'cors'
 import { pool } from './Config/DatabaseConfig.js'
 
 // Import routes
-import {userRouter} from './Routes/User.js'
+import { userRouter } from './Routes/User.js'
+import { questionnaireRouter } from './Routes/Questionnaire.js'
 
 const port = process.env.PORT
 
@@ -12,7 +13,8 @@ app.use(express.json())
 app.use(cors())
 
 // Connect routes to the app
-app.use('/user',userRouter)
+app.use('/user', userRouter)
+app.use('/questionnaire', questionnaireRouter)
 
 app.listen(port, () => {
     console.log("Server is running on port " + port)
