@@ -5,6 +5,7 @@ import { pool } from './Config/DatabaseConfig.js'
 // Import routes
 import { userRouter } from './Routes/User.js'
 import { questionnaireRouter } from './Routes/Questionnaire.js'
+import { answerRouter } from './Routes/Answer.js'
 
 const port = process.env.PORT
 
@@ -15,6 +16,7 @@ app.use(cors())
 // Connect routes to the app
 app.use('/user', userRouter)
 app.use('/questionnaire', questionnaireRouter)
+app.use('/answer',answerRouter)
 
 app.listen(port, () => {
     console.log("Server is running on port " + port)
