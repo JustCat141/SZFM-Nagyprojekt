@@ -5,3 +5,4 @@ export const questionnaireRouter = express.Router()
 
 // Write your endpoints here...
 questionnaireRouter.get('/:id', questionnaireController.getQuestionnaire)
+questionnaireRouter.get('/user/:userId', questionnaireController.getUserQuestionnaires)
