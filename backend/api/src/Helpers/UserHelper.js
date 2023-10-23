@@ -12,14 +12,14 @@ export async function verifyHash(obj, hash) {
     return result
 }
 
-export async function verifyPasswordFormat() {
+// export async function verifyPasswordFormat() {
     
-}
+// }
 
-export async function verifyEmailFormat() {
+// export async function verifyEmailFormat() {
 
-}
+// }
 
-export async function verifyPasswordFormat() {
+// export async function verifyPasswordFormat() {
     
-}
+// }
