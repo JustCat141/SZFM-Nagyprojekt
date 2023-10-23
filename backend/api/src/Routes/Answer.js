@@ -1,7 +1,7 @@
 import express from 'express'
+import * as answerController from '../Controllers/AnswerController.js'
+
 export const answerRouter = express.Router()
 
 // Write your endpoints here...
-answerRouter.get('/', async (req,res) => {
-    res.send("This is a test message from the Answer Route").status(200)
-})
+answerRouter.get('/',answerController.getAnswers)
