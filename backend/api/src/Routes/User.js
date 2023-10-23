@@ -1,7 +1,8 @@
 import express from 'express'
+import * as userController from '../Controllers/UserController.js'
+
 export const userRouter = express.Router()
 
 // Write your endpoints here...
-userRouter.get('/', async (req,res) => {
-    res.send("This is a test message from the User Route").status(200)
-})
+userRouter.get('/', await userController.getUsers)
+userRouter.get('/:id', await userController.getUser)
