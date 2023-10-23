@@ -6,3 +6,4 @@ export const userRouter = express.Router()
 // Write your endpoints here...
 userRouter.get('/', await userController.getUsers)
 userRouter.get('/:id', await userController.getUser)
+userRouter.post('/register', await userController.registUser)
