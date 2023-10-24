@@ -56,15 +56,12 @@ CREATE TABLE `answers` (
 Emellett a .env fájlban lévő adatokat is konfigurálni kell, hogy az adatbázis működjön.
 
 ## 2. Szerver futtatása
-A Szerver [mappájába](./api/src/) kell belépni egy terminállal (ahol a server.js fájl talákható), majd a következő utasítást kell kiadni:
-
-```bash
-node server.js
-```
+A szerver futtatásához a *backend* mappában lévő [run.bat](./run.bat) fájlt kell futtatni
 
 Ha a szerverünk fut, akkor a következő üzenetet kell látnunk:
 
 ```bash
+Starting server...
 Server is running on port 8080
 ```
 
