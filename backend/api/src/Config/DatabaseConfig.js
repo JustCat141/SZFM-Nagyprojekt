@@ -1,7 +1,12 @@
 import mysql from 'mysql2'
 import dotenv from 'dotenv'
 
-dotenv.config({ path: '../.env' });
+const result = dotenv.config({ path: '../.env' });
+
+if(result.error) {
+    console.error("Error! Unable to load .env file! Process terminated.")
+    process.exit()
+}
 
 export const pool = mysql.createPool({
     host: process.env.MYSQL_HOST,

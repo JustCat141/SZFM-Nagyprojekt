@@ -19,7 +19,7 @@ app.use('/api/questionnaire', questionnaireRouter)
 app.use('/api/answer',answerRouter)
 
 app.listen(port, () => {
-    console.log("Server is running on port " + port)
+    console.log("Server started successfully! Running on port " + port+"!")
 })
 
 app.use((err, req, res, next) => {
