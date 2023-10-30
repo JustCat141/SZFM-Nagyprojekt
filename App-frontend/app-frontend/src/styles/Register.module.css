@@ -1,5 +1,6 @@
 .register-page {
-    background-color:#8e8ea1;
+    /*background-color:#8e8ea1;*/
+    background-color: rgb(52,203,49);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,8 +22,9 @@
 
 .register-box {
     /*Reisztrációs fül div*/
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
-    rgba(81,81,143,1) 35%, rgba(0,212,255,1) 100%);
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(81,81,143,1) 35%, rgba(0,212,255,1) 100%);*/
+    background-color: white;
     text-align: center;
     height: 28rem;
     width: 30rem;
