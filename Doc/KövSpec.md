@@ -145,6 +145,44 @@ A Google Forms esetében más a folyamat:
 | Felület     | K17 | Kérdéssorozat létrehozása, szerkesztése | Ezen a felületen lehet szerkeszteni az adott kvízt.                                                                                                                                                                                                                                                                              |
 
 ## 7. Fogalomszótár:
+- ***Felmérés:*** A felhasználók által megadott válaszok 
+összegyűjtése és elemzése a megadott kérdésekre.
+
+- ***Kérdőív:*** Az alkalmazás által biztosított eszköz, 
+amely lehetővé teszi a felhasználók számára, hogy különböző 
+kérdésekre válaszoljanak.
+
+- ***Reszponzivitás:*** Az alkalmazás képessége, hogy 
+optimális megjelenítést biztosítson különböző készülékeken és 
+képernyőméreteken.
+
+- ***Adat:*** Olyan információk, amelyeket a felhasználók 
+megadnak a kérdőív kitöltése során, és amelyeket az 
+alkalmazás rögzít és feldolgoz.
+
+- ***Adatfeldolgozás:*** Az a folyamat, amely során az 
+alkalmazás elemzi, tárolja és kezeli a felhasználók által 
+megadott adatokat.
+
+- ***Felhasználói felület:*** Az alkalmazás által biztosított 
+grafikus elemek és funkciók, amelyek lehetővé teszik a 
+felhasználók számára a kérdőív kitöltését és a válaszok 
+beküldését.
+
+- ***Becslés:*** Az olyan értékek vagy eredmények körülbelüli 
+meghatározása, amelyek a felhasználók válaszai alapján 
+készülnek.
+
+- ***Adatbiztonság:*** Az olyan intézkedések és 
+mechanizmusok, amelyek biztosítják, hogy a felhasználók által 
+megadott adatok biztonságban legyenek és ne kerüljenek 
+illetéktelen hozzáféréshez vagy manipulációhoz.
+
+- ***Felhasználói Jogosultságok:*** Azok a beállítások, 
+amelyek meghatározzák, hogy milyen tevékenységeket 
+végezhetnek el az egyes felhasználók az alkalmazásban, 
+például kérdőívek létrehozása, kitöltése vagy eredmények 
+megtekintése.
 
 <h2>8. Fejlesztői igényspecifikáció:</h2>
 <h3>-Fejlesztői vízió (Vágyálom):</h3> 
