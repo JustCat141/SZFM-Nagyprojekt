@@ -9,6 +9,8 @@
     /*Felhasználóhoz tartozó kérdőívek listája*/
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .UserQuestionnairesList-list-item {
@@ -23,6 +25,7 @@
     width: 20rem;
     text-transform: uppercase;
     font-weight: 600;
+    height: 10rem;
 }
 
 .UserQuestionnairesList-list-item:hover {
@@ -32,7 +35,7 @@
      
  }
 
- .UserQuestionnairesList-list-item-box {
+ .UserQuestionnairesList-list-item-box { 
     /*Felhasználóhoz tartozó kérdőívek listaeleméhez tartozó szövegdoboz
       */
       font-weight: bolder;

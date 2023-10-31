@@ -47,7 +47,10 @@
     /*Input fieldek szövege*/
     padding: 0.3rem 0.6rem;
     border-radius: 1rem;
-    background-color: #c9e0fe;
+    /*background-color: #c9e0fe;*/
+    background-color:  #EFEFEF;
+    border: none;
+    box-shadow: rgb(47, 46, 46, 0.2) 0px 2px 4px;
 }
 
 ::placeholder {
