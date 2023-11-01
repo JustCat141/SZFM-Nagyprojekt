@@ -19,8 +19,8 @@
 
 .search-box-id-input {
     /*Kereső doboz input field szövege*/
-    background-color: rgba(128, 125, 125, 0.247);
-    padding: 0.8rem 2rem;
+    /*background-color: rgba(128, 125, 125, 0.247);*/
+    padding: 0.5rem 2rem;
     border-radius: 1rem;
     color: black;
     font-size: 1rem;

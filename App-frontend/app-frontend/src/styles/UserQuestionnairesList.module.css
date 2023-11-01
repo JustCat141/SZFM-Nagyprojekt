@@ -44,9 +44,10 @@
 }
 
 .UserQuestionnairesList-list-item:hover {
-    background-color: rgba(132, 159, 229, 0.396);
+    background-color: rgb(203, 237, 203);
     color: rgba(2,0,36,1);
-    box-shadow: inset 0 0 1rem rgba(1, 10, 33, 0.742);
+    /* box-shadow: inset 0 0 1rem rgba(1, 10, 33, 0.742); */
+
      
  }
 
