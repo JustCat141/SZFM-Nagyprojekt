@@ -67,11 +67,11 @@ button {
     color: white;
     font-weight: bold;
     border: none;
-    box-shadow: rgb(47, 46, 46, 0.2) 0px 2px 4px;
+    box-shadow: rgba(0, 0, 0, 2.2) 0px 2px 4px;
 }
 
 button:hover {
-    background-color: #dfdfe6;
+    background-color: rgb(180, 219, 180);
     color: black;
 }
 
