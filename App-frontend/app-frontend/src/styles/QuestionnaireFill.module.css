@@ -19,10 +19,18 @@
 }
 
 .questionnaire-card-list-item {
-
+    border: 1px solid red;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .questionnaire-question-box {
+    text-align: left;
 
 }
 
