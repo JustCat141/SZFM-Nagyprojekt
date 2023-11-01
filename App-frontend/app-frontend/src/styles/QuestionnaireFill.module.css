@@ -1,9 +1,10 @@
 .questionnaire-page {
-
+    background-color: #E1F6E1;
+    padding: 2rem 0;
 }
 
 .questionnaire-header-card {
-    
+
 }
 
 .questionnaire-card-list {
@@ -11,23 +12,63 @@
 }
 
 .questionnaire-title {
-
+    font-size: 1.4rem;
+    text-align: left;
+    background-color: white;
+    width: 60%;
+    height: 4rem;
+    border-radius: 1rem;
+    margin-bottom: 0;
+    margin: 0 auto;
+    padding: 0.5rem 0.5rem 1.8rem 1.8rem;
+    margin-bottom: 1rem; 
 }
 
 .questionnaire-description {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    background-color: white;
+    width: 60%;
+    height: 5rem;
+    border-radius: 1rem;
+    margin-bottom: 0;
+    margin: 0 auto;
+    padding: 0.5rem 0.5rem 1.8rem 1.8rem;
+}
 
+.questionnaire-card-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
 }
 
 .questionnaire-card-list-item {
-
+    border-radius: 1rem;
+    margin: 0.5rem 0rem;
+    padding: 0.5rem 0.5rem 1.8rem 1.8rem;
+    list-style: none;
+    background-color: white;
+    width: 60%;
 }
 
 .questionnaire-question-box {
+    text-align: left;
+}
 
+.questionnaire-question-box svg {
+    fill: rgb(52,203,49);
+}
+
+.questionnaire-question-box div {
+    text-align: left;
 }
 
 .questionnaire-question-title {
-
+    margin-top: 0;
+    font-size: 1.2rem;
 }
 
 .questionnaire-question-description {
@@ -35,6 +76,7 @@
 }
 
 .questionnaire-answers-list {
+    padding: 0;
 
 }
 
@@ -51,15 +93,17 @@
 }
 
 .questionnaire-answer-text {
-
+ 
 }
 
 .questionnaire-answer-type-box {
-
+    border-bottom: 1px solid black;
+    width: 96%;
 }
 
 .questionnaire-answer-type-text {
-
+    border: none;
+    width: 100%;
 }
 
 .questionnaire-button-box {

@@ -1,6 +1,6 @@
 .login-page {
     /*Login page stílusai*/
-    background-color: #dfdfe6;
+    background-color: rgb(52,203,49);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,8 +19,9 @@
 
 .login-box {
     /*A login box*/
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
-    rgba(81,81,143,1) 35%, rgba(0,212,255,1) 100%);
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(81,81,143,1) 35%, rgba(0,212,255,1) 100%);*/
+    background-color: white;
     text-align: center;
     height: 22rem;
     width: 30rem;
@@ -31,6 +32,7 @@
 .login-main-title {
     font-size: 2rem;
     padding: 1rem;
+    color: #686869;
 }
 
 .login-input-box {
@@ -42,8 +44,12 @@
     /*Az input fieldek placeholder szövege*/
     padding: 0.4rem 0.8rem;
     border-radius: 1rem;
-    background-color: #c9e0fe;
-    color: rgba(2,0,36,1);
+    /*background-color: #c9e0fe;*/
+    background-color:  #EFEFEF;
+    /*color: rgba(2,0,36,1);*/
+    color: #E2E2E4;
+    border: none;
+    box-shadow: rgb(47, 46, 46, 0.2) 0px 2px 4px;
 }
 
 .login-button-box {
@@ -57,13 +63,15 @@
 button {
     padding: 0.5rem 1.6rem;
     border-radius: 1rem;
-    background-color: #090952;
+    background-color: rgb(52,203,49);
     color: white;
     font-weight: bold;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 2.2) 0px 2px 4px;
 }
 
 button:hover {
-    background-color: #dfdfe6;
+    background-color: rgb(180, 219, 180);
     color: black;
 }
 
