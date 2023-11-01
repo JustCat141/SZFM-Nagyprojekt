@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 14rem;
 }
 
 .UserQuestionnairesList-list {
@@ -15,7 +16,7 @@
 
 .UserQuestionnairesList-list-item {
     /*Felhasználóhoz tartozó kérdőívek listaeleme*/
-    padding: 0.6rem;
+    /*padding: 0.6rem;*/
     cursor: pointer;
     background-color: rgb(58, 58, 150);
     color: white;
@@ -25,7 +26,21 @@
     width: 20rem;
     text-transform: uppercase;
     font-weight: 600;
-    height: 10rem;
+    height: 13rem;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.UserQuestionnairesList-list-item div {
+    background-color: white;
+    color: #777777;
+    width: 98.5%;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0;
+    text-align: left;
+    padding-left: 0.2rem;
 }
 
 .UserQuestionnairesList-list-item:hover {
@@ -38,6 +53,7 @@
  .UserQuestionnairesList-list-item-box { 
     /*Felhasználóhoz tartozó kérdőívek listaeleméhez tartozó szövegdoboz
       */
+      border: 1px solid red;
       font-weight: bolder;
 }
 
