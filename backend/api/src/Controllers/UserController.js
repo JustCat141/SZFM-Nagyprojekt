@@ -1,10 +1,17 @@
 import * as userService from '../Services/UserService.js'
 import * as userHelper from '../Helpers/UserHelper.js'
 import * as rh from '../Helpers/ResponseHelper.js'
+import { logger } from '../Helpers/Logger.js'
 
 export const getUsers = async (req, res) => {
-    const users = await userService.getUsers()
-    res.status(200).send(users)
+    try {
+        const users = await userService.getUsers()
+        res.status(200).send(users)
+    }
+    catch (err) {
+        logger.error(err)
+        res.status(500).send("Something broke")
+    }
 }
 
 export const getUser = async (req, res) => {
@@ -14,25 +21,30 @@ export const getUser = async (req, res) => {
 }
 
 export const registUser = async (req, res) => {
-    const { username, email, password } = req.body
-    
-    const passwordHash = await userHelper.hash(password)
+    try {
+        const { username, email, password } = req.body
+        const passwordHash = await userHelper.hash(password)
 
-    const doesUserExist = await userService.getUserByEmail(email)
-
-    if(doesUserExist == undefined) {
-        await userService.createUser(username,email,passwordHash)
-        return res.status(201)
-    } else {
-        return res.status(409).send(rh.emailAddressTaken)
+        await userService.createUser(username, email, passwordHash)
+        
+        logger.info(`A new user ${username} has just registered!`)
+        return res.status(201).send(rh.success)
+    } catch (err) {
+        if (err.code === 'ER_DUP_ENTRY') {
+            return res.status(401).send(rh.emailAddressTaken)
+        }
+        else {
+            logger.error(err)
+        }
+        return res.sendStatus(500)
     }
 }
 
-export const login = async (req,res) => {
+export const login = async (req, res) => {
     const { email, password } = req.body
 
     const user = await userService.getUserByEmail(email)
-    
+
     if (user == undefined) {
         return res.status(401).send(rh.invalidLogin)
     }
@@ -40,7 +52,7 @@ export const login = async (req,res) => {
     const isValidEmail = email == user.email
     const isValidPassword = await userHelper.verifyHash(password, user.password)
 
-    if(isValidEmail && isValidPassword) {
+    if (isValidEmail && isValidPassword) {
         return res.status(200).send(rh.success)
     } else {
         return res.status(401).send(rh.invalidLogin)
