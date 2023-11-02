@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { pool } from './Config/DatabaseConfig.js'
+import { logger } from './Helpers/Logger.js'
 
 // Import routes
 import { userRouter } from './Routes/User.js'
@@ -18,11 +18,12 @@ app.use('/api/user', userRouter)
 app.use('/api/questionnaire', questionnaireRouter)
 app.use('/api/answer',answerRouter)
 
+logger.info("Starting server...")
 app.listen(port, () => {
-    console.log("Server started successfully! Running on port " + port+"!")
+    logger.info("Server started successfully! Running on port " + port+"!")
 })
 
 app.use((err, req, res, next) => {
-    console.error(err.stack)
+    logger.error(err.stack)
     res.status(500).send('Something broke!')
 })
