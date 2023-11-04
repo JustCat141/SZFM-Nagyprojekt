@@ -1,6 +1,41 @@
-# Rendszer célja
+# Questionnaire - Rendszerterv
+
+## Rendszer célja
+A Questionnaire projekt célja egy innovatív, digitális 
+megoldás létrehozása a kérdőívek kezelésére és 
+kiértékelésére. A jelenlegi papíralapú kérdőívek manuális 
+feldolgozása és értékelése komoly idő- és erőforrás-igényt 
+jelent, ami a mai gyors tempójú üzleti környezetben 
+egyszerűen nem megengedhető. A megrendelő felismerte, hogy a 
+digitális átállás elengedhetetlen a hatékony működés 
+érdekében, és ezért döntött az új megoldás bevezetése mellett.
+
+A projekt legfontosabb céljai a következők:
+
+- Könnyen kezelhető felhasználói felület biztosítása, hogya 
+felhasználók zökkenőmentesen navigálhassanak a rendszerben.
+- Különböző típusú és témájú kérdőívek létrehozásának 
+és kitöltésének lehetősége, hogy a felhasználók testreszabott 
+visszajelzéseket kaphassanak.
+- Automatizált eredmény kiértékelés és elemzés, amely segíti a gyors döntéshozatalt és a hatékony erőforrás felosztást.
+- Reszponzív dizájn biztosítása, hogy a 
+felhasználók kényelmesen használhassák a rendszert 
+számítógépen és okostelefonon egyaránt.
+- Lehetőség a felhasználók számára tippek és jóslatok adására 
+és fogadására, ami további interaktivitást és érdeklődést 
+generál a platformon.
+
+A fent említett célok elérésével a Questionnaire egy 
+effektív, időspóroló és erőforrás-hatékony megoldást kínál a 
+kérdőívek kezelésére és kiértékelésére, amely a modern üzleti 
+környezetben elengedhetetlen, de sokszínűségének köszönhetően más területeken, például az oktatásban is fontos szerepe lehet.
 
 ## Projekt terv
+
+
+
+
+
 
 ## Üzleti folyamatok modellje
 
