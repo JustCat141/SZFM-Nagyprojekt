@@ -1,8 +1,92 @@
-# Rendszer célja
+# Questionnaire - Rendszerterv
 
-# Projekt terv
+## Rendszer célja
+A Questionnaire projekt célja egy innovatív, digitális 
+megoldás létrehozása a kérdőívek kezelésére és 
+kiértékelésére. A jelenlegi papíralapú kérdőívek manuális 
+feldolgozása és értékelése komoly idő- és erőforrás-igényt 
+jelent, ami a mai gyors tempójú üzleti környezetben 
+egyszerűen nem megengedhető. A megrendelő felismerte, hogy a 
+digitális átállás elengedhetetlen a hatékony működés 
+érdekében, és ezért döntött az új megoldás bevezetése mellett.
 
-# Üzleti folyamatok modellje
+A projekt legfontosabb céljai a következők:
+
+- Könnyen kezelhető felhasználói felület biztosítása, hogy a 
+felhasználók zökkenőmentesen navigálhassanak a rendszerben.
+- Különböző típusú és témájú kérdőívek létrehozásának 
+és kitöltésének lehetősége, hogy a felhasználók testreszabott 
+visszajelzéseket kaphassanak.
+- Automatizált eredmény kiértékelés és elemzés, amely segíti a gyors döntéshozatalt és a hatékony erőforrás felosztást.
+- Reszponzív dizájn biztosítása, hogy a 
+felhasználók kényelmesen használhassák a rendszert 
+számítógépen és okostelefonon egyaránt.
+- Lehetőség a felhasználók számára tippek és jóslatok adására 
+és fogadására, ami további interaktivitást és érdeklődést 
+generál a platformon.
+
+A fent említett célok elérésével a Questionnaire egy 
+effektív, időspóroló és erőforrás-hatékony megoldást kínál a 
+kérdőívek kezelésére és kiértékelésére, amely a modern üzleti 
+környezetben elengedhetetlen, de sokszínűségének köszönhetően más területeken, például az oktatásban is fontos szerepe lehet.
+
+## Projekt terv
+### Projekt Áttekintés és Célkitűzések
+***Célkitűzések:***
+
+- Könnyen kezelhető felhasználói felület biztosítása
+- Különböző típusú és témájú kérdőívek létrehozása és kitöltése
+- Automatizált eredmény kiértékelés és elemzés
+- Reszponzív dizájn a kényelmes felhasználói élmény érdekében
+- Lehetőség a felhasználók számára tippek és jóslatok adására és fogadására
+
+
+### Projektcsapat és Felelősségi Körök
+***Csapat tagjai:*** Somogyi Patrik, 
+Barta Bence, Nyeste Szilveszter, Pósán 
+Róbert
+
+- ***Frontend:*** Nyeste Szilveszter, 
+Pósán Róbert\
+(Feladatuk a rendszer minél igényesebb, 
+stílusosabb, egyszerűbb megjelenésének 
+biztosítása.)
+
+- ***Backend:*** Somogyi Patrik, Barta 
+Bence\
+(Feladatuk a kérdőív által nyert adatok 
+tárolása, szükséges adatbázis(ok) 
+létrehozása.)
+
+A csapat tagjai felelősek azért, hogy az 
+adott sprintre vállalt feladatokat 
+időben elvégezzék.
+
+### Ütemterv
+A projekt elkészítésére 6 hét áll 
+rendelkezésre. Az első héten már a 
+dokumentumok nagy részét el fogjuk 
+készíteni, így az 5 sprint alatt jobban 
+fog tudni a csapat fókuszálni a 
+fejlesztére.
+
+A következő ütemterv szerint fogunk haladni:
+
+| Hét   |      Elvégzendő feladat      |
+|----------|:-------------:|
+| 1. |  Követelményspecifikáció és Funkcionális specifikáció elkészítése |
+| 2. |    Rendszerterv elkészítése,   Funkciók meghatározása, UI megtervezése, Logo elkészítése   |
+| 3. |  UI kialakítása (reszponzív design), Funkciók kivitelezése, MYSQL adatbázis létrehozása |
+| 4. | Eredmény kiértékelés fejlesztése + Demo projekt bemutató! |
+| 5. | Alapos tesztelés és hibajavítás |
+| 6. | Felhasználói visszajelzések beépítése, utolsó finomítások és üzembe helyezése |
+
+### Kommunikációs Terv
+
+- Hetente több projektértekezletek a csapat között.
+- Discord felületen online, illetve személyesen hétfőnként 12-13:40-ig
+
+## Üzleti folyamatok modellje
 
 Ezen alpont az alkalmazásban zajló kulcsfontosságú üzleti folyamatokat térképezi fel, mint például a regisztráció, bejelentkezés, kérdőív készítés és kitöltés. Ez a részletes leírás segíti a fejlesztőket és érintetteket az alkalmazás üzleti folyamatainak és felhasználói interakcióinak megértésében, azok lépéseinek és szereplőinek jól strukturált bemutatásával.
 
@@ -31,7 +115,7 @@ Ezen alpont az alkalmazásban zajló kulcsfontosságú üzleti folyamatokat tér
 
 ## Törvényi előírások, szabványok:
 
-# Funkcionális terv
+## Funkcionális terv
 A felhasználónak:
 
 - Tudnia kell bejelentkezni
@@ -48,11 +132,11 @@ A web alkalmazásnak:
 - Html, Css, JavaScript, React Js frontend, Python backend, JSON fájlok az adatok tárolására
 - Az egyes részeknek megfelelően kell kommunikálni egymással
 
-# Architektúrális terv
+## Architektúrális terv
 
 Egy olyan webalkalmazás, amely Python-Flask backendet és egy ReactJs frontendet használ. A ReactJs magába foglalja a HTML, CSS, Javascript technológiákat is, illetve magát a React keretrendszert is. A frontend a fetch API-t használja a backend API-val való kommunikációhoz. Az adatábzishoz MySql adatbázist választottunk.
 
-# Implementációs terv
+## Implementációs terv
 ### Frontend (HTML, CSS, JavaScript, ReactJS):
 
 Létrehozni komponenseket a felhasználói felület különböző részeihez, például a bejelentkezéshez, regisztrációhoz, kérdőívek listázásához, kérdőív kitöltéséhez és statisztikák megjelenítéséhez.
@@ -85,7 +169,7 @@ Létrehozni egy MySQL adatbázist a szükséges táblákkal, például a felhasz
 
 Definiálni egyedülálló kulcsokat és indexeket az adatbázis teljesítményének optimalizálása érdekében.
 
-# Fizikai környezet
+## Fizikai környezet
 Az alkalmazás web platformra készül, böngészőből érhető el. A projekthez tartozik mobil nézet, így mobilról is ugyan úgy használható.
 
 ### Fejlesztői eszközök
@@ -100,12 +184,7 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 - [Adobe Photoshop CC 2019](https://www.adobe.com/products/photoshop.html)
 - Microsoft Paint
 
-
-### Fejlesztői eszközök
-
-# Architekturális terv
-
-# Adatbázisterv, adattárolás
+## Adatbázisterv, adattárolás
 
 ### MEGJEGYZÉS!! - Ez a terv nem a végleges formája az adattárolásnak. A projekt fejlesztése alatt fenntartjuk ezen pont módosítását, illetve teljes változását!
 
@@ -150,7 +229,7 @@ A következő ábra az adatbázist, illetve az adattárolás módját szemlélte
 
 ![Kép az adattárolás módjáról](./images/adatbazis_modell.png)
 
-# Karbartási terv
+## Karbantási terv
 
 A weboldal folyamatos üzemeltetése és karbantartása a következőkön alapul:
 
@@ -178,6 +257,6 @@ A felhasználók személyes adatainak védelme és kezelése kiemelt fontosság�
 
 Regisztrált felhasználók szükség esetén törlésre kerülhetnek. Adatbázis terhelésének optimalizálása. Továbbá lehetnek például GDPR okokból is.
 
-# Tesztterv
+## Tesztterv
 
-# Telepítési terv
+## Telepítési terv

@@ -1,8 +1,42 @@
-<h1>Questionnaire - Funkcionális specifikáció</h1>
+# Questionnaire - Funkcionális specifikáció
 
-<h3> 1. Áttekintés:</h3> 
+## 1. Áttekintés:
+A Questionnaire célja egy modern, digitális megoldás 
+létrehozása a kérdőívek kezelésére és kiértékelésére. A 
+jelenlegi papíralapú kérdőívek manuális feldolgozása és 
+kiértékelése jelentős időt és erőforrást emészt fel, ami a 
+mai felgyorsult üzleti környezetben elfogadhatatlan. A 
+megrendelő ráébredt, hogy a digitális átállás elengedhetetlen 
+a hatékony működés érdekében.
 
-<h3> 2. Jelenlegi helyzet:</h3> 
+Legfőbb céljaink:
+
+- Könnyen kezelhető felhasználói felület biztosítása
+- Különböző típusú és témájú kérdőívek létrehozása és 
+kitöltése
+- Automatizált eredmény kiértékelés és elemzés.
+- Reszponzív dizájn, hogy a felhasználók kényelmesen 
+használhassák számítógépen és okostelefonon egyaránt.
+- Lehetőség a felhasználók számára tippek és jóslatok adására 
+és fogadására.
+
+ Jelenleg több rendszer is létezik erre a célra, a 
+ legismertebb talán a Google Forms, ahol saját részre tudunk 
+ kérdőíveket készíteni, megosztani, ellenőrizni, azonban itt 
+ a tervező felhasználó lehetőségei igen szűkösek, 
+ korlátozottak és a kitöltéséhez Gmail fiókra van szükség.
+ Mi szeretnénk egy kicsit mást csinálni, a mi applikációnk  
+ sokrétűen felhasználható, például oktatási területen is, 
+ ahol lehetőség van a diákok fejlődésének és teljesítményének 
+ nyomon követésére. Az adatokat az alkalmazás egy 
+ adatbázisban fogja tárolni, hogy később is könnyen     
+ elérhetőek legyenek. Megfelelve a mai kor követelményeinek, 
+ a program számítógépen és okostelefonon is megfelelő módon 
+ kell működjön. Ezen kívül a programnak képesnek kell lennie 
+ a felhasználóktól tippeket/ jóslatokat kérni és fogadni, 
+ például "Ki fogja megnyerni a következő teniszmeccset?"
+
+## 2. Jelenlegi helyzet:
 A megrendelő jelenleg egy hagyományos papíralapú kérdőívet alkalmaz, ami már nem hatékony a felgyorsult világban. 
 Ez kézi rendezést és kiértékelést igényel, ami jelentős időt és munkát emészt fel, akár 10-15 percet is képes elvenni egy-egy kérdőív
 esetén. 
@@ -28,7 +62,7 @@ Emellett lehetőséget kell biztosítania a felhasználók számára, hogy tippe
 "Ki fogja megnyerni a következő futball világbajnokságot?"
 A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket egy adatbázisban fogunk tárolni a későbbi felhasználás céljából.
 
-<h3> 3. Követelménylista</h3>
+## 3. Követelménylista
 
 | Modul       | ID  | Név                                     | Leírás                                                                                                                                                                                                                                                                                                                           |
 | ----------- | --- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,13 +84,34 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 | Felület     | K16 | Kérdéssorozat értékelése                | Ezen a felületen jelenik meg a kérdésekre adott válaszok statisztikája.                                                                                                                                                                                                                                                          |
 | Felület     | K17 | Kérdéssorozat létrehozása, szerkesztése | Ezen a felületen lehet szerkeszteni az adott kvízt.                                                                                                                                                                                                                                                                              |
 
-<h3> 4. Jelenlegi üzleti folyamatok modellje:</h3>
+## 4. Jelenlegi üzleti folyamatok modellje:
+Jelenleg egy erre a célra kijelölt személy és időszakonként 
+diákok is végeznek ilyen feladatokat diákmunka keretein 
+belül. Ez a megközelítés számos okból problémás és hosszú 
+távon fenntarthatatlan. Míg előnyei kevésbé jelentősek, 
+hátrányai jóval súlyosabbak. Mindezek együttesen azt 
+mutatják, hogy eljött az ideje egy hatékonyabb, pontosabb és 
+fenntarthatóbb digitális megoldás bevezetésének.
 
-# Igényelt üzleti folyamatok modellje
+A jelenlegi folyamat az alábbiak szerint zajlik:
+
+1. Papír beszerzése
+2. Kérdőívek készítése
+3. Nyomtatás
+4. Kiosztás
+5. Begyűjtés
+6. Kiértékelés
+7. Statisztikák készítése
+8. Ellenőrzés
+9. Eredmények prezentálása
+
+Ezt az ineffektív folyamatot a digitalizálás egy új, modern szintre emeli, hosszú távon pedig jelentős megtakarítást eredményez a vállalkozás számára.
+
+### Igényelt üzleti folyamatok modellje
 A megrendelő szeretne egy olyan online felületet, ahol egy felhasznaló a regisztráció, majd a  bejelentkezés után (azonosító és jelszó megadása után) kérdőívet tölthet ki. Amennyiben szeretné, saját maga is tud létrehozni kérdőívet, egyedi blokkokkal és kérdésekkel vagy válaszokkal. Minden felhasználó hozzáfér a többi felhasználó kérdőíveihez is.
 ![Igényelt üzleti folyamatok modellje](./images/igenyelt_diagram2.png)
 
-# 6. Használati esetek
+## 6. Használati esetek
 1. Felhasználói regisztráció
     - Leírás:  A felhasználó regisztrálja magát az alkalmazásban, hogy hozzáférhessen a rendszerhez.
     - Főbb lépések:
@@ -91,7 +146,7 @@ A megrendelő szeretne egy olyan online felületet, ahol egy felhasznaló a regi
         3. Hozzáad kérdéseket a kérdőívhez.
         4. Beküldi a kérdőívet.
         5. Sikeres létrehozás esetén a rendszer visszaigazolja a kérdőív létrejöttét és egyedi azonosítót generál hozzá.
-# 7. Képernyő tervek
+## 7. Képernyő tervek
 
 A projekt tervezése során a számítógépes megjelenítés mellett a telefonos megjelenítést is preferáljuk, és ebben a kontextusban néhány tervezési elvet alkalmaztunk. A grafikus felhasználói felület (GUI) letisztult és könnyen kezelhető lesz, hogy a felhasználók könnyedén és hatékonyan használhassák az alkalmazást.
 
@@ -125,7 +180,7 @@ A megnyitott kérdőív a következőképpen rendeződik el:
 A Kérdőív felülete:
 ![Kérdőív felülete](./images/scetch_questionnaire_page.png)
 
-# 8. Forgatókönyv
+## 8. Forgatókönyv
 
 #### 1. Forgatókönyv a felhasználói regisztrációhoz:
 1. A felhasználó a főoldalon választja a "Regisztráció" lehetőséget.
@@ -161,8 +216,8 @@ A Kérdőív felülete:
 4. A rendszer betölti a kérdőív statisztikáit, például kitöltések száma, válaszok eloszlása stb.
 5. A felhasználó megtekinti és elemezi a statisztikákat a kérdőív teljesítményének felmérése céljából.
 
-# Fogalomszótár
-### Google forms: 
+## Fogalomszótár
+### Google Forms: 
 A Google Forms egy felmérés-adminisztrációs szoftver, amely a Google által kínált ingyenes, webalapú Google Docs Editors programcsomag része. A szolgáltatás magában foglalja a Google Dokumentumokat, a Google Táblázatokat, a Google Diákat, a Google Rajzokat, a Google Webhelyeket és a Google Keepet is.
 ### HTML:
 A HTML egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, és mára már internetes szabvánnyá vált a W3C támogatásával. Az aktuális változata az 5, mely az SGML általános jelölőnyelv egy konkrét alkalmazása.
