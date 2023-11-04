@@ -105,6 +105,25 @@ A login bodyába a következő adatokat kell elhelyezni JSON formátumban:
 }
 ```
 
+### Questionnaire Endpointok
+
+#### Get Questionnaire (GET)
+```
+http://DOMAIN:PORT/api/questionnaire/ID
+```
+
+#### Get User Questionnaire (GET)
+```
+http://DOMAIN:PORT/api/questionnaire/user/USERID
+```
+
+#### Submit Questionnaire (POST)
+```
+http://DOMAIN:PORT/api/questionnaire/create
+```
+
+**TODO: Answer endpoint dokumentáció**
+
 ## 4. Hibaüzenetek
 
 Az API bizonyos endpointjai (általában POST metódusok) egy egyszerű JSON formátumú válasszal térnek vissza, amely a művelet sikerességét, illetve egy hibakódot tartalmaz
