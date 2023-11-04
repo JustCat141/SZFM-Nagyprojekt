@@ -77,3 +77,23 @@ http://localhost:8080/api/answer/...
 *(jelenleg az API még nem rendelkezik endpointokkal...)*
 
 bocs ha a megfogalmazás szar, jelenleg hajnali fél 3 van 🥱💀
+
+## 4. Hibaüzenetek
+
+Az API bizonyos endpointjai (általában POST metódusok) egy egyszerű JSON formátumú válasszal térnek vissza, amely a művelet sikerességét, illetve egy hibakódot tartalmaz
+```json
+{
+  "success": false,
+  "errorCode": 102 // Helytelen jelszó
+}
+```
+
+Ezeknek a kódoknak külön jelentéseik vannak, amellyet a következő táblázat tartalmaz:
+| Hibakód | Jelentés                        | Előfordulás                                     |
+| ------- | ------------------------------- | ----------------------------------------------- |
+| 101     | Helytelen email formátum        | Regisztráció, Bejelentkezés                     |
+| 102     | Helytelen jelszó formátum       | Regisztráció                                    |
+| 103     | Helytelen bejelentkezési adatok | Bejelentkezés, Felhasználói adatok változtatása |
+| 104     | Helytelen adatformátum          | Kérdőív feltöltése, Válasz feltöltése           |
+| 201     | Foglalt emailcím                | Regisztráció                                    |
+
