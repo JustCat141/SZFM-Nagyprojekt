@@ -7,7 +7,7 @@ export const getQuestionnaire = async (req,res) => {
     try {
         const id = req.params.id
         const questionnaire = await questionnaireService.getQuestionnaire(id)
-        res.status(200).send(questionnaire)
+        return res.status(200).send(questionnaire)
     } catch(err) {
         logger.error(err)
         return res.sendStatus(500)
@@ -18,7 +18,7 @@ export const getUserQuestionnaires = async (req, res) => {
     try {
         const userId = req.params.userId
         const questionnaires = await questionnaireService.getUserQuestionnaires(userId)
-        res.status(200).send(questionnaires)
+        return res.status(200).send(questionnaires)
     } catch (err) {
         logger.error(err)
         return res.sendStatus(500)
@@ -38,7 +38,7 @@ export const createQuestionnaire = async (req, res) => {
         const questionsJSON = JSON.stringify(questions)
 
         await questionnaireService.createQuestionnaire(user_id, title, description, questionsJSON)
-        return res.sendStatus(200)
+        return res.sendStatus(201)
     } catch (err) {
         logger.error(err)
         return res.sendStatus(500)
