@@ -184,11 +184,6 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 - [Adobe Photoshop CC 2019](https://www.adobe.com/products/photoshop.html)
 - Microsoft Paint
 
-
-### Fejlesztői eszközök
-
-## Architekturális terv
-
 ## Adatbázisterv, adattárolás
 
 ### MEGJEGYZÉS!! - Ez a terv nem a végleges formája az adattárolásnak. A projekt fejlesztése alatt fenntartjuk ezen pont módosítását, illetve teljes változását!
