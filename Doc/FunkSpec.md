@@ -1,6 +1,40 @@
 # Questionnaire - Funkcionális specifikáció
 
 ## 1. Áttekintés:
+A Questionnaire célja egy modern, digitális megoldás 
+létrehozása a kérdőívek kezelésére és kiértékelésére. A 
+jelenlegi papíralapú kérdőívek manuális feldolgozása és 
+kiértékelése jelentős időt és erőforrást emészt fel, ami a 
+mai felgyorsult üzleti környezetben elfogadhatatlan. A 
+megrendelő ráébredt, hogy a digitális átállás elengedhetetlen 
+a hatékony működés érdekében.
+
+Legfőbb céljaink:
+
+- Könnyen kezelhető felhasználói felület biztosítása
+- Különböző típusú és témájú kérdőívek létrehozása és 
+kitöltése
+- Automatizált eredmény kiértékelés és elemzés.
+- Reszponzív dizájn, hogy a felhasználók kényelmesen 
+használhassák számítógépen és okostelefonon egyaránt.
+- Lehetőség a felhasználók számára tippek és jóslatok adására 
+és fogadására.
+
+ Jelenleg több rendszer is létezik erre a célra, a 
+ legismertebb talán a Google Forms, ahol saját részre tudunk 
+ kérdőíveket készíteni, megosztani, ellenőrizni, azonban itt 
+ a tervező felhasználó lehetőségei igen szűkösek, 
+ korlátozottak és a kitöltéséhez Gmail fiókra van szükség.
+ Mi szeretnénk egy kicsit mást csinálni, a mi applikációnk  
+ sokrétűen felhasználható, például oktatási területen is, 
+ ahol lehetőség van a diákok fejlődésének és teljesítményének 
+ nyomon követésére. Az adatokat az alkalmazás egy 
+ adatbázisban fogja tárolni, hogy később is könnyen     
+ elérhetőek legyenek. Megfelelve a mai kor követelményeinek, 
+ a program számítógépen és okostelefonon is megfelelő módon 
+ kell működjön. Ezen kívül a programnak képesnek kell lennie 
+ a felhasználóktól tippeket/ jóslatokat kérni és fogadni, 
+ például "Ki fogja megnyerni a következő teniszmeccset?"
 
 ## 2. Jelenlegi helyzet:
 A megrendelő jelenleg egy hagyományos papíralapú kérdőívet alkalmaz, ami már nem hatékony a felgyorsult világban. 
@@ -51,6 +85,7 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 | Felület     | K17 | Kérdéssorozat létrehozása, szerkesztése | Ezen a felületen lehet szerkeszteni az adott kvízt.                                                                                                                                                                                                                                                                              |
 
 ## 4. Jelenlegi üzleti folyamatok modellje:
+
 
 ### Igényelt üzleti folyamatok modellje
 A megrendelő szeretne egy olyan online felületet, ahol egy felhasznaló a regisztráció, majd a  bejelentkezés után (azonosító és jelszó megadása után) kérdőívet tölthet ki. Amennyiben szeretné, saját maga is tud létrehozni kérdőívet, egyedi blokkokkal és kérdésekkel vagy válaszokkal. Minden felhasználó hozzáfér a többi felhasználó kérdőíveihez is.
