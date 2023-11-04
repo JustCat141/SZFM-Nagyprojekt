@@ -1,6 +1,7 @@
 import * as questionnaireService from '../Services/QuestionnaireService.js'
 import * as questionnaireHelper from '../Helpers/QuestionnaireHelper.js'
 import * as rh from '../Helpers/ResponseHelper.js'
+import { logger } from '../Helpers/Logger.js'
 
 export const getQuestionnaire = async (req,res) => {
     try {
