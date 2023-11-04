@@ -12,7 +12,7 @@ digitális átállás elengedhetetlen a hatékony működés
 
 A projekt legfontosabb céljai a következők:
 
-- Könnyen kezelhető felhasználói felület biztosítása, hogya 
+- Könnyen kezelhető felhasználói felület biztosítása, hogy a 
 felhasználók zökkenőmentesen navigálhassanak a rendszerben.
 - Különböző típusú és témájú kérdőívek létrehozásának 
 és kitöltésének lehetősége, hogy a felhasználók testreszabott 
@@ -31,6 +31,15 @@ kérdőívek kezelésére és kiértékelésére, amely a modern üzleti
 környezetben elengedhetetlen, de sokszínűségének köszönhetően más területeken, például az oktatásban is fontos szerepe lehet.
 
 ## Projekt terv
+### Projekt Áttekintés és Célkitűzések
+Célkitűzések:
+
+- Könnyen kezelhető felhasználói felület biztosítása
+- Különböző típusú és témájú kérdőívek létrehozása és kitöltése
+- Automatizált eredmény kiértékelés és elemzés
+- Reszponzív dizájn a kényelmes felhasználói élmény érdekében
+- Lehetőség a felhasználók számára tippek és jóslatok adására és fogadására
+
 
 
 
