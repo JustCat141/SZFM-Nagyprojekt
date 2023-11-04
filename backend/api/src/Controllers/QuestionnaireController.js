@@ -24,17 +24,22 @@ export const getUserQuestionnaires = async (req, res) => {
     }
 }
 
-export const createQuestionnaire = async (req,res) => {
-    const questionnaire = req.body
-    const { user_id,title,description,questions } = questionnaire
-    const isValid = await questionnaireHelper.isValidDataStructure(questions)
-    
-    if(!isValid) {
-        return res.status(400).send(rh.invalidFormat)
-    }
-    
-    const questionsJSON = JSON.stringify(questions)
+export const createQuestionnaire = async (req, res) => {
+    try {
+        const questionnaire = req.body
+        const { user_id, title, description, questions } = questionnaire
+        const isValid = await questionnaireHelper.isValidDataStructure(questions)
+        
+        if (!isValid) {
+            return res.status(400).send(rh.invalidFormat)
+        }
+        
+        const questionsJSON = JSON.stringify(questions)
 
-    questionnaireService.createQuestionnaire(user_id,title,description,questionsJSON)
-    return res.sendStatus(200)
+        await questionnaireService.createQuestionnaire(user_id, title, description, questionsJSON)
+        return res.sendStatus(200)
+    } catch (err) {
+        logger.error(err)
+        return res.sendStatus(500)
+    }
 }
