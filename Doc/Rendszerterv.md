@@ -32,7 +32,7 @@ környezetben elengedhetetlen, de sokszínűségének köszönhetően más terü
 
 ## Projekt terv
 ### Projekt Áttekintés és Célkitűzések
-Célkitűzések:
+***Célkitűzések:***
 
 - Könnyen kezelhető felhasználói felület biztosítása
 - Különböző típusú és témájú kérdőívek létrehozása és kitöltése
@@ -41,10 +41,33 @@ Célkitűzések:
 - Lehetőség a felhasználók számára tippek és jóslatok adására és fogadására
 
 
+### Projektcsapat és Felelősségi Körök
+***Csapat tagjai:*** Somogyi Patrik, 
+Barta Bence, Nyeste Szilveszter, Pósán 
+Róbert
 
+- ***Frontend:*** Nyeste Szilveszter, 
+Pósán Róbert\
+(Feladatuk a rendszer minél igényesebb, 
+stílusosabb, egyszerűbb megjelenésének 
+biztosítása.)
 
+- ***Backend:*** Somogyi Patrik, Barta 
+Bence\
+(Feladatuk a kérdőív által nyert adatok 
+tárolása, szükséges adatbázis(ok) 
+létrehozása.)
 
+A csapat tagjai felelősek azért, hogy az 
+adott sprintre vállalt feladatokat 
+időben elvégezzék.
 
+### Ütemterv
+
+### Kommunikációs Terv
+
+- Hetente több projektértekezletek a csapat között.
+- Discord felületen online, illetve személyesen hétfőnként 12-13:40-ig
 
 ## Üzleti folyamatok modellje
 
