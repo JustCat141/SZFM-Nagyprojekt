@@ -75,8 +75,8 @@ A következő ütemterv szerint fogunk haladni:
 | Hét   |      Elvégzendő feladat      |
 |----------|:-------------:|
 | 1. |  Követelményspecifikáció és Funkcionális specifikáció elkészítése |
-| 2. |    Rendszerterv elkészítése,   Funkciók meghatározása, UI megtervezése   |
-| 3. |  UI kialakítása (reszponzív design), Funkciók kivitelezése |
+| 2. |    Rendszerterv elkészítése,   Funkciók meghatározása, UI megtervezése, Logo elkészítése   |
+| 3. |  UI kialakítása (reszponzív design), Funkciók kivitelezése, MYSQL adatbázis létrehozása |
 | 4. | Eredmény kiértékelés fejlesztése + Demo projekt bemutató! |
 | 5. | Alapos tesztelés és hibajavítás |
 | 6. | Felhasználói visszajelzések beépítése, utolsó finomítások és üzembe helyezése |
