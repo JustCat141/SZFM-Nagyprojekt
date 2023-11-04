@@ -121,6 +121,15 @@ http://DOMAIN:PORT/api/questionnaire/user/USERID
 ```
 http://DOMAIN:PORT/api/questionnaire/create
 ```
+A submit bodyába a következő adatokat kell elhelyezni JSON formátumban:
+```json
+{
+  "user_id": "int",
+  "title": "string",
+  "description": "string",
+  "questions" : "JSON"
+}
+```
 
 **TODO: Answer endpoint dokumentáció**
 
