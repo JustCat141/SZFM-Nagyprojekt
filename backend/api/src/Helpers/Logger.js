@@ -1,13 +1,12 @@
 import chalk from 'chalk'
 
 class Logger {
-    constructor(ignoredLogLevel) {
-        this.ignoredLogLevel = ignoredLogLevel
+    constructor() {
         this.logTypes = {
             ERROR: chalk.red,
             WARNING: chalk.yellow,
             INFO: chalk.blueBright,
-            DEBUG: chalk.green,
+            DEBUG: chalk.gray,
         };
     }
 
@@ -15,7 +14,8 @@ class Logger {
         if (this.logTypes[type]) {
             const coloredType = this.logTypes[type](type);
             const currentTime = chalk.gray(`(${new Date().toLocaleTimeString()})`)
-            console.log(`${currentTime} [${coloredType}] ${message}`);
+            const text = `${currentTime} [${coloredType}] ${message}`
+            console.log(text);
         } else {
             console.log(message);
         }
