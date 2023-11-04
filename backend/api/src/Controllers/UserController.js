@@ -59,6 +59,7 @@ export const login = async (req, res) => {
         const isValidPassword = await userHelper.verifyHash(password, user.password)
 
         if (isValidEmail && isValidPassword) {
+            logger.info(`User ${user.username} logged in!`)
             return res.status(200).send(rh.success)
         } else {
             return res.status(401).send(rh.invalidLogin)
