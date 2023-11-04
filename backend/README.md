@@ -68,15 +68,42 @@ Server is running on port 8080
 ## 3. Endpointok elérése
 Az API által biztosított endpointokat a következő URL-eken keresztül lehet elérni:
 
+### User endpointok
+
+#### Get Users (GET)
 ```
-http://localhost:8080/api/user/...
-http://localhost:8080/api/questionnaire/...
-http://localhost:8080/api/answer/...
+http://DOMAIN:PORT/api/user
 ```
 
-*(jelenleg az API még nem rendelkezik endpointokkal...)*
+#### Get User (GET)
+```
+http://DOMAIN:PORT/api/user/ID
+```
 
-bocs ha a megfogalmazás szar, jelenleg hajnali fél 3 van 🥱💀
+#### Register (POST)
+```
+http://DOMAIN:PORT/api/user/register
+```
+A regisztráció bodyába a következő adatokat kell elhelyezni JSON formátumban:
+```json
+{
+  "username": "string",
+  "email": "string",
+  "password" : "string"
+}
+```
+
+#### Login (POST)
+```
+http://DOMAIN:PORT/api/user/login
+```
+A login bodyába a következő adatokat kell elhelyezni JSON formátumban:
+```json
+{
+  "email": "string",
+  "password" : "string"
+}
+```
 
 ## 4. Hibaüzenetek
 
