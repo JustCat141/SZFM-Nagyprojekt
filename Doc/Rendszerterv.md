@@ -1,8 +1,8 @@
 # Rendszer célja
 
-# Projekt terv
+## Projekt terv
 
-# Üzleti folyamatok modellje
+## Üzleti folyamatok modellje
 
 Ezen alpont az alkalmazásban zajló kulcsfontosságú üzleti folyamatokat térképezi fel, mint például a regisztráció, bejelentkezés, kérdőív készítés és kitöltés. Ez a részletes leírás segíti a fejlesztőket és érintetteket az alkalmazás üzleti folyamatainak és felhasználói interakcióinak megértésében, azok lépéseinek és szereplőinek jól strukturált bemutatásával.
 
@@ -31,7 +31,7 @@ Ezen alpont az alkalmazásban zajló kulcsfontosságú üzleti folyamatokat tér
 
 ## Törvényi előírások, szabványok:
 
-# Funkcionális terv
+## Funkcionális terv
 A felhasználónak:
 
 - Tudnia kell bejelentkezni
@@ -48,11 +48,11 @@ A web alkalmazásnak:
 - Html, Css, JavaScript, React Js frontend, Python backend, JSON fájlok az adatok tárolására
 - Az egyes részeknek megfelelően kell kommunikálni egymással
 
-# Architektúrális terv
+## Architektúrális terv
 
 Egy olyan webalkalmazás, amely Python-Flask backendet és egy ReactJs frontendet használ. A ReactJs magába foglalja a HTML, CSS, Javascript technológiákat is, illetve magát a React keretrendszert is. A frontend a fetch API-t használja a backend API-val való kommunikációhoz. Az adatábzishoz MySql adatbázist választottunk.
 
-# Implementációs terv
+## Implementációs terv
 ### Frontend (HTML, CSS, JavaScript, ReactJS):
 
 Létrehozni komponenseket a felhasználói felület különböző részeihez, például a bejelentkezéshez, regisztrációhoz, kérdőívek listázásához, kérdőív kitöltéséhez és statisztikák megjelenítéséhez.
@@ -85,7 +85,7 @@ Létrehozni egy MySQL adatbázist a szükséges táblákkal, például a felhasz
 
 Definiálni egyedülálló kulcsokat és indexeket az adatbázis teljesítményének optimalizálása érdekében.
 
-# Fizikai környezet
+## Fizikai környezet
 Az alkalmazás web platformra készül, böngészőből érhető el. A projekthez tartozik mobil nézet, így mobilról is ugyan úgy használható.
 
 ### Fejlesztői eszközök
@@ -103,9 +103,9 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 
 ### Fejlesztői eszközök
 
-# Architekturális terv
+## Architekturális terv
 
-# Adatbázisterv, adattárolás
+## Adatbázisterv, adattárolás
 
 ### MEGJEGYZÉS!! - Ez a terv nem a végleges formája az adattárolásnak. A projekt fejlesztése alatt fenntartjuk ezen pont módosítását, illetve teljes változását!
 
@@ -150,7 +150,7 @@ A következő ábra az adatbázist, illetve az adattárolás módját szemlélte
 
 ![Kép az adattárolás módjáról](./images/adatbazis_modell.png)
 
-# Karbartási terv
+## Karbantási terv
 
 A weboldal folyamatos üzemeltetése és karbantartása a következőkön alapul:
 
@@ -178,6 +178,6 @@ A felhasználók személyes adatainak védelme és kezelése kiemelt fontosság�
 
 Regisztrált felhasználók szükség esetén törlésre kerülhetnek. Adatbázis terhelésének optimalizálása. Továbbá lehetnek például GDPR okokból is.
 
-# Tesztterv
+## Tesztterv
 
-# Telepítési terv
+## Telepítési terv

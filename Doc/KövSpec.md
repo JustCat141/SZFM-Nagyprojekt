@@ -1,6 +1,6 @@
-<h1>Questionnaire - Követelményspecifikáció</h1>
+# Questionnaire - Követelményspecifikáció
 
-<h3> 1. Jelenlegi helyzet:</h3> 
+## 1. Jelenlegi helyzet:
 A megrendelő jelenleg is egy papíralapú kérdőívet használ, amely a mai
 felgyorsult világban már nem megengedhető. 
 Ezek rendezése, manuális kiértékelése jelentős emberi munkát és időt
@@ -36,14 +36,14 @@ jóslatokat kérni és fogadni, például "Ki fogja megnyeri a következő footb
 A kérdőívek kitöltésénnél célunk az információk begyűjtése, ezeket egy adatbázis segítségével fogjuk eltárolni, 
 a későbbi felhasználás érdekében.
 
-<h2>Megrendelői igényspecifikáció</h2>
+# Megrendelői igényspecifikáció
 
-<h3>2. Vágyálom rendszer: </h3>
+## 2. Vágyálom rendszer:
 Biztosítani kell egy reszponzív webes alkalmazást, amely elsősorban a felhasználók számára kényelmes és egyszerű használatot nyújt. Az alkalmazásnak lehetőséget kell biztosítania a felhasználók számára a regisztrációra, bejelentkezésre és a jelszavak változtatására. Ezenkívül a rendszernek lehetőséget kell nyújtania felmérések létrehozására egy meghatározott témában, majd ezen felmérések automatikus kiértékelésére is szükség van. Az eredményekből származó statisztikák létrehozása is elengedhetetlen. A designnak az ügyfél vállalati színeihez kell igazodnia, emellett a felhasználói felületnek könnyen használhatónak és áttekinthetőnek kell lennie mindenki számára.
 
 Ez a projekt komoly és sokrétű, és nagy figyelmet és gondos tervezést igényel a különböző komponensek közötti szoros integráció érdekében. Az alkalmazásnak elsődlegesen a felhasználói élményre kell összpontosítania, különösen a regisztráció, bejelentkezés és felmérések készítése során. A reszponzív design elengedhetetlen ahhoz, hogy az alkalmazás bármilyen eszközön tökéletesen működjön, és az ügyfél vállalati színeinek alkalmazása egy egységes és meghatározó megjelenést biztosít az alkalmazásnak. Az áttekinthető és könnyen navigálható felhasználói felület biztosítja, hogy a felhasználók kényelmesen és hatékonyan használhassák az alkalmazást.
 
-<h3> 3. Jelenlegi folyamatok: </h3>
+## 3. Jelenlegi folyamatok:
 Jelenleg külön egy erre a célra felvett ember végzi a feladatot, 
 valamint időszakonként diákok szokták diákmunka keretein belül. 
 Ez a modell több okból is problémás és nem fenntartható hosszú távon,
@@ -74,7 +74,7 @@ A Google Forms esetében más a folyamat:
 * A létrehozó elküldi az általa létrehozott kérdőív URL linkjét
 * A létrehozó a kitöltés után megkapja a válaszokat.
 
-### 4. Igényelt folyamatok:
+## 4. Igényelt folyamatok:
 #### 4.1 Megjelenés:
 - **4.1.1:** Online megjelenés.
 - **4.1.2:** Az oldalt bármilyen eszközről, illetve bármilyen böngészőből el lehessen érni.
@@ -98,7 +98,7 @@ A Google Forms esetében más a folyamat:
 - **4.4.2:** Minden felhasználó a saját kérdéssorozata fölött rendelkezik, úgymond ő az adminja.
 - **4.4.3:** A felhasználó meg tudja nézni a kérdéssorozatára kapott válaszok elemzését, statisztikáját.
 
-### 5. Rendszerre vonatkozó szabályok
+## 5. Rendszerre vonatkozó szabályok
 
 **5.1 Felhasználói regisztráció és bejelentkezés**
 - **5.1.1:** Az alkalmazásnak lehetőséget kell biztosítania a felhasználók regisztrációjára, amelyhez a következő információkat kell bekérnie: felhasználónév, e-mail cím, jelszó.
@@ -184,8 +184,8 @@ végezhetnek el az egyes felhasználók az alkalmazásban,
 például kérdőívek létrehozása, kitöltése vagy eredmények 
 megtekintése.
 
-<h2>8. Fejlesztői igényspecifikáció:</h2>
-<h3>-Fejlesztői vízió (Vágyálom):</h3> 
+## 8. Fejlesztői igényspecifikáció:
+### Fejlesztői vízió (Vágyálom):
 A fejlesztő számára az ideális helyzet az lenne, hogy olyan megrendelések érkezzenek, amelyeket a jelenlegi kapacitásai határidőn belül és kiváló minőségben képes teljesíteni. Ez lehetővé tenné számára, hogy a projektek tervezésében és kivitelezésében a legjobb munkát nyújtsa.
 
 A fejlesztők képesek lennének minden részletet kivitelezni a megrendelői igények alapján, anélkül, hogy hiányosságok vagy hibák maradnának a végeredményben. Modern fejlesztési módszereket és eljárásokat alkalmaznának, hogy a projekt hatékony és innovatív legyen.
@@ -201,7 +201,7 @@ Egy sikeres projekt megvalósítása az elsődleges cél mind a fejlesztő, mind
 A megbízók számára az ilyen vágyálmok megvalósítása azt jelenti, hogy könnyen és bizalommal dolgozhatnak együtt a fejlesztővel. Az átlátható kommunikáció, a hatékony projektkezelés és a minőségi munka hosszú távon is fenntartható és sikeres kapcsolatot eredményezhet. A megbízók hajlamosak visszatérő ügyfelekké válni, ha elégedettek a fejlesztő munkájával és a projektek eredményeivel.
 
 
-<h3>-Fejlesztői cél:</h3> 
+## Fejlesztői cél:
 A saját tudását felhasználva a megrendelő igényeinek maximális kielégítése: A fejlesztő elsődleges feladata az, hogy a megbízó által megfogalmazott igényeket a lehető legjobban megvalósítsa. Ehhez a projektek során szükséges folyamatos tanulás és fejlődés.
 
 További projektekben is a bizalom elnyerése a megrendelő részéről: A megbízók bizalmát megnyerni és megtartani kulcsfontosságú a fejlesztő számára. Ha a megbízó elégedett a korábbi munkával, nagyobb az esélye újabb projektek kapcsán való együttműködésre.
@@ -213,4 +213,3 @@ Fejlesztő portfóliójának a bővítéséül szolgál: A fejlesztő minden pro
 A fejlesztési görbe normális ütemtervben halad, nem stagnál: A fejlesztőnek folyamatosan fejlődnie kell, de nem szabad elhamarkodottan cselekednie. Az egyensúly fontos: a fejlesztésnek folyamatosnak és stabilnak kell lennie, de ne szabad beleesni a túlzott rohanásba.
 
 A felmerülő problémák, akadályok hamar orvosolhatók: A fejlesztőnek proaktívan kell reagálnia a projekt során felmerülő problémákra és akadályokra. Az időben történő problémamegoldás kulcsfontosságú a projekt sikere szempontjából.
-
