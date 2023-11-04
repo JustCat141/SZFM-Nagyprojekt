@@ -32,7 +32,7 @@ kitölteni.
 Megfelelve a mai kor követelményeinek, a program számítógépen és
 okostelefonon is megfelelő módon kell működjön.
 Ezen kívül a programnak képesnek kell lennie a felhasználóktól tippeket/
-jóslatokat kérni és fogadni, például "Ki fogja megnyeri a következő football világbajnokságot?"
+jóslatokat kérni és fogadni, például "Ki fogja megnyerni a következő football világbajnokságot?"
 A kérdőívek kitöltésénnél célunk az információk begyűjtése, ezeket egy adatbázis segítségével fogjuk eltárolni, 
 a későbbi felhasználás érdekében.
 
