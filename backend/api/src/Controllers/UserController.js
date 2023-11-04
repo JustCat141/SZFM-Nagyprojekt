@@ -15,9 +15,14 @@ export const getUsers = async (req, res) => {
 }
 
 export const getUser = async (req, res) => {
-    const id = req.params.id
-    const user = await userService.getUser(id)
-    res.status(200).send(user)
+    try {
+        const id = req.params.id
+        const user = await userService.getUser(id)
+        res.status(200).send(user)
+    } catch (err) {
+        logger.error(err)
+        return res.sendStatus(500)
+    }
 }
 
 export const registUser = async (req, res) => {
@@ -26,8 +31,8 @@ export const registUser = async (req, res) => {
         const passwordHash = await userHelper.hash(password)
 
         await userService.createUser(username, email, passwordHash)
-        
-        logger.info(`A new user ${username} has just registered!`)
+
+        logger.info(`A new user "${username}" has just registered!`)
         return res.status(201).send(rh.success)
     } catch (err) {
         if (err.code === 'ER_DUP_ENTRY') {
