@@ -85,7 +85,27 @@ A kérdőívek kitöltése során a cél az információk gyűjtése, melyeket e
 | Felület     | K17 | Kérdéssorozat létrehozása, szerkesztése | Ezen a felületen lehet szerkeszteni az adott kvízt.                                                                                                                                                                                                                                                                              |
 
 ## 4. Jelenlegi üzleti folyamatok modellje:
+Jelenleg egy erre a célra kijelölt személy és időszakonként 
+diákok is végeznek ilyen feladatokat diákmunka keretein 
+belül. Ez a megközelítés számos okból problémás és hosszú 
+távon fenntarthatatlan. Míg előnyei kevésbé jelentősek, 
+hátrányai jóval súlyosabbak. Mindezek együttesen azt 
+mutatják, hogy eljött az ideje egy hatékonyabb, pontosabb és 
+fenntarthatóbb digitális megoldás bevezetésének.
 
+A jelenlegi folyamat az alábbiak szerint zajlik:
+
+1. Papír beszerzése
+2. Kérdőívek készítése
+3. Nyomtatás
+4. Kiosztás
+5. Begyűjtés
+6. Kiértékelés
+7. Statisztikák készítése
+8. Ellenőrzés
+9. Eredmények prezentálása
+
+Ezt az ineffektív folyamatot a digitalizálás egy új, modern szintre emeli, hosszú távon pedig jelentős megtakarítást eredményez a vállalkozás számára.
 
 ### Igényelt üzleti folyamatok modellje
 A megrendelő szeretne egy olyan online felületet, ahol egy felhasznaló a regisztráció, majd a  bejelentkezés után (azonosító és jelszó megadása után) kérdőívet tölthet ki. Amennyiben szeretné, saját maga is tud létrehozni kérdőívet, egyedi blokkokkal és kérdésekkel vagy válaszokkal. Minden felhasználó hozzáfér a többi felhasználó kérdőíveihez is.
