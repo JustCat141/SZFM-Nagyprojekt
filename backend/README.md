@@ -16,14 +16,13 @@ Ezeket az alábbi módon tudjuk elkészíteni:
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ```
 
 ### Questionnaires tábla legenerálása:
@@ -37,7 +36,7 @@ CREATE TABLE `questionnaires` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ```
 ### Answers tábla legenerálása:
 ```sql
@@ -61,8 +60,10 @@ A szerver futtatásához a *backend* mappában lévő [run.bat](./run.bat) fájl
 Ha a szerverünk fut, akkor a következő üzenetet kell látnunk:
 
 ```bash
-Starting server...
-Server is running on port 8080
+(15:40:24) [INFO] Connecting to MySQL database...
+(15:40:24) [INFO] Successfully connected to the database!
+(15:40:24) [INFO] Starting server...
+(15:40:24) [INFO] Server started successfully! Running on port 8080!
 ```
 
 ## 3. Endpointok elérése
