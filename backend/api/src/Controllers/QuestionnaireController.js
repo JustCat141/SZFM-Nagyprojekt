@@ -3,9 +3,14 @@ import * as questionnaireHelper from '../Helpers/QuestionnaireHelper.js'
 import * as rh from '../Helpers/ResponseHelper.js'
 
 export const getQuestionnaire = async (req,res) => {
-    const id = req.params.id
-    const questionnaire = await questionnaireService.getQuestionnaire(id)
-    res.status(200).send(questionnaire)
+    try {
+        const id = req.params.id
+        const questionnaire = await questionnaireService.getQuestionnaire(id)
+        res.status(200).send(questionnaire)
+    } catch(err) {
+        logger.error(err)
+        return res.sendStatus(500)
+    }
 }
 
 export const getUserQuestionnaires = async (req,res) => {
