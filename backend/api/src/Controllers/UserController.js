@@ -46,20 +46,25 @@ export const registUser = async (req, res) => {
 }
 
 export const login = async (req, res) => {
-    const { email, password } = req.body
+    try {
+        const { email, password } = req.body
 
-    const user = await userService.getUserByEmail(email)
+        const user = await userService.getUserByEmail(email)
 
-    if (user == undefined) {
-        return res.status(401).send(rh.invalidLogin)
-    }
+        if (user == undefined) {
+            return res.status(401).send(rh.invalidLogin)
+        }
 
-    const isValidEmail = email == user.email
-    const isValidPassword = await userHelper.verifyHash(password, user.password)
+        const isValidEmail = email == user.email
+        const isValidPassword = await userHelper.verifyHash(password, user.password)
 
-    if (isValidEmail && isValidPassword) {
-        return res.status(200).send(rh.success)
-    } else {
-        return res.status(401).send(rh.invalidLogin)
+        if (isValidEmail && isValidPassword) {
+            return res.status(200).send(rh.success)
+        } else {
+            return res.status(401).send(rh.invalidLogin)
+        }
+    } catch (err) {
+        logger.error(err)
+        return res.sendStatus(500)
     }
 }
