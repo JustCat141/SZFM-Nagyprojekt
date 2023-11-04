@@ -63,6 +63,23 @@ adott sprintre vállalt feladatokat
 időben elvégezzék.
 
 ### Ütemterv
+A projekt elkészítésére 6 hét áll 
+rendelkezésre. Az első héten már a 
+dokumentumok nagy részét el fogjuk 
+készíteni, így az 5 sprint alatt jobban 
+fog tudni a csapat fókuszálni a 
+fejlesztére.
+
+A következő ütemterv szerint fogunk haladni:
+
+| Hét   |      Elvégzendő feladat      |
+|----------|:-------------:|
+| 1. |  Követelményspecifikáció és Funkcionális specifikáció elkészítése |
+| 2. |    Rendszerterv elkészítése,   Funkciók meghatározása, UI megtervezése   |
+| 3. |  UI kialakítása (reszponzív design), Funkciók kivitelezése |
+| 4. | Eredmény kiértékelés fejlesztése + Demo projekt bemutató! |
+| 5. | Alapos tesztelés és hibajavítás |
+| 6. | Felhasználói visszajelzések beépítése, utolsó finomítások és üzembe helyezése |
 
 ### Kommunikációs Terv
 
