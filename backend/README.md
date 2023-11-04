@@ -75,5 +75,3 @@ http://localhost:8080/api/answer/...
 ```
 
 *(jelenleg az API még nem rendelkezik endpointokkal...)*
-
-bocs ha a megfogalmazás szar, jelenleg hajnali fél 3 van 🥱💀
