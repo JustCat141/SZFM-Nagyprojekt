@@ -13,10 +13,15 @@ export const getQuestionnaire = async (req,res) => {
     }
 }
 
-export const getUserQuestionnaires = async (req,res) => {
-    const userId = req.params.userId
-    const questionnaires = await questionnaireService.getUserQuestionnaires(userId)
-    res.status(200).send(questionnaires)
+export const getUserQuestionnaires = async (req, res) => {
+    try {
+        const userId = req.params.userId
+        const questionnaires = await questionnaireService.getUserQuestionnaires(userId)
+        res.status(200).send(questionnaires)
+    } catch (err) {
+        logger.error(err)
+        return res.sendStatus(500)
+    }
 }
 
 export const createQuestionnaire = async (req,res) => {
