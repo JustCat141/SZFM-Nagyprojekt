@@ -10,7 +10,7 @@ export const getUsers = async (req, res) => {
     }
     catch (err) {
         logger.error(err)
-        res.status(500).send("Something broke")
+        return res.sendStatus(500)
     }
 }
 
