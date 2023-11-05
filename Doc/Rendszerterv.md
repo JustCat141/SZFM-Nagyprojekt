@@ -184,6 +184,9 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 - [Adobe Photoshop CC 2019](https://www.adobe.com/products/photoshop.html)
 - Microsoft Paint
 
+**Adatbázis kezelő**
+- [MySQL Workbench](https://www.mysql.com/products/workbench/)
+
 ## Adatbázisterv, adattárolás
 
 Ezen alpont az alkalmazás strukturális alapját és adatkezelési módját definiálja.
