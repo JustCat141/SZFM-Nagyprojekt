@@ -182,6 +182,7 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 
 **Grafikai eszközök**
 - [Adobe Photoshop CC 2019](https://www.adobe.com/products/photoshop.html)
+- [Figma](https://www.figma.com/)
 - Microsoft Paint
 
 **Adatbázis kezelő**
