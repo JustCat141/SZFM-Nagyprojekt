@@ -149,11 +149,11 @@ Kezelni kell az állapotokat és az eseményeket a React állapotkezelési és e
 
 Implementálni felhasználói értesítéseket és hibaüzeneteket a felhasználóbarát felhasználói élmény érdekében a login felületen akár.
 
-### Backend (Flask, Python):
+### Backend (Node.js, JavaScript, Express, MySQL):
 
-Egy Flask alkalmazást a projekt gyökérmappájába létrehozni.
+Egy JavaScript-Express alkalmazást a projekt gyökérmappájába létrehozni.
 
-Definiálni útvonalakat (endpoints) a Flask alkalmazásban a frontend és backend kommunikációhoz, például a regisztrációhoz, bejelentkezéshez, kérdőívek létrehozásához, adatok lekérdezéséhez.
+Definiálni útvonalakat (endpointokat) a JavaScript alkalmazásban a frontend és backend kommunikációhoz, például a regisztrációhoz, bejelentkezéshez, kérdőívek létrehozásához, adatok lekérdezéséhez.
 
 Konfigurálni az adatbázist.
 
@@ -161,7 +161,7 @@ Implementálni felhasználói autentikációt.
 
 Elkészíteni a kérdőívek és válaszok modelljét az adatbázisban(blokkokat).
 
-Kezelni a HTTP kéréseket a frontendtől, ellenőrizd őket és hajtsd végre a megfelelő adatbázisműveleteket.
+Kezelni a HTTP kéréseket a frontendtől, ellenőrizni őket és végrehajtani a megfelelő adatbázisműveleteket (Querry).
 
 ### Adatbázis (MySQL):
 
