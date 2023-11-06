@@ -13,3 +13,7 @@ export async function getUserQuestionnaires(userId) {
 export async function createQuestionnaire(user_id,title,description,questions) {
     await pool.query('INSERT INTO questionnaires(user_id, title, description, questions) VALUES(?, ?, ?, ?)', [user_id, title, description, questions])
 }
+
+export async function deleteQuestionnaire(id) {
+    await pool.query('DELETE FROM questionnaires WHERE id = ?', [id])
+}
