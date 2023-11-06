@@ -22,3 +22,7 @@ export async function createUser(username, emailHash, passwordHash) {
 export async function deleteUser(id){
     await pool.query('DELETE FROM users WHERE id = ?', [id])
 }
+
+export async function updateUser(id, username, email, passwordHash) {
+    await pool.query('UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?', [username, email, passwordHash, id])
+}
