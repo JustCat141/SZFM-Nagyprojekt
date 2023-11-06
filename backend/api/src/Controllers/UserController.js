@@ -57,3 +57,15 @@ export const deleteUser = async (req,res) => {
         return res.sendStatus(500)
     }
 }
+
+export const updateUser = async (req, res) => {
+    try{
+        const id = req.params.id
+        const { username, email, password} = req.body
+
+        const passwordHash = await userHelper.hash(password)
+        await.userService.updateUser(id, username, email, passwordHash)
+    } catch (err) {
+        return res.sendStatus(500)
+    }
+}
