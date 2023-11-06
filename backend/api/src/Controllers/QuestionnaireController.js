@@ -28,3 +28,14 @@ export const createQuestionnaire = async (req,res) => {
     questionnaireService.createQuestionnaire(user_id,title,description,questionsJSON)
     return res.sendStatus(200)
 }
+
+export const deleteQuestionnaire = async (req,res) => {
+    try{
+        const id = req.params.id
+        await questionnaireService.deleteQuestionnaire(id)
+
+        return res.status(200).send(rh.success)
+    } catch (err) {
+        return res.sendStatus(500)
+    }
+}
