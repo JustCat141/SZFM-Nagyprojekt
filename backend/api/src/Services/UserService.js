@@ -18,3 +18,7 @@ export async function getUserByEmail(emailHash) {
 export async function createUser(username, emailHash, passwordHash) {
     await pool.query('INSERT INTO users(username, email, password) VALUES(?, ?, ?)', [username, emailHash, passwordHash])
 }
+
+export async function deleteUser(id){
+    await pool.query('DELETE FROM users WHERE id = ?', [id])
+}
