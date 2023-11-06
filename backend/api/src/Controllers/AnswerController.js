@@ -15,3 +15,17 @@ export const uploadAnswers = async (req, res) => {
         return res.sendStatus(500)
     }
 }
+
+export const getEvaluation = async (req, res) => {
+    try{
+        const user_id = req.params.user_id;
+        const questionnaire_id = req.params.questionnaire_id;
+
+        const evalutaionResult = await answerService.getEvaluation(user_id, questionnaire_id);
+
+        return res.status(200).send(evalutaionResult);
+    } catch (err) {
+        return res.sendStatus(500);
+    }
+}
+
