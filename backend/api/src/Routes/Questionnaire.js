@@ -7,3 +7,5 @@ export const questionnaireRouter = express.Router()
 questionnaireRouter.get('/:id', questionnaireController.getQuestionnaire)
 questionnaireRouter.get('/user/:userId', questionnaireController.getUserQuestionnaires)
 questionnaireRouter.post('/create', questionnaireController.createQuestionnaire)
+
+questionnaireRouter.delete('/:id', questionnaireController.deleteQuestionnaire)
