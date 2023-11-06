@@ -65,6 +65,7 @@ export const updateUser = async (req, res) => {
 
         const passwordHash = await userHelper.hash(password)
         await.userService.updateUser(id, username, email, passwordHash)
+        return res.status(200).send(rh.success)
     } catch (err) {
         return res.sendStatus(500)
     }
