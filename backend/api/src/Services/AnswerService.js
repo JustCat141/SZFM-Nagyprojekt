@@ -10,6 +10,6 @@ export async function uploadAnswers(questionnaire_id, question_id, answer){
 }
 
 export async function getEvaluation(user_id, questionnaire_id) {
-    const [result] = await pool.query('SELECT * FROM evaluations WHERE user_id = ? AND questionnaire_id = ?', [user_id, questionnaire_id]);
+    const [result] = await pool.query('SELECT * FROM Evaluations WHERE user_id = ? AND questionnaire_id = ?', [user_id, questionnaire_id]);
     return result
 }
