@@ -7,4 +7,4 @@ export const answerRouter = express.Router()
 answerRouter.get('/',answerController.getAnswers)
 
 //new route to upload answers
-answerRouter.post('/upload', answerController.uploadAnswer)
+answerRouter.post('/upload', answerController.uploadAnswers)
