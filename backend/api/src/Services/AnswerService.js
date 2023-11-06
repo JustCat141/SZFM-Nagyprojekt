@@ -8,3 +8,8 @@ export async function getAnswers() {
 export async function uploadAnswers(questionnaire_id, question_id, answer){
     await pool.query('INSERT INTO answers(questionnaire_id, question_id, answer) VALUES (?, ?, ?)', [questionnaire_id, question_id, answer]);
 }
+
+export async function getEvaluation(user_id, questionnaire_id) {
+    const [result] = await pool.query('SELECT * FROM evaluations WHERE user_id = ? AND questionnaire_id = ?', [user_id, questionnaire_id]);
+    return result
+}
