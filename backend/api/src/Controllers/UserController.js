@@ -46,3 +46,14 @@ export const login = async (req,res) => {
         return res.status(401).send(rh.invalidLogin)
     }
 }
+
+export const deleteUser = async (req,res) => {
+    try{
+        const id = req.params.id
+        await userService.deleteUser(id)
+
+        return res.status(200).send(rh.success)
+    } catch (err) {
+        return res.sendStatus(500)
+    }
+}
