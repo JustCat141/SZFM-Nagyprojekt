@@ -8,3 +8,6 @@ answerRouter.get('/',answerController.getAnswers)
 
 //new route to upload answers
 answerRouter.post('/upload', answerController.uploadAnswers)
+
+//new route to evaluate the answers
+answerRouter.get('/evaluate/:user_id/:questionnaire_id', answerController.getEvaluation)
