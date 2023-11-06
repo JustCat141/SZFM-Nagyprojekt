@@ -10,3 +10,5 @@ userRouter.post('/register', await userController.registUser)
 userRouter.post('/login', await userController.login)
 
 userRouter.delete('/:id',userController.deleteUser)
+
+userRouter.put('/:id', userController.updateUser)
