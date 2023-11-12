@@ -1,5 +1,4 @@
 @echo off
-echo Starting server...
 
 :: Get the current directory
 set "currentFolder=%CD%"

@@ -149,11 +149,11 @@ Kezelni kell az állapotokat és az eseményeket a React állapotkezelési és e
 
 Implementálni felhasználói értesítéseket és hibaüzeneteket a felhasználóbarát felhasználói élmény érdekében a login felületen akár.
 
-### Backend (Flask, Python):
+### Backend (Node.js, JavaScript, Express, MySQL):
 
-Egy Flask alkalmazást a projekt gyökérmappájába létrehozni.
+Egy JavaScript-Express alkalmazást a projekt gyökérmappájába létrehozni.
 
-Definiálni útvonalakat (endpoints) a Flask alkalmazásban a frontend és backend kommunikációhoz, például a regisztrációhoz, bejelentkezéshez, kérdőívek létrehozásához, adatok lekérdezéséhez.
+Definiálni útvonalakat (endpointokat) a JavaScript alkalmazásban a frontend és backend kommunikációhoz, például a regisztrációhoz, bejelentkezéshez, kérdőívek létrehozásához, adatok lekérdezéséhez.
 
 Konfigurálni az adatbázist.
 
@@ -161,7 +161,7 @@ Implementálni felhasználói autentikációt.
 
 Elkészíteni a kérdőívek és válaszok modelljét az adatbázisban(blokkokat).
 
-Kezelni a HTTP kéréseket a frontendtől, ellenőrizd őket és hajtsd végre a megfelelő adatbázisműveleteket.
+Kezelni a HTTP kéréseket a frontendtől, ellenőrizni őket és végrehajtani a megfelelő adatbázisműveleteket (Querry).
 
 ### Adatbázis (MySQL):
 
@@ -182,20 +182,23 @@ Az alkalmazás web platformra készül, böngészőből érhető el. A projekthe
 
 **Grafikai eszközök**
 - [Adobe Photoshop CC 2019](https://www.adobe.com/products/photoshop.html)
+- [Figma](https://www.figma.com/)
 - Microsoft Paint
 
-## Adatbázisterv, adattárolás
+**Adatbázis kezelő**
+- [MySQL Workbench](https://www.mysql.com/products/workbench/)
 
-### MEGJEGYZÉS!! - Ez a terv nem a végleges formája az adattárolásnak. A projekt fejlesztése alatt fenntartjuk ezen pont módosítását, illetve teljes változását!
+## Adatbázisterv, adattárolás
 
 Ezen alpont az alkalmazás strukturális alapját és adatkezelési módját definiálja.
 Az adatbázisterv részletesen meghatározza az adatbázisban tárolt adatok típusait, az adatok közötti kapcsolatokat, valamint az adatkezelés és lekérdezések módját.
 A cél a hatékony és biztonságos adatkezelés biztosítása, valamint az alkalmazás funkcionalitásainak megfelelő adatstruktúra és adatelérési mechanizmus kialakítása.
 
 ## 1. Adatbázis struktúra
-A rendszer két fő adattáblából épül fel:
- 1. Felhasználók
- 2. Kérdőívek
+A rendszer három adattáblából épül fel:
+ 1. Felhasználók - (users)
+ 2. Kérdőívek - (questionnaires)
+ 3. Válaszok - (answers)
 
 ### 1.1 A **felhasználók** tábla felépítése
 A felhasználók tábla tartalmazza minden regisztrált felhasználó adatát.
@@ -206,7 +209,7 @@ Ezen adatok a következők:
  - **username** - A felhasználó által megadott felhasználónév. Minden felhasználónak egyedi felhasználóneve van.
  - **email** - A felhasználó által megadott e-mail cím.
  - **password** - A felhasználó jelszava, hashelt formában tárolva a biztonság érdekében.
- - **registration_date** - A felhasználó regisztrációjának pontos ideje.
+ - **created_at** - A felhasználó regisztrációjának pontos ideje.
 
 ### 1.2 A **Kérdőívek** tábla felépítése
 Ez a tábla tárolja a felhasználók által létrehozott kérdőívek adatait. Egyik adatnak sem lehet null értéke, kivéve a leírást. Ezen adatok a következők:
@@ -215,19 +218,30 @@ Ez a tábla tárolja a felhasználók által létrehozott kérdőívek adatait. 
  - **user_id** - User Id - Felhasználói azonosító. Ez a mező tárolja a kérdőív tulajdonosának az azonosítóját.
  - **title** - A kérdőívhez tartozó cím.
  - **description** - A kérdőívhez tartozó leírás (lehet null érték).
- - **path** - A kérdőív adatait tároló file útvonala *(egy random string, pl. X2vbo6mtvas)*,
+ - **questions** - Maga a kérdéssor JSON-ban tárolt felépítése. Ez tárolja a kérdéseket, a válaszadás típusát, illetve a válaszokat.
+  - **created_at** - A kérdőív elkészültének pontos ideje.
+
+### 1.3 A **Válaszok** tábla felépítése
+Ez a tábla tárolja a felasználók által adott válaszokat JSON formátumban.
+ - **id** - A válaszhoz tartozó azonosító.
+ - **user_id** - A válaszadó azonosítója
+ - **questionnaire_id** - A kérdőív azonosítója
+ - **answer** - Maga a válasz JSON-ban tárolt felépítése. Ez tárolja a kérdés indexét, illetve a válaszok indexe(i)t.
+  - **created_at** - A kérdőív elkészültének pontos ideje.
 
 ### 2. A kérdőívekhez tartozó adatatok rendszere
-A kérdőívek adatai JSON fájlokban tárolódnak a backenden.
+A kérdőívek adatai JSON formátumban tárolódnak az adatbázisban.
 
-De miért JSON fájlokban tároljuk a kérdőívek adatait, miért nem egy erre szánt adatbázistáblában?
+De miért JSON formátumban tároljuk a kérdőívek adatait?
 
 Minden kérdőív egy vagy több kérdésből épül fel. Ezek a kérdések különböző válaszadási típusokból, illetve válaszlehetőségekből állnak. Ennek köszönhetően egy kérdőív különböző mennyiségú és bemenetű válaszlehetőségekből (pl. textfield, egy vagy többlehetőséges fálaszokból) áll, ezért nem lehetséges egyetlen sémára létrehozni őket.
 
 ### 3. Az adattárolás modellje
-A következő ábra az adatbázist, illetve az adattárolás módját szemlélteti.
+A következő ábra az adatbázis modelljét szemlélteti.
 
 ![Kép az adattárolás módjáról](./images/adatbazis_modell.png)
+
+*Az ábra a [draw.io](https://www.drawio.com/) segítségével készült.*
 
 ## Karbantási terv
 
