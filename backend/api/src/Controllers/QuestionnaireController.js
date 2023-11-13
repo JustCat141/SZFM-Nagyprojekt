@@ -1,5 +1,6 @@
 import * as questionnaireService from '../Services/QuestionnaireService.js'
 import * as questionnaireHelper from '../Helpers/QuestionnaireHelper.js'
+import * as answerService from '../Services/AnswerService.js';
 import * as rh from '../Helpers/ResponseHelper.js'
 import { logger } from '../Helpers/Logger.js'
 
@@ -55,3 +56,15 @@ export const deleteQuestionnaire = async (req,res) => {
         return res.sendStatus(500)
     }
 }
+
+export const evaluateUserAnswers = async (req, res) => {
+    try {
+        const questionnaireId = req.params.id;
+
+        // Kérdőív részleteinek lekérése
+        const questionnaire = await questionnaireService.getQuestionnaire(questionnaireId);
+
+        if (!questionnaire) {
+            return res.status(404).send(rh.invalidFormat);
+        }
+
