@@ -83,3 +83,11 @@ export const evaluateUserAnswers = async (req, res) => {
         if (!isValidFormat) {
             return res.status(400).send(rh.invalidFormat);
         }
+
+        // JSON fájl visszaküldése a frontendre
+        return res.status(200).send(evaluationData);
+    } catch (err) {
+        logger.error(err);
+        return res.sendStatus(500);
+    }
+};
