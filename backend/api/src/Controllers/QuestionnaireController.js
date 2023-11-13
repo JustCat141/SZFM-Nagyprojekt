@@ -76,3 +76,10 @@ export const evaluateUserAnswers = async (req, res) => {
             questionnaire: questionnaire.questions,
             answers: answers.map(answer => answer.answer),
         };
+
+        // JSON fájl formátumának ellenőrzése
+        const isValidFormat = await questionnaireHelper.isValidDataStructure(evaluationData);
+
+        if (!isValidFormat) {
+            return res.status(400).send(rh.invalidFormat);
+        }
