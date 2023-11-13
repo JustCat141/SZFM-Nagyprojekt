@@ -70,3 +70,9 @@ export const evaluateUserAnswers = async (req, res) => {
 
         // Megkeresi a válaszokat az adott questionnaire id-hoz
         const answers = await answerService.getAnswersByQuestionnaireId(questionnaireId);
+
+        // Kérdések és válaszok egy json fájlban
+        const evaluationData = {
+            questionnaire: questionnaire.questions,
+            answers: answers.map(answer => answer.answer),
+        };
