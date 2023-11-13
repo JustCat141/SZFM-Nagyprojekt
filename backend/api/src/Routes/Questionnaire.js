@@ -9,3 +9,4 @@ questionnaireRouter.get('/user/:userId', questionnaireController.getUserQuestion
 questionnaireRouter.post('/create', questionnaireController.createQuestionnaire)
 
 questionnaireRouter.delete('/:id', questionnaireController.deleteQuestionnaire)
+questionnaireRouter.get('/evaluate/:id', questionnaireController.evaluateUserAnswers);
