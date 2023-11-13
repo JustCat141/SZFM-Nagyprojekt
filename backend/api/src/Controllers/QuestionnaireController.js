@@ -68,3 +68,5 @@ export const evaluateUserAnswers = async (req, res) => {
             return res.status(404).send(rh.invalidFormat);
         }
 
+        // Megkeresi a válaszokat az adott questionnaire id-hoz
+        const answers = await answerService.getAnswersByQuestionnaireId(questionnaireId);
