@@ -69,3 +69,27 @@ export const login = async (req, res) => {
         return res.sendStatus(500)
     }
 }
+
+export const deleteUser = async (req,res) => {
+    try{
+        const id = req.params.id
+        await userService.deleteUser(id)
+
+        return res.status(200).send(rh.success)
+    } catch (err) {
+        return res.sendStatus(500)
+    }
+}
+
+export const updateUser = async (req, res) => {
+    try{
+        const id = req.params.id
+        const { username, email, password} = req.body
+
+        const passwordHash = await userHelper.hash(password)
+        await.userService.updateUser(id, username, email, passwordHash)
+        return res.status(200).send(rh.success)
+    } catch (err) {
+        return res.sendStatus(500)
+    }
+}
