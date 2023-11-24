@@ -3,6 +3,7 @@ export const LoadForFill = (id) => {
 
   return fetch(apiUrl)
     .then((response) => {
+      console.log(response);
       return response; // Return the full response
     })
     .catch((error) => {

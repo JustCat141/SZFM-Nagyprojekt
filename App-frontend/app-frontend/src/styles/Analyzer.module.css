@@ -1,23 +1,23 @@
 .analyzer-page {
  /*Elemző főoldal*/
-    height: 13rem;
     background-color: white;
+    margin-bottom: 5rem;
 }
 
 .main-text {
     /*Kérdőív címe és leírása*/
     margin: 0;
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 1.3rem;
     font-weight: bold;
 }
 
 .question-list {
     /*Kérdés lista*/
-    height: 58rem;
     margin: 0;
     list-style: none;
     padding: 0;
+    margin-bottom: 2rem;
 }
 
 .question-list-item {
@@ -45,9 +45,14 @@
     width: 50rem;
     background-color: rgba(188, 237, 190, 0.553);
     border-radius: 1rem;
+    padding-top: 1rem;
 }
 
 .answer-list-text {
     /*Válasz szövege ha a kérdés nem kiválasztós volt*/
     font-size: 1rem;
+}
+
+.button { 
+    margin-top: 2rem;
 }

@@ -57,9 +57,11 @@ const QuestionnaireAnalyzer = (id) => {
                   ))
                 ) : (
                   question.answers.map((answer, answerIndex) => (
-
+                    <div>
+                      <div>{answer}</div>
                     <Chart key={answerIndex} answerText={answer}
                     answerNumber={question.given_answers[answerIndex]} />
+                    </div>
                   )))
                 }
                 </div>

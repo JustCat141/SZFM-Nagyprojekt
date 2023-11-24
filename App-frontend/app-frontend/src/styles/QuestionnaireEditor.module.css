@@ -18,7 +18,8 @@
 
 .questionnaire-input-fields {
     /*Kérdőív felső input field divje*/
-    padding: 2rem
+    padding: 2rem;
+    margin: 0 auto;
 }
 
 .questionnaire-input-field {

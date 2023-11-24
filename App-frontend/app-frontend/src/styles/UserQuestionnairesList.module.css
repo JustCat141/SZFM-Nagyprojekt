@@ -17,8 +17,8 @@
 .UserQuestionnairesList-list-item {
     /*Felhasználóhoz tartozó kérdőívek listaeleme*/
     /*padding: 0.6rem;*/
-    cursor: pointer;
-    background-color: rgb(58, 58, 150);
+    cursor: pointer;/* 
+    background-color: rgb(58, 58, 150); */
     color: white;
     border-radius: 1rem;
     margin: 1rem;
