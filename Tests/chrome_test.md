@@ -1,0 +1,10 @@
+| Questionnaire rendszer tesztelése | Tesztelő: | Pósán Róbert  |  |  |  |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Böngésző | Lépés | Leírás | Státusz | Várt eredmény | Kapott eredmény |
+| Chrome | 1 | Regisztráció | passed | Regisztrációs felület helyes kitöltése, a regisztrálás megtörténik és bejelentkező felület jelenik meg | Létrejön a felhasználó fiókja az adatbázisban amivel a bejelentkezést létre tudja hozni |
+|  | 2 | Bejelentkezés | passed | A felhasználó megadja a helyes felhasználónevét és jelszavát, majd sikeresen bejelentkezik és átirányítódik a főoldalra | Sikeres authentikáció után megtörténik az átirányítás a főoldalra |
+| | 3 | Kérdőív kitöltése | passed | A rendszer rögzíti a válaszokat, és átirányítja a felhasználót a következő kérdésre, a beküldés gombbal elküldheti a kitöltött kérdőívet | A rendszer rögzíti a válaszokat, és átirányítja a felhasználót a következő kérdésre, a beküldés gombbal elküldheti a kitöltött kérdőívet |
+| | 4 | Kérdőív validáció | passed | Kitöltetlen válasznál a program megjelenít egy hibaüzenetet a hiányzó mezőkkel | Kitöltetlen válasznál a program megjelenít egy hibaüzenetet a hiányzó mezőkkel |
+|  | 5 | Kérdőív mentése | passed | A rendszer megerősíti a mentést, és a felhasználó láthatja az elmentett válaszait a profiljában | A rendszer megerősíti a mentést, és a felhasználó láthatja az elmentett válaszait a profiljában |
+|  | 6 | Oldalak közötti navigáció | passed | A rendszer megjegyzi az eddigi válaszokat, és visszatér a megfelelő kérdéshez | A rendszer megjegyzi az eddigi válaszokat, és visszatér a megfelelő kérdéshez |
+|  | 7 | Kijelentkezés | passed | A felhasználó kijelentkezik, és a rendszer visszairányítja a bejelentkező képernyőre. Ha újra bejelentkezik, folytathatja a munkáját | A felhasználó kijelentkezik, és a rendszer visszairányítja a bejelentkező képernyőre. Ha újra bejelentkezik, folytathatja a munkáját |
